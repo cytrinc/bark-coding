@@ -1,5 +1,5 @@
 # Advanced Editor
-The advanced editor was created by [sillybreakfast](https://github.com/sillybreakfast). It runs JavaScript with added features optimized for Bark.
+The advanced editor was created by [rayne cloudy](https://github.com/raynecloudy). It runs JavaScript with added features optimized for Bark.
 
 ## Commands
 
@@ -34,5 +34,27 @@ Draws a rectangle on the stage.
 
 #### Methods
 - `draw()`: Renders the sprite.
+
+## Variables
+
+### Check mouse keys
+
+These variables tell you if the selected key is being pressed.
+
+- `kb_left_arrow`
+
+If left arrow key pressed.
+
+- `kb_right_arrow`
+
+If right arrow key pressed.
+
+- `kb_up_arrow`
+
+If up arrow key pressed.
+
+- `kb_down_arrow`
+
+If down arrow key pressed.
 
 [Edit this page.](https://github.com/mariocraft987/bark-coding/edit/main/documentation/content/Advanced%20editor.md)
