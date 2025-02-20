@@ -81,6 +81,24 @@
                     canvas.moveTo(this.x+30, this.y+40);
                     canvas.lineTo(this.x+40, this.y+55);
                     canvas.stroke();
+                } else if (this.costume == "greenman") {
+                    let img = new Image();
+                    img.src = "/advanced/sprites/greenman.png";
+                    img.onload = () => {
+                        canvas.drawImage(img, this.x, this.y, img.width * (this.size / 30), img.height * (this.size / 30));
+                    }
+                } else if (this.costume == "spaceman") {
+                    let img = new Image();
+                    img.src = "/advanced/sprites/spaceman.png";
+                    img.onload = () => {
+                        canvas.drawImage(img, this.x, this.y, img.width * (this.size / 30), img.height * (this.size / 30));
+                    }
+                } else if (this.costume == "jerry") {
+                    let img = new Image();
+                    img.src = "/advanced/sprites/jerry.png";
+                    img.onload = () => {
+                        canvas.drawImage(img, this.x, this.y, img.width * (this.size / 60), img.height * (this.size / 60));
+                    }
                 }
             }
         }
@@ -108,6 +126,53 @@
 
         let alert = function(message) {
             alert(message)
+        }
+
+        let kb_left_arrow = false;
+        let kb_right_arrow = false;
+        let kb_up_arrow = false;
+        let kb_down_arrow = false;
+
+        document.onkeydown = function(event) {
+	        switch (event.keyCode) {
+		        case 37: { // left arrow
+			        kb_left_arrow = true;
+                    break;
+		        }
+		        case 39: { // right arrow
+			        kb_right_arrow = true;
+                    break;
+		        }
+		        case 38: { // up arrow
+			        kb_up_arrow = true;
+                    break;
+		        }
+		        case 40: { // down arrow
+			        kb_down_arrow = true;
+                    break;
+		        }
+	        }
+        }
+
+        document.onkeyup = function(event) {
+	        switch (event.keyCode) {
+		        case 37: { // left arrow
+			        kb_left_arrow = false;
+                    break;
+		        }
+		        case 39: { // right arrow
+			        kb_right_arrow = false;
+                    break;
+		        }
+		        case 38: { // up arrow
+			        kb_up_arrow = false;
+                    break;
+		        }
+		        case 40: { // down arrow
+			        kb_down_arrow = false;
+                    break;
+		        }
+	        }
         }
     </script>
 </body>
