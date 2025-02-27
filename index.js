@@ -153,9 +153,12 @@ function initializeDarkMode() {
       return;
     body.classList.add('dark-mode');
 }
-initializeDarkMode();
-whatsNew();
-InitTheme()
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    initializeDarkMode();
+    whatsNew();
+    InitTheme()
+});
 
 function InitTheme() {
   if (localStorage.theme == "bluedodger" && localStorage.navcolor != "nocolor") {
