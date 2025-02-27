@@ -154,12 +154,6 @@ function initializeDarkMode() {
     body.classList.add('dark-mode');
 }
 
-document.addEventListener("DOMContentLoaded", function(event) {
-    initializeDarkMode();
-    whatsNew();
-    InitTheme()
-});
-
 function InitTheme() {
   if (localStorage.theme == "bluedodger" && localStorage.navcolor != "nocolor") {
     document.getElementById("navbar_color").value = localStorage.navcolor;
@@ -195,6 +189,12 @@ function InitTheme() {
   return;
   }
 }
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    initializeDarkMode();
+    whatsNew();
+    InitTheme()
+});
 
 let mybutton = document.getElementById("topBtn");
 
