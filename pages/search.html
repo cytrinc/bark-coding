@@ -12,22 +12,14 @@
   <!-- inject:navbar -->
   
   <h1><span id="header"></span></h1>
-  <p>Link this to your profile?</p>
-  <a id="link">#hashtag</a>
-  <br/>
-  <textarea id="link-select">[#hashtag](https://bark.dumorando.com/search?q=hashtag)</textarea>
+  <p>Sorry, but searching projects don't work yet :(</p>
 
   <!-- inject:footer -->
 </body>
 <script>
   let q = new URLSearchParams(location.search).get("q".toString()) || "";
-  document.title = 'Bark Search - "' + q + '"';
+  document.title = 'Bark Search - ' + q;
   document.getElementById('header').innerHTML += q;
-
-  document.getElementById("link").href = `https://bark.dumorando.com/search?q=${q}`;
-  document.getElementById("link").innerHTML = `#${q}`;
-
-  document.getElementById("link-select").value = `[#${q}](https://bark.dumorando.com/search?q=${q})`;
 </script>
 <script src="/index.js"></script>
 
