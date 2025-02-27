@@ -160,7 +160,7 @@ InitTheme()
 function InitTheme() {
   if (localStorage.theme == "bluedodger" && localStorage.navcolor != "nocolor") {
     document.getElementById("navbar_color").value = localStorage.navcolor;
-    document.getElementById("navbar").style.background = localStorage.navcolor;
+    document.getElementById("navbar").style.backgroundColor = localStorage.navcolor;
   } else {
   const theme = localStorage.getItem('theme') ?? "bluedodger";
   if (theme.startsWith('#')) {
