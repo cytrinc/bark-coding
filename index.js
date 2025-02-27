@@ -155,10 +155,6 @@ function initializeDarkMode() {
 }
 
 function InitTheme() {
-  if (localStorage.theme == "bluedodger" && localStorage.navcolor != "nocolor") {
-    document.getElementById("navbar_color").value = localStorage.navcolor;
-    document.getElementById("navbar").style.backgroundColor = localStorage.navcolor;
-  } else {
   const theme = localStorage.getItem('theme') ?? "bluedodger";
   if (theme.startsWith('#')) {
     const style = document.createElement('style');
@@ -187,7 +183,6 @@ function InitTheme() {
       document.head.append(link);
   }
   return;
-  }
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
