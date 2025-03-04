@@ -103,7 +103,7 @@
     </div>
 
     <div>
-      <p id="bio" style="float: right;"></p>
+      <p id="bio" style="float: right; overflow: scroll; height: 180px;"></p>
     </div>
 
   </div>
@@ -194,7 +194,7 @@
   bio.innerHTML = replace(data.bio);
 
   if (await isuseradmin(username)) {
-    document.getElementById('username').outerHTML += "<admin-pin>Bark team<img src='/src/images/assets/other/wrench.png' width='20' style='image-rendering: pixelated; opacity: 0.3;'></admin-pin>";
+    document.getElementById('username').outerHTML += "<admin-pin>Bark team<img title='This user is a developer!' src='/src/images/assets/other/wrench.png' width='17' style='image-rendering: pixelated; opacity: 0.5;'></admin-pin>";
     document.getElementById('username').style.color = "#ffa70f";
   }
 
