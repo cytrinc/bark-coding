@@ -2,7 +2,8 @@
 ![Static Badge](https://img.shields.io/badge/server:%20-bapiv2-green?style=for-the-badge&logo=javascript&logoColor=yellow)
 ![Static Badge](https://img.shields.io/badge/latest%20release-0.1.9-green?style=for-the-badge&logo=electron&logoColor=green)
 
-<a href="https://discord.com/invite/hXmHw7H9BF">![Bark Coding Discord](https://discord.com/api/guilds/1225552735445843978/embed.png)</a>
+The Bark Discord
+https://discord.gg/hXmHw7H9BF
 <br />
 *The API source code is hosted at https://github.com/dumorando/bapiv2*
 
@@ -11,10 +12,10 @@ Bark is a website that makes programming easy, so users of any age can create an
 Bark has many features, including:
 - Dark mode
 - Custom stage size&ast;
-- Customize editor layout&ast;
 - Paint editor&ast;
+- Game Engine&ast;
 - Accounts/Community
-- More features soon, Bark is still in its early stages
+- More features soon, Bark is still in it's early stages
 
 `*` = coming soon
 
@@ -27,17 +28,17 @@ Bark has many features, including:
 Please read our <a href="https://github.com/mariocraft987/bark.github.io/blob/main/CONTRIBUTING.md">`contribution guidelines`</a> before contributing.
 To be a part of Bark's development, please go to <a href="https://bark.dumorando.com/jobs">this</a> page and follow the instructions to apply.
 ## Staff/Contributors
-[<img src="https://avatars.githubusercontent.com/u/154646419?v=4" alt="mariocraft" title="mariocraft" width="70" height="70" style="border-radius:100%">](https://github.com/mariocraft987)
-[<img src="https://avatars.githubusercontent.com/u/130254323?v=4" alt="nmsderp" title="nmsderp" width="70" height="70" style="border-radius:100%">](https://github.com/nmsderp)
-[<img src="https://avatars.githubusercontent.com/u/129226914?v=4" alt="reese" title="reese" width="70" height="70" style="border-radius:100%">](https://github.com/sillybreakfast)
-[<img src="https://avatars.githubusercontent.com/u/158863401?v=4" alt="Rubiidev" title="Rubiidev" width="70" height="70" style="border-radius:100%">](https://github.com/Rubiidev-18)
-[<img src="https://avatars.githubusercontent.com/u/144301348?v=4" alt="dumorando" title="dumorando" width="70" height="70" style="border-radius:100%">](https://github.com/dumorando)
-[<img src="https://avatars.githubusercontent.com/u/110662505?v=4" alt="Adam" title="Adam" width="70" height="70" style="border-radius:100%">](https://github.com/Bashamega)
-[<img src="https://avatars.githubusercontent.com/u/158528051?v=4" alt="Kevenn" title="Kevenn" width="70" height="70" style="border-radius:100%">](https://github.com/QuirkyWorks)
-[<img src="https://avatars.githubusercontent.com/u/164731988?v=4" alt="Rubiidev Alt" title="Rubiidev Alt" width="70" height="70" style="border-radius:100%">](https://github.com/Rubiidev18alt)
-[<img src="https://avatars.githubusercontent.com/u/115564143?v=4" alt="" title="BwnnyRxbbit" width="70" height="70" style="border-radius:100%">](https://github.com/Funtasmo)
-[<img src="https://avatars.githubusercontent.com/u/167290033?v=4" alt="" title="BwnnyRxbbit" width="70" height="70" style="border-radius:100%">](https://github.com/BwnnyRxbbit)
-[<img src="https://avatars.githubusercontent.com/u/138245554?v=4" alt="" title="KitsunAbigal" width="70" height="70" style="border-radius:100%">](https://github.com/KitsunAbigail)
+[<img src="https://avatars.githubusercontent.com/u/154646419?v=4" alt="mariocraft" title="mariocraft" width="60" style="border-radius:100%">](https://github.com/mariocraft987)
+[<img src="https://avatars.githubusercontent.com/u/130254323?v=4" alt="nmsderp" title="nmsderp" width="60" style="border-radius:100%">](https://github.com/nmsderp)
+[<img src="https://avatars.githubusercontent.com/u/129226914?v=4" alt="rayney" title="rayney" width="60" style="border-radius:100%">](https://github.com/raynecloudy)
+[<img src="https://avatars.githubusercontent.com/u/158863401?v=4" alt="Rubiidev" title="Rubiidev" width="60" style="border-radius:100%">](https://github.com/Rubiidev-18)
+[<img src="https://avatars.githubusercontent.com/u/144301348?v=4" alt="dumorando" title="dumorando" width="60" style="border-radius:100%">](https://github.com/dumorando)
+[<img src="https://avatars.githubusercontent.com/u/110662505?v=4" alt="Adam Bashagema" title="Adam" width="60" style="border-radius:100%">](https://github.com/Bashamega)
+[<img src="https://avatars.githubusercontent.com/u/158528051?v=4" alt="Kevenn" title="Kevenn" width="60" style="border-radius:100%">](https://github.com/QuirkyWorks)
+[<img src="https://avatars.githubusercontent.com/u/164731988?v=4" alt="Rubiidev Alt" title="Rubiidev Alt" width="60" style="border-radius:100%">](https://github.com/Rubiidev18alt)
+[<img src="https://avatars.githubusercontent.com/u/115564143?v=4" alt="" title="BwnnyRxbbit" width="50" style="border-radius:100%">](https://github.com/Funtasmo)
+[<img src="https://avatars.githubusercontent.com/u/167290033?v=4" alt="" title="BwnnyRxbbit" width="50" style="border-radius:100%">](https://github.com/BwnnyRxbbit)
+[<img src="https://avatars.githubusercontent.com/u/138245554?v=4" alt="" title="KitsunAbigal" width="50" style="border-radius:100%">](https://github.com/KitsunAbigail)
 <hr>
 
 # License
