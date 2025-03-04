@@ -100,31 +100,31 @@
     <div class="flex" style="float: left;">
       <img style="border-radius: 50%" height="75" src="" id="pfp" alt="Profile picture">
       <h1 id="username">User</h1>
+
+      <br/>
+      <button class="buttonFrBx followButton" onclick="alert(`sorry, following doesn't work yet :(`);" title="you can follow this user, if you want" style="color: gold;">Follow</button>
+      <br/>
+      <br/>
+      <button class="buttonFrBx" id="changeprofiledetails" onclick="location.replace('/settings/profile')">Change profile details</button>
+      <br/>
+      <a href="/reportuser" id="report_link" style="float:left;">Report this user</a>
+      <div id="admin">
+        <br/>
+        <details>
+          <summary><b>ADMIN</b></summary>
+          <br/>
+          <button class="buttonFrBx danger" id="buttonadmininvalidatepfp">[admin] invalidate pfp</button>
+          <br/>
+          <br/>
+          <button class="buttonFrBx danger" id="buttonadmininvalidatebio">[admin] change bio to</button>
+          <br/>
+          <textarea id="texttoexecute" placeholder="[Removed by bark team]" rows="2" cols="20"></textarea>
+          </details>
+      </div>
     </div>
 
     <div>
       <p id="bio" style="float: right;"></p>
-    </div>
-
-    <br/>
-    <button class="buttonFrBx followButton" onclick="alert(`sorry, following doesn't work yet :(`);" title="you can follow this user, if you want" style="color: gold;">Follow</button>
-    <br/>
-    <br/>
-    <button class="buttonFrBx" id="changeprofiledetails" onclick="location.replace('/settings/profile')">Change profile details</button>
-    <br/>
-    <a href="/reportuser" id="report_link" style="float:left;">Report this user</a>
-    <div id="admin">
-      <br/>
-      <details>
-        <summary><b>ADMIN</b></summary>
-        <br/>
-        <button class="buttonFrBx danger" id="buttonadmininvalidatepfp">[admin] invalidate pfp</button>
-        <br/>
-        <br/>
-        <button class="buttonFrBx danger" id="buttonadmininvalidatebio">[admin] change bio to</button>
-        <br/>
-        <textarea id="texttoexecute" placeholder="[Removed by bark team]" rows="2" cols="20"></textarea>
-        </details>
     </div>
   </div>
 
