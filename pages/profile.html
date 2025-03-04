@@ -97,11 +97,16 @@
 <body>
   <!-- inject:navbar -->
   <div class="box">
-    <div class="flex">
+    <div class="flex" style="float: left;">
       <img style="border-radius: 50%" height="75" src="" id="pfp" alt="Profile picture">
-      <h1 id="username">Undefined</h1>
+      <h1 id="username">User</h1>
     </div>
-    <p id="bio"></p><br />
+
+    <div>
+      <p id="bio" style="float: right;"></p>
+    </div>
+
+    <br/>
     <button class="buttonFrBx followButton" onclick="alert(`sorry, following doesn't work yet :(`);" title="you can follow this user, if you want" style="color: gold;">Follow</button>
     <br/>
     <br/>
