@@ -128,7 +128,9 @@
 <script src="/index.js"></script>
 <script src="/src/scripts/replacer.js"></script>
 <script>
-  document.getElementById("preview-bio").innerHTML = replace(document.getElementById("bio").value);
+  document.getElementById('bio').onkeypress = function() {
+      document.getElementById("preview-bio").innerHTML = replace(document.getElementById("bio").value);
+  }
   
   function addURL() {
     document.getElementById("bio").value += "\n[text](url)";
@@ -206,6 +208,8 @@
         }
     }
   });
+
+  document.getElementById("preview-bio").innerHTML = replace(document.getElementById("bio").value);
 
   const pfpresponse = await fetch(`https://api.bark.dumorando.com/api/v2/fetchUser?username=${localStorage.myBarkUsername}`);
 
