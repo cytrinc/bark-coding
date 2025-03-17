@@ -55,16 +55,16 @@
         </summary>
 
         <p>Upload your Blockly project<span style="color: red;">*</span></p>
-        <input type="file">
+        <input type="file" accept=".barkf">
         
         <p>Upload your thumbnail<span style="color: red;">*</span></p>
-        <input type="file">
+        <input type="file" accept="image/*">
 
         <p>Enter your title<span style="color: red;">*</span></p>
-        <input type="text">
+        <input type="text" id="title">
 
         <p>Enter a description</p>
-        <textarea cols="40" rows="30" placeholder="This is my project! Use the WASD/arrow keys to move!"></textarea>
+        <textarea cols="50" rows="12" placeholder="This is my project! Use the WASD/arrow keys to move, I made this in the Bark Blockly Editor."></textarea>
       </details>
 </center>
   
@@ -72,4 +72,18 @@
 </body>
 <script src="/index.js"></script>
 <script src="/src/scripts/replacer.js"></script>
+<script>
+  title_list = [
+    "Flappy Birb", 
+    "Escape the Platformer", 
+    "RPG Game", 
+    "Pancake [Animation]", 
+    "shooter game", 
+    "Bark Dog goes shopping" 
+  ]
+  
+  setInterval(function () {
+    document.getElementById("title").placeholder = title_list[Math.floor(Math.random()*title_list.length)];
+}, 3000);
+</script>
 </html>
