@@ -81,9 +81,12 @@
     "shooter game", 
     "Bark Dog goes shopping" 
   ]
+
+  // so input isnt blank on start
+  document.getElementById("title").placeholder = title_list[Math.floor(Math.random()*title_list.length)];
   
   setInterval(function () {
     document.getElementById("title").placeholder = title_list[Math.floor(Math.random()*title_list.length)];
-}, 3000);
+}, 2000);
 </script>
 </html>
