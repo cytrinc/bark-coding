@@ -5,9 +5,9 @@
 }
 
 @keyframes b-glow {
-  0% {box-shadow: 0px 0px 5px blue;}
-  50% {box-shadow: 0px 0px 15px cyan;}
-  100% {box-shadow: 0px 0px 5px blue;}
+  0% {box-shadow: 0px 0px 5px cyan;}
+  50% {box-shadow: 0px 0px 25px cyan;}
+  100% {box-shadow: 0px 0px 5px cyan;}
 }
 
 .dark-mode .special {
