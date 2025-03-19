@@ -120,7 +120,7 @@ function hideshowProfileDropdown() {
   document.getElementById("myProfileDropDown").style.display = "block";
 }
 
-document.getElementById("dropdownButton").addEventListener("click", hideshowProfileDropdown())
+document.getElementById("dropdownButton")?.addEventListener("click", hideshowProfileDropdown())
 
 
 function randomTxt() {
