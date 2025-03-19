@@ -53,11 +53,5 @@ Object.keys(components).forEach(item => {
     document.body.innerHTML = document.body.innerHTML.replace(`<!-- inject:${item} -->`, components[item]);
 });
 
-function showhideProfileButton() {
-    document.getElementById("myProfileDropdown").style.display = "block";
-}
-
-document.getElementById("dropdownButton").addEventListener("click", showhideProfileButton());
-
 //done injecting, go to the top cuz it scrolls down automatically for some reason
 window.scrollTo(0, 0);

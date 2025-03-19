@@ -116,6 +116,13 @@ function Todo() {
   document.getElementById("boxChanger").innerHTML = "<h2>Todo List</h2><p>" + toDoContent.replaceAll(/\n/g, "<br>") + "</p>";
 }
 
+function hideshowProfileDropdown() {
+  document.getElementById("myProfileDropDown").style.display = "block";
+}
+
+document.getElementById("dropdownButton").addEventListener("click", hideshowProfileDropdown())
+
+
 function randomTxt() {
   if (location.pathname !== "/explore")
     return;
