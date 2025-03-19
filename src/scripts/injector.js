@@ -1,5 +1,11 @@
 const actionsecret = localStorage.getItem("secret");
-let profile = !!localStorage.getItem("myBarkUsername") ? `<a href="/settings">Settings</a><a href="/profile/${localStorage.getItem("myBarkUsername")}" class="right">My Profile</a></div>` : '<a href="login" class="right">Login</a><a href="signup" class="right">Join bark</a></div>'
+let profile = !!localStorage.getItem("myBarkUsername") ? `
+<a href="/settings">Settings</a>
+<a class="right" id="dropdownButton">My Profile</a></div>
+<div id="myProfileDropDown" class="dropdown-content" style="display: none;">
+	<a href="/profile/${localStorage.getItem("myBarkUsername")}">Profile</a>
+    <a href="/settings">Settings</a>
+</div>` : '<a href="login" class="right">Login</a><a href="signup" class="right">Join bark</a></div>'
 let afdbtn = new Date().getMonth() === 3 && new Date().getDate() === 1 ? "<a id='flip-it-afd-btn'>FLIP IT</a>" : '';
 let turkey = new Date().getMonth() === 10 && new Date().getDate() === 28 ? "<a onclick='alert(`Happy Thanksgiving!!\n\n🦃🦃🦃`)'>🦃</a>" : '';
 
@@ -46,5 +52,12 @@ const components = {
 Object.keys(components).forEach(item => {
     document.body.innerHTML = document.body.innerHTML.replace(`<!-- inject:${item} -->`, components[item]);
 });
+
+function showhideProfileButton() {
+    document.getElementById("myProfileDropdown").style.display = "block";
+}
+
+document.getElementById("dropdownButton").addEventListener("click", showhideProfileButton());
+
 //done injecting, go to the top cuz it scrolls down automatically for some reason
 window.scrollTo(0, 0);
