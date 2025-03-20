@@ -4,6 +4,8 @@ let profile = !!localStorage.getItem("myBarkUsername") ? `
 <div id="myProfileDropDown" class="dropdown-content" style="display: none;">
 <a href="/profile/${localStorage.getItem("myBarkUsername")}">My Profile</a>
 <br/>
+<a href="/settings/profile">Profile Settings</a>
+<br/>
 <a href="/settings">Site Settings</a>
 </div>` : '<a href="login" class="right">Login</a><a href="signup" class="right">Join bark</a></div>'
 let afdbtn = new Date().getMonth() === 3 && new Date().getDate() === 1 ? "<a id='flip-it-afd-btn'>FLIP IT</a>" : '';
