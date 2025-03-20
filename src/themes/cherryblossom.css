@@ -100,10 +100,10 @@ input, select {
 }
 
 .dropdown-content {
-  background-color: #eb12c3;
+  background-color: #ff66bb;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
-  padding: 27px;
+  padding: 31px;
   float: right;
 }
 

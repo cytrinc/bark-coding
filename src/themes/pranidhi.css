@@ -101,6 +101,26 @@ a.link {
   text-decoration: underline;
 }
 
+.dropdown-content {
+  background-color: #c95757;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  padding: 20px;
+  float: right;
+}
+
+.dropdown-content a {
+  text-decoration: none;
+  color: white;
+  margin: 3px;
+  padding: 2px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f6f4d2;
+  color: black;
+}
+
 .buttonFrBx {
   background-color: #bc4749;
   /* Green buttons */
