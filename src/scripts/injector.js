@@ -1,10 +1,11 @@
 const actionsecret = localStorage.getItem("secret");
 let profile = !!localStorage.getItem("myBarkUsername") ? `
 <a href="/settings">Settings</a>
-<a class="right" onclick="hideshowProfileDropdown()">My Profile</a></div>
+<a class="right" onclick="hideshowProfileDropdown()">${localStorage.getItem("myBarkUsername")}</a></div>
 <div id="myProfileDropDown" class="dropdown-content" style="display: none;">
-	<a href="/profile/${localStorage.getItem("myBarkUsername")}">Profile</a>
-    <a href="/settings">Settings</a>
+<a href="/profile/${localStorage.getItem("myBarkUsername")}">My Profile</a>
+<br/>
+<a href="/settings">Site Settings</a>
 </div>` : '<a href="login" class="right">Login</a><a href="signup" class="right">Join bark</a></div>'
 let afdbtn = new Date().getMonth() === 3 && new Date().getDate() === 1 ? "<a id='flip-it-afd-btn'>FLIP IT</a>" : '';
 let turkey = new Date().getMonth() === 10 && new Date().getDate() === 28 ? "<a onclick='alert(`Happy Thanksgiving!!\n\n🦃🦃🦃`)'>🦃</a>" : '';
