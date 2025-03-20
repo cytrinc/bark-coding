@@ -117,8 +117,14 @@ function Todo() {
 }
 
 function hideshowProfileDropdown() {
-  location.href = `/profile/${localStorage.myBarkUsername}`;
-  document.getElementById("myProfileDropDown").style.display = "block";
+  /* location.href = `/profile/${localStorage.myBarkUsername}`; */
+  if (document.getElementById("myProfileDropDown").style.display == "none") {
+    // show dropdown
+    document.getElementById("myProfileDropDown").style.display = "block";
+  } else {
+    // hide dropdown
+    document.getElementById("myProfileDropDown").style.display = "none";
+  }
 }
 
 function randomTxt() {
