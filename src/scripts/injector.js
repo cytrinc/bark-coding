@@ -1,7 +1,7 @@
 const actionsecret = localStorage.getItem("secret");
 let profile = !!localStorage.getItem("myBarkUsername") ? `
 <a href="/settings">Settings</a>
-<a class="right" id="dropdownButton">My Profile</a></div>
+<a class="right" onclick="hideshowProfileDropdown()">My Profile</a></div>
 <div id="myProfileDropDown" class="dropdown-content" style="display: none;">
 	<a href="/profile/${localStorage.getItem("myBarkUsername")}">Profile</a>
     <a href="/settings">Settings</a>
