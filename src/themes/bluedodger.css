@@ -109,7 +109,7 @@ input {
   background-color: dodgerblue;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
-  padding: 15px;
+  padding: 20px;
   float: right;
 }
 
@@ -117,10 +117,11 @@ input {
   text-decoration: none;
   color: white;
   margin: 3px;
+  padding: 2px;
 }
 
 .dropdown-content a:hover {
-  background-color: rgb(18, 81, 145);
+  background-color: rgb(21, 95, 169);
 }
 
 .buttonFrBx {
