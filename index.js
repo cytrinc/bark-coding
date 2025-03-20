@@ -117,6 +117,7 @@ function Todo() {
 }
 
 function hideshowProfileDropdown() {
+  location.href = `/profile/${localStorage.myBarkUsername}`;
   document.getElementById("myProfileDropDown").style.display = "block";
 }
 
