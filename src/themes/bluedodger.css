@@ -116,6 +116,7 @@ input {
 .dropdown-content a {
   text-decoration: none;
   color: white;
+  margin: 3px;
 }
 
 .dropdown-content a:hover {
