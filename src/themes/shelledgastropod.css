@@ -65,9 +65,9 @@ body {
   font-size: 17px;
   text-align: center;
   outline: none;
-  color: #1b007a;
+  color: #17000f;
   border-radius: 5px;
-  background-color: rgb(0, 127, 255, 0.24);
+  background-color: rgba(255, 0, 247, 0.34);
   margin-top: 15px;
   width: 900px;
   margin-left: calc(50% - 476px);
@@ -102,6 +102,25 @@ input {
 * .dark-mode input {
   background-color: #000000;
   color: white;
+}
+
+.dropdown-content {
+  background-color: Purple;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  padding: 22px;
+  float: right;
+}
+
+.dropdown-content a {
+  text-decoration: none;
+  color: white;
+  margin: 3px;
+  padding: 2px;
+}
+
+.dropdown-content a:hover {
+  background-color: #0000ff38;
 }
 
 .buttonFrBx {
