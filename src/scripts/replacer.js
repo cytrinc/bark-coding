@@ -306,7 +306,7 @@ function replace(text) {
     
     for (r = 0; r < 50; r++) {
         start = getTwoKeys(start, "**", "<b>","</b>")
-        start = getTwoKeys(start, "_", "<i>","</i>")
+        start = getTwoKeys(start, "*", "<i>","</i>")
         start = getTwoKeys(start, "`", "<code>","</code>")
     }
 
