@@ -1,0 +1,62 @@
+name: GitHub Status Check
+
+on:
+  workflow_dispatch:  # Manual trigger
+  schedule:
+    - cron: '*/30 * * * *'  # Runs every 30 minutes
+
+jobs:
+  check_github_status:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+      - name: Create test commit
+        run: |
+          TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")
+          echo "Test commit at $TIMESTAMP" > .github/github-status-test.txt
+          git add .github/github-status-test.txt
+          git commit -m "Test commit for GitHub status - $TIMESTAMP" || echo "Commit failed"
+
+      - name: Try pushing commit
+        id: push_status
+        run: |
+          LOG_FILE="logs/github_status.log"
+          TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")
+          DIVIDER="--- [$TIMESTAMP] ---"
+
+          if git push origin main; then
+            STATUS="GitHub is up"
+            echo "push_success=true" >> $GITHUB_ENV
+          else
+            STATUS="GitHub might be down"
+            echo "push_success=false" >> $GITHUB_ENV
+          fi
+
+          mkdir -p logs  # Ensure logs folder exists
+
+          # Append log entry
+          if [[ -f "$LOG_FILE" ]]; then
+            echo -e "$DIVIDER\n$STATUS" >> "$LOG_FILE"
+          else
+            echo -e "$DIVIDER\n$STATUS" > "$LOG_FILE"
+          fi
+
+      - name: Delete test commit
+        if: env.push_success == 'true'
+        run: |
+          git reset --hard HEAD~1
+          git push --force origin main
+
+      - name: Commit and push log file
+        run: |
+          git add logs/github_status.log
+          git commit -m "Update GitHub status log"
+          git push origin main
