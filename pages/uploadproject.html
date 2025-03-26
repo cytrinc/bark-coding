@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bark - Upload</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/png">
+  <meta name="title" content="Bark coding - Explore">
+  <meta name="description" content="Bark is a programming language building off of Google's Blockly.">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bark.dumorando.com/">
+  <meta property="og:title" content="Bark coding - Explore">
+  <meta property="og:description" content="Bark is a programming language building off of Google's Blockly.">
+  <meta property="og:image" content="https://bark.dumorando.com/src/images/Logo.svg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://bark.dumorando.com/">
+  <meta property="twitter:title" content="Bark coding - Explore">
+  <meta property="twitter:description" content="Bark is a programming language building off of Google's Blockly.">
+  <meta property="twitter:image" content="https://bark.dumorando.com/src/images/Logo.svg">
+  
+  <!-- Optional Meta Tags -->
+  <meta name="keywords" content="coding, blockly, block coding, bark coding">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content=" days">
+  <meta name="author" content="mariocraft">
+</head>
+
+<body onload="randomTxt()">
+
+  <!-- inject:navbar -->
+  <div class="textCenter">
+    <h2>Upload Project</h2>
+  <p><label for="file" style="cursor: pointer;">Upload Thumbnail:</label></p>
+  <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)"></p>
+  <p><img id="output" width="200" /></p>
+    <br/>
+      <label for="selectas">Upload project as </label>
+  <select name="selectas" id="selectas">
+    <option value="test">A test project</option>
+    <option value="small">A small project</option>
+    <option value="demo">A Demo</option>
+    <option value="full">A full game</option>
+  </select>
+  </div>
+  <!-- inject:footer -->
+</body>
+<script src="/index.js"></script>
+<script src="/src/scripts/replacer.js"></script>
+  <script>
+  var loadFile = function(event) {
+    var image = document.getElementById('output');
+    image.src = URL.createObjectURL(event.target.files[0]);
+  };
+  </script>
+
+</html>

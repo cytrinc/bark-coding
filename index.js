@@ -1,40 +1,89 @@
 /* Some common scripts created in javascript to work the website, and make it interactive. */
 
-let newsBox = "Come see Bark's 5th trailer!";
-let baseUrl = "https://bark-coding.vercel.app";
+let toevaluate = ["/src/scripts/injector.js"];
+toevaluate.forEach(path => {
+  fetch(path)
+    .then(data => data.text())
+    .then(data => {
+      (async () => {
+        eval(data);
+      })(); //run in a seprate thread so it doesnt block this scripts execution
+    });
+});
+
+if (document.URL == "https://bark.dumorando.com/profile/" || document.URL == "https://bark.dumorando.com/profile") {
+  window.location.href = "https://bark.dumorando.com/users";
+}
+
+let newsBox =  `
+Bark Coding now has a working comment system!!!
+`;
+let baseUrl = window.location.origin;
 let commitsLength = 150;
 
 let mobile = window.navigator.userAgent.toLowerCase().includes("mobi");
 
-console.error("Exit Now! This part is used by devolopers. \n Hackers could tell you to paste strings here to hack your Bark account. \n DON'T DO IT");
+let isLinux = navigator.appVersion.indexOf("Linux") != -1
 
-// navbar
-content = '<div class="navbar"><a href="' + baseUrl + '"><img src="https://bark-coding.vercel.app/src/images/Logo.svg" alt="bark" width="25" height="25" ></a><a href="https://bark-coding.vercel.app/editor_new">Create</a><a href="/explore">Explore</a>'
-content += '<a href="/ideas">Ideas</a><a href="/about">About</a><a href="https://github.com/mariocraft987/bark.github.io/discussions">Discuss</a><a href="/settings">Settings</a>'
-// special april fools button ;)
-if (new Date().getMonth() === 3 && new Date().getDate() === 1) {
-    content += "<a id='flip-it-afd-btn'>FLIP IT</a>";
-}
-content += '<a class="dark-mode-button" id="darkModeToggle"><dmbico alt="Dark Mode"></dmbico></a><form action="search" style="display: contents;"><input class="searchBar" id="search" name="q" placeholder="Search for Projects"></input></form>'
-if (localStorage.getItem("myBarkUsername") == "") {
-    content += '<a class="right">sign out</a><a class="right">profile</a>'
-} else {
-    content += '<a href="login" class="right">Sign in</a><a href="signup" class="right">Join bark</a></div>'
-}
-document.getElementById('navbar').innerHTML = content;
+let isFirefox = window.navigator.userAgent.toLowerCase().includes("firefox")
+let isSafari = window.safari !== undefined;
+// because i get confused sometimes
+// https://stackoverflow.com/questions/7944460/detect-safari-browser
 
-// footer
-if (document.url != "baseUrl") {
-    var footer;
-    footer = '<footer><p style="color: #777;">Looks like you\'ve reached the bottom.</p><p>';
-    footer += '<a href="/index">Home</a> '; // Home
-    footer += '<a href="/editor_new/">Editor</a> '; // Editor
-    footer += '<a href="https://github.com/mariocraft987/bark.github.io/">Github</a> '; // Github
-    footer += '<br/><br/><a href="https://github.com/mariocraft987/bark-coding/wiki">Wiki</a> '; // Wiki
-    footer += '<a href="https://discord.gg/hXmHw7H9BF">Discord</a> '; // Discord
-    footer += '</p></footer>'
-    document.body.innerHTML += footer;
+let showHoldOn = true;
+
+// conditionals
+
+if (document.URL.includes('bark-coding.vercel.app') || document.URL.includes('mariocraft987.github.io/bark-coding')) {
+  localStorage.barktoken = null;
+  window.location.href = "https://bark.dumorando.com" + document.URL.replaceAll(window.location.origin, "");
 }
+
+if (showHoldOn) {
+
+  // this exists because yeah
+  shout = "";
+
+  for (i = 0; i < 3; i++) {
+    shout = shout + "!";
+    console.log("%cHold on%s", "font-weight: bold; font-size: 50pt; color: red;", shout);
+  }
+  console.log("If anyone asks you to paste something in here, Don't do it!! \nThey might be trying to steal, or ban your account! \nIf you are trying to paste something in here, then make sure its from a trusted source!");
+}
+
+document.body.innerHTML += "<button onclick='scrollToTop()' class='buttonFrBx' id='topBtn' disabled>Top</button>";
+
+function randomstring(length = 8) {
+  const RandomCharacter = () => String.fromCharCode(Math.random() * (126 - 32) + 32);
+  return Array.from({ length }, RandomCharacter).join("");
+}
+
+if (!localStorage.getItem("secret")) {
+  localStorage.setItem("secret", randomstring());
+}
+
+function CheckLoggedIn() {
+  if (localStorage.getItem("barktoken") === null) {
+    localStorage.removeItem("myBarkUsername");
+
+    return;
+  }
+  
+  // Quick note, probably shouldn't send the token in the search string, use POST instead.
+  fetch(`https://api.bark.dumorando.com/api/v2/currentUser?token=${localStorage.getItem("barktoken")}`)
+    .then(data => data.json())
+    .then(data => {
+      const ReauthNeeded = data.error === 'Reauthenticate';
+      if (!ReauthNeeded) {
+        localStorage.setItem("myBarkUsername", data.username)
+        return;
+      }
+      localStorage.removeItem("myBarkUsername");
+      localStorage.removeItem("barktoken");
+      location.reload();
+    });
+}
+CheckLoggedIn();
 
 if (new Date().getMonth() === 3 && new Date().getDate() === 1) {
     document.getElementById("flip-it-afd-btn").addEventListener("click", function () {
@@ -49,106 +98,182 @@ if (new Date().getMonth() === 3 && new Date().getDate() === 1) {
 }
 
 function whatsNew() {
-    if (document.URL == baseUrl + "/") {
-        document.getElementById("boxChanger").innerHTML = "<h2>Whats New?</h2><p>" + newsBox + "</p>";
-    }
+  if (location.pathname !== "/")
+    return;
+  document.getElementById("boxChanger").innerHTML = "<h2>Whats New?</h2><p>" + newsBox + "</p>";
+}
+
+function Todo() {
+  if (location.pathname !== "/")
+    return;
+
+  document.getElementById("boxChanger").innerHTML = "<h2>Fetching file...</h2><p>please wait...</p>";
+
+  fetch("https://bark.dumorando.com/static/todolist.txt")
+.then(x => x.text())
+.then(y => toDoContent = y);
+  
+  document.getElementById("boxChanger").innerHTML = "<h2>Todo List</h2><p>" + toDoContent.replaceAll(/\n/g, "<br>") + "</p>";
+}
+
+function hideshowProfileDropdown() {
+  /* location.href = `/profile/${localStorage.myBarkUsername}`; */
+  if (document.getElementById("myProfileDropDown").style.display == "none") {
+    // show dropdown
+    document.getElementById("myProfileDropDown").style.display = "block";
+  } else {
+    // hide dropdown
+    document.getElementById("myProfileDropDown").style.display = "none";
+  }
 }
 
 function randomTxt() {
-    //geeksforgeeks.org for the random text generator.
-
-    if (document.URL == baseUrl + "/explore") {
-
-        fetch('https://bark-coding.vercel.app/src/scripts/tips.json')
-            .then(res => res.json()).then(data => {
-                obj = data;
-            })
-            .then(() => {
-                wrd = obj[parseInt(Math.random() * obj.length)]
-                document.getElementById("randomWord").innerHTML = wrd;
-            });
-    }
+  if (location.pathname !== "/explore")
+    return;
+  fetch("/src/json/tips.json")
+    .then(res => res.json())
+    .then(data => {
+      var tip = data[parseInt(Math.random() * data.length)];
+      document.getElementById("randomWord").innerHTML = tip;
+  });
 }
 
 function jobRegister() {
     let job = document.querySelector('input[name=job]:checked').value;
     let username = document.getElementById('github-username').value;
-    document.getElementById('page').innerHTML = '<br/><h2>You have selected a Job to ' + job + '</h2><p>We have to run a few tests to see your actually <em>' + username + '</em></p><br/><br/><p>Please comment "Job Register 4067"';
-    document.getElementById('page').innerHTML += ' on <a class="link" href="https://github.com/Mariocraft987/bark.github.io/commit/5644df6ebc5aa7ea7b611141a265ff7c17712c5e">this commit</a>.</p>'
+    document.getElementById('page').innerHTML = `<br/>
+    <h2>You have selected a Job to ${job}</h2>
+    <p>We have to run a few tests to see your actually <em>${username}</em></p>
+    <br/> <br/>
+    <p>Please comment "Job Register 4067" on <a class="link" href="https://github.com/Mariocraft987/bark.github.io/commit/5644df6e">this commit</a>.</p>`;
 }
 
 /* @mnsderp for the data saving scripts */
 
-// Function to toggle dark mode
 function toggleDarkMode() {
     const body = document.body;
     body.classList.toggle('dark-mode');
-    // Save dark mode state to local storage
     const isDarkMode = body.classList.contains('dark-mode');
     localStorage.setItem('darkMode', isDarkMode);
 }
 
-// Function to initialize dark mode based on local storage
 function initializeDarkMode() {
     const isDarkMode = localStorage.getItem('darkMode') === 'true';
     const body = document.body;
-    if (isDarkMode) {
-        body.classList.add('dark-mode');
-    } else {
-        body.classList.remove('dark-mode');
-    }
+    if (!isDarkMode)
+      return;
+    body.classList.add('dark-mode');
 }
 
-// Attach event listener to dark mode toggle button
-const darkModeToggle = document.getElementById('darkModeToggle');
-darkModeToggle.addEventListener('click', toggleDarkMode);
+function InitTheme() {
+  const theme = localStorage.getItem('theme') ?? "bluedodger";
+  if (theme.startsWith('#')) {
+    const style = document.createElement('style');
+    document.head.append(style);
 
-// Initialize dark mode when the page loads
-window.addEventListener('load', initializeDarkMode);
+    const link = document.createElement('link');
+    link.rel = "stylesheet";
+    link.href = `/src/themes/bluedodger.css`;
+      
+    document.head.append(link);
 
-whatsNew();
-const theme = localStorage.getItem('theme');
-if (theme) {
-    if (theme.startsWith('#')) {
-        const style = document.createElement('style');
-        document.head.append(style);
-        const link = document.createElement('link');
-        link.rel = "stylesheet";
-        link.href = `https://bark-coding.vercel.app/src/themes/bluedodger.css`;
-        document.head.append(link);
-    } else if (theme != "bluedodger") {
-        const link = document.createElement('link');
-        link.rel = "stylesheet";
-        link.href = `https://bark-coding.vercel.app/src/themes/${theme}.css`;
-        document.head.append(link);
+    if (isSafari) {
+        document.getElementsByTagName('head')[0].innerHTML += "<link rel='stylesheet' href='/src/themes/bluedodger.css'>";
     } else {
-        const link = document.createElement('link');
-        link.rel = "stylesheet";
-        link.href = `https://bark-coding.vercel.app/src/themes/bluedodger.css`;
-        document.head.append(link);
+      document.head.append(link);
     }
-} else {
-        const link = document.createElement('link');
-        link.rel = "stylesheet";
-        link.href = `https://bark-coding.vercel.app/src/themes/bluedodger.css`;
-        document.head.append(link);
-    }
-
-let mybutton = document.getElementById("myBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
+    return;
   }
+  const link = document.createElement('link');
+  link.rel = "stylesheet";
+  link.href = `/src/themes/${theme}.css`;
+    
+  if (isSafari) {
+      document.getElementsByTagName('head')[0].innerHTML += `<link rel='stylesheet' href='/src/themes/${theme}.css'>`;
+  } else {
+      document.head.append(link);
+  }
+  return;
 }
 
-// When the user clicks on the button, scroll to the top of the document
+document.addEventListener("DOMContentLoaded", function(event) {
+    initializeDarkMode();
+    whatsNew();
+    InitTheme()
+});
+
+let mybutton = document.getElementById("topBtn");
+
+window.onscroll = scrollFunction;
+function scrollFunction() {
+  var Down20PX = document.documentElement.scrollTop > 20 || document.body.scrollTop > 20;
+  mybutton.disabled = !Down20PX;
+}
 function scrollToTop() {
   document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  document.documentElement.scrollTop = 0; // everything else
 }
+
+
+
+let CustomSelect = document.getElementsByClassName("custom-select");
+for (let i = 0; i < CustomSelect.length; i++) {
+  let selectElement = CustomSelect[i].querySelector("select");
+  let SelectedItem = document.createElement("div");
+  SelectedItem.setAttribute("class", "select-selected");
+  SelectedItem.innerHTML = selectElement.options[selectElement.selectedIndex].innerHTML;
+  CustomSelect[i].appendChild(a);
+  let OptionList = document.createElement("div");
+  OptionList.setAttribute("class", "select-items select-hide");
+  for (let j = 1; j < selectElement.length; j++) {
+    let option = document.createElement("div");
+    option.innerHTML = selElmnt.options[j].innerHTML;
+    option.addEventListener("click", function(e) {
+        let select = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        let OptionItem = this.parentNode.previousSibling;
+        for (let i = 0; i < select.options.length; i++) {
+          if (select.options[i].innerHTML == this.innerHTML) {
+            select.selectedIndex = i;
+            OptionItem.innerHTML = this.innerHTML;
+            let LastSelected = this.parentNode.getElementsByClassName("same-as-selected");
+            for (let k = 0; k < LastSelected.length; k++) {
+              LastSelected[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        OptionItem.click();
+    });
+    OptionList.appendChild(option);
+  }
+  CustomSelect[i].appendChild(OptionList);
+  SelectedItem.addEventListener("click", function(e) {
+    e.stopPropagation();
+    closeAllSelect(this);
+    this.nextSibling.classList.toggle("select-hide");
+    this.classList.toggle("select-arrow-active");
+  });
+}
+function closeAllSelect(elemnt) {
+  let IndexesThatAreSelected = [];
+  let SelectItems = document.getElementsByClassName("select-items");
+  let SelectedItems = document.getElementsByClassName("select-selected");
+  for (let i = 0; i < SelectedItems.length; i++) {
+    if (elemnt != SelectedItems[i]) {
+      SelectedItems[i].classList.remove("select-arrow-active");
+      continue;
+    }
+    
+    IndexesThatAreSelected.push(i);
+  }
+  for (let i = 0; i < SelectItems.length; i++) {
+    if (!IndexesThatAreSelected.includes(i))
+      continue;
+    SelectItems[i].classList.add("select-hide");
+  }
+}
+document.addEventListener("click", closeAllSelect);
+
+console.log("-----------------------------------------");
+console.log("All scripts were ran successfully!")

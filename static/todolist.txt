@@ -1,17 +1,19 @@
 2024
 Todo list for Bark.
 
+new game engine for bark - making it work (atomicbolts)
+
 Create the block Editor - done!
 Custom Domains - Working on it
-Working forms sending data - uhhhhhhhhh
-Server Databases - not yet
+Working forms sending data - 👍👍👍
+Server Databases - user database
 Donating - Someday..
 
 Working commits box - done!
-Extensions page - not yet
+Extensions page - almost
 
-One index.html and javascript to change content
+One index.html and javascript to change content - we have vercel pages
 
-Turn this Bing AI code Into working blockly blocks
+Turn this Bing AI code Into working blockly blocks - ai code is banned
 
-Add sun icon for light/dark mode button - done! (by qwertyy)
+Add sun icon for light/dark mode button - done! (by breakfast)

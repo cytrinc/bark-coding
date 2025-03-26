@@ -1,0 +1,7 @@
+# Early 2000s , the raging robot war is still going on
+# we shouldn't have trusted them 
+# curse you virtual assistances and purple gorillas!
+
+User-agent: *
+Disallow: /settings/profile/
+Disallow: /settings/

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Are you sure you want to go to this website?</title>
+  </head>
+  <body>
+    <style>
+      .button {
+        background-color: green;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        text-decoration: none;
+      }
+
+      .button:hover {
+        background-color: darkgreen;
+      }
+      .cancel {
+        background-color: gainsboro !important;
+        color: black !important;
+      }
+      .cancel:hover {
+        background-color: gray !important;
+        color: white !important;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+    <!-- inject:navbar -->
+    <div class="box hidden">
+      <h4>Are you sure you want to go to this website?</h4>
+      <p>
+        This is the url:
+        <span id="url-text" style="text-decoration: underline">undefined</span>
+        <img id="site-icon" width="20">
+      </p>
+      <div style="display: flex; justify-content: space-evenly">
+        <a href="/" class="button cancel">Cancel</a>
+        <a href="#" id="url" class="button">Open</a>
+      </div>
+    </div>
+    <div class="box">
+      <h4>Go to the home page</h4>
+      <a href="/" class="button cancel">Home</a>
+    </div>
+    <!-- inject:footer -->
+    <script src="/index.js"></script>
+    <script>
+      // it's safer to just include our own websites
+      const url = new URL(window.location.href);
+      const trusted = [
+        "https://bark.dumorando.com",
+        "https://bark-editor.vercel.app",
+        "https://atomicbolts.nekoweb.org",
+        "https://breakfast.nekoweb.org",
+        "https://api.semisocial.chat",
+        "https://bark-coding.vercel.app",
+        "https://bark.dumorando.com",
+        "https://breakfast.pages.gay",
+        "https://dumorando.com",
+        "https://dumo.network",
+        "https://dumosgamemaker.vercel.app",
+        "https://nmsderp.xyz",
+        "https://go.nmsderp.xyz",
+        "https://mariocraft987.github.io",
+        "https://penguinmod.com",
+        "https://snail-ide.com/",
+        "https://snail-ide.com",
+        "https://semisocial.chat",
+        "https://uwu.dumorando.com",
+        "https://sillyfriends.xyz",
+        "https://bark-editor.vercel.app/",
+        "https://extra-treats.vercel.app/"
+      ];
+
+      function isValidURL(string) {
+        try {
+          new URL(string);
+          return true;
+        } catch (e) {
+          return false;
+        }
+      }
+
+      const paramValue = url.searchParams.get("urlLink");
+      if (isValidURL(paramValue)) {
+        document.getElementsByClassName("box")[0].classList.remove("hidden");
+        document.getElementsByClassName("box")[1].classList.add("hidden");
+        document.getElementById("url").href = paramValue;
+
+        //just instantly go to the site if it is trusted
+        const trustedd = !!trusted.includes(paramValue);
+        if (trustedd) { 
+          window.location = paramValue;
+        }
+
+        document.getElementById("url-text").innerText = paramValue;
+        document.getElementById("site-icon").src = `https://s2.googleusercontent.com/s2/favicons?domain=${paramValue}`;
+      }
+    </script>
+  </body>
+</html>

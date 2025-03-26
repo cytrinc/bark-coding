@@ -1,0 +1,23 @@
+{
+    "welcome": "欢迎!",
+    "barkfromblockly": "Bark 是一种基于 Google <i>Blockly</i> 库的编程语言。",
+    "barkinspiredscratch": "Bark 受到 <a class='link' href='https://scratch.mit.edu'>Scratch</a> 的启发。",
+    "createdby": "由 <a href='https://github.com/mariocraft987'>mariocraft987</a> 和许多 <a href='/contributors'>出色的贡献者</a> 创建！",
+    "whatsnew": "最新消息",
+    "nothingyet": "还没有内容...",
+    "recentcommitsbutton": "开发动态",
+    "petmascot": "和它一起玩吧!",
+    "checkeditor": "然后你可以查看 <a href='https://bark.dumorando.com/editor/'>编辑器</a>!",
+    "fromcountries": "来自其他国家的访问者",
+    "donatebutton": "捐赠页面",
+    "fetchingloading": "正在加载最新消息",
+    "pleasewaitloading": "请稍候",
+    "nocommits": "<h2>哎呀... :(</h2><p>加载提交失败。请检查您的连接并重试。</p>",
+    "projectsdisclaimer": "Bark 项目尚未推出... 请耐心等待。",
+    "needideas": "需要想法吗？",
+    "workingprog": "此页面正在建设中",
+    "newblocks": "Bark 的新技术",
+    "selecttheme": "选择主题:",
+    "warninglang": "此功能正在开发中。",
+    "langnotwork": "某些功能可能无法使用"
+}

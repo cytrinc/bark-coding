@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>console</title>
+    <style>
+        body {
+            font-family: 'Fira Mono', monospace;
+            background-color: black;
+            color: white;
+            font-size: 14px;
+            padding: 10px;
+        }
+        input {
+            font-family: 'Fira Mono', monospace;
+            background-color: black;
+            color: white;
+            font-size: 14px;
+            border: none;
+            outline: none;
+            width: 1380px;
+        }
+        .allow-whitespace {
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+    <span id="title" class="allow-whitespace">
+___           _      ___                  _      
+| _ ) __ _ _ _| |__  / __|___ _ _  ___ ___| |___ 
+| _ \/ _` | '_| / / | (__/ _ \ ' \(_-&lt/ _ \ / -_)
+|___/\__,_|_| |_\_\  \___\___/_||_/__/\___/_\___|</span>
+
+    <p><span id="loadings"></span></p>
+
+    <br/>
+
+    <span id="output"></span>
+
+    <span id="input"></span>
+</body>
+<script>
+
+    if (localStorage.myBarkUsername != null) {
+        system_user = localStorage.myBarkUsername;
+    } else {
+        system_user = "anonymous";
+    }
+
+    function write(val) {
+        document.getElementById("output") += val;
+    }
+
+    function cmd(ele) {
+        if(event.keyCode == 13) {
+            let input = document.getElementById("user_input").value;
+
+            if (input == "help") {
+                write("Coming Soon!");
+            } else {
+                write("ERROR: Invalid Command");
+            }
+
+        }
+    }
+
+    function bootup() {
+        console.log("Booted up!");
+
+        document.getElementById("input").innerHTML += `<br/><br/>${system_user}@barkcoding<br/>$<input id='user_input' onkeydown="cmd()" autocomplete='off'>`;
+        document.getElementById("user_input").focus();
+    }
+
+    setTimeout(() => {
+        document.getElementById("loadings").innerHTML = "Getting Javascript...";
+
+        setTimeout(() => {
+            document.getElementById("loadings").innerHTML += "<br/>Getting commands...";
+
+            setTimeout(() => {
+                document.getElementById("loadings").innerHTML += "<br/>Doing some mediocre tech stuff...";
+
+                setTimeout(() => {
+                    bootup();
+
+                    document.getElementById("loadings").innerHTML += "<br/>Booted Up!";
+                }, 1000);
+            }, 1000);
+        }, 1000);
+    }, 1000);
+    
+</script>
+</html>

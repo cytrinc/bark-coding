@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="Bark coding - Home">
+  <meta name="description" content="Bark is a programming language building off of Google's Blockly.">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bark.dumorando.com/">
+  <meta property="og:title" content="Bark coding - Home">
+  <meta property="og:description" content="Bark is a programming language building off of Google's Blockly.">
+  <meta property="og:image" content="https://bark.dumorando.com/src/images/Logo.svg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://bark.dumorando.com/">
+  <meta property="twitter:title" content="Bark coding - Home">
+  <meta property="twitter:description" content="Bark is a programming language building off of Google's Blockly.">
+  <meta property="twitter:image" content="https://bark.dumorando.com/src/images/Logo.svg">
+  
+  <!-- Optional Meta Tags -->
+  <meta name="keywords" content="coding, blockly, block coding, bark coding">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content=" days">
+  <meta name="author" content="mariocraft">
+    <title>Bark - Profile Settings</title>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png">
+  <meta name="description"
+    content="Bark Coding is a Blockly Based coding language created by mariocraft987 and more!" />
+  <style>
+    #currentpfp {
+      margin-right: 5px;
+      border-radius: 50%;
+      aspect-ratio: 1/1;
+      width: 75px;
+    }
+    
+    .flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #pfp {
+      margin-right: 5px;
+      border-radius: 50%;
+      aspect-ratio: 1/1;
+      width: 75px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- inject:navbar -->
+  <center>
+    <h1 id="welcome">Loading</h1>
+  </center>
+
+  <!-- ---------------------------------------------------------------------------------------------------------------- -->
+
+    <div class="box">
+    <div style="float: left;">
+      <img style="border-radius: 50%" height="75" src="" id="preview-pfp" alt="Profile picture">
+      <h1>Me</h1>
+    </div>
+
+    <div>
+      <p id="preview-bio" style="float: right; overflow: auto; height: 180px;">Lorem Ipsum Dolor Sit Amit</p>
+    </div>
+
+  </div>
+
+
+  </div>
+
+  <br/>
+  <!-- ---------------------------------------------------------------------------------------------------------------- -->
+  
+  
+  <div class="box">
+    <h1>Change bio</h1>
+    <textarea name="Bioarea" placeholder="I like to eat bananas, walk my dog, draw, etc." id="bio" rows="8" cols="45">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt atque eos praesentium magnam minima eum explicabo, aut, doloremque itaque officiis, expedita amet. Expedita inventore aut amet perferendis alias labore maiores!
+    </textarea>
+    <br />
+    <button class="buttonFrBx" id="setbio">Save</button>
+    <!--
+    <img src="/src/images/assets/add_to_textarea/clip.png" title="Add URL" width="27">
+    <img src="/src/images/assets/add_to_textarea/italic.png" title="Add italic text" width="27">
+    <img src="/src/images/assets/add_to_textarea/bold.png" title="Add bold text" width="27">
+    <img src="/src/images/assets/add_to_textarea/font.png" title="Add typeface" width="27">
+    -->
+  </div>
+
+  <div class="box">
+    <h1>Profile picture</h1>
+    <input type="file" name="pfpupload" id="pfpupload" accept="image/*">
+    <br />
+    <p id="errpfp" style="color:red"></p>
+    <img id="currentpfp" style="border-radius: 100%" width="70">
+  </div>
+
+  <div class="box">
+      <p style="cursor: pointer;" onclick="signoutAcc()" title="signout of your account REMEMBER YOUR PASSWORD!" class="right">Sign out?</p>
+  </div>
+
+  <dialog id="ExtrPopup">
+    <h2>Do you need help?</h2>
+    <p>This is <i>NO</i> joke here.</p>
+    <p>Either call the phone number <i>988 Suicide Lifeline</i>, or <br/>
+    go to their website at <a href="https://988lifeline.org">988lifeline.org</a>.</p>
+    <p><a onclick="document.getElementById('ExtrPopup').close();">Close this popup</a></p>
+  </dialog>
+  
+  <!-- inject:footer -->
+</body>
+<!--
+  <script src="/index.js"></script>
+  ???????????
+-->
+    <!-- zepto cuz i got tired of doing dom stuff -->
+    <script src="https://zeptojs.com/zepto.min.js"></script>
+<script src="/index.js"></script>
+<script src="/src/scripts/replacer.js"></script>
+<script>
+  document.getElementById('bio').onkeypress = function() {
+      document.getElementById("preview-bio").innerHTML = replace(document.getElementById("bio").value);
+  }
+  
+  function addURL() {
+    document.getElementById("bio").value += "\n[text](url)";
+    document.getElementById("bio").focus();
+  }
+
+  function signoutAcc() {
+      const actionsecret = localStorage.getItem("secret");
+      location.href = `/signout?code=${encodeURIComponent(actionsecret)}`;
+  }
+</script>
+<script type="module">
+  if (!localStorage.myBarkUsername) window.location.replace("/login");
+  
+  const username = localStorage.getItem('myBarkUsername');
+  const token = localStorage.getItem('barktoken');
+  const response = await fetch(`https://api.bark.dumorando.com/api/v2/fetchUser?username=${localStorage.getItem("myBarkUsername")}`).then(data => data.json());
+  $('#welcome').text(`Welcome back, ${username}!`);
+  $('textarea#bio').text(response.bio);
+  $('#setbio').on('click', async () => {
+
+    /*
+    if (
+      $('textarea#bio').val()
+      .includes("suicidal")
+      .includes("suicide")
+   ) {
+
+      document.getElementById('ExtrPopup').showModal();
+
+      return;
+    }
+  */
+
+    $('#setbio').prop('disabled', true);
+    await fetch(`https://api.bark.dumorando.com/api/v2/setBio?token=${encodeURIComponent(token)}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            bio: $('textarea#bio').val()
+        })
+    });
+    $('#setbio').prop('disabled', false);
+  });
+  function blobtodataurl(blob) {
+    return new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.onload = (e) => resolve(e.target.result);
+        reader.readAsDataURL(blob);
+    });
+  }
+  //use vanilla js for this one cause idk how to use zepto with it 
+  document.getElementById('pfpupload').addEventListener("change", async (e) => {
+    const file = e.target.files[0];
+    if (file) {
+        const response = await fetch(`https://api.bark.dumorando.com/api/v2/setPFP?token=${encodeURIComponent(token)}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                pfp: await blobtodataurl(file)
+            })
+        });
+        if (response.status === 414) {
+            $('#errpfp').text('profile picture is too big in file size.');
+        } else if (response.status === 204) {
+            $('#errpfp').css({ color: 'green '}).text('success!');
+            document.getElementById('currentpfp').src = await blobtodataurl(file)
+        } else {
+            $('#errpfp').text('something went wrong..');
+            console.error(await response.json());
+        }
+    }
+  });
+
+  document.getElementById("preview-bio").innerHTML = replace(document.getElementById("bio").value);
+
+  const pfpresponse = await fetch(`https://api.bark.dumorando.com/api/v2/fetchUser?username=${localStorage.myBarkUsername}`);
+
+  if (pfpresponse.status === 404) window.location.replace("/404");
+
+  const data = await pfpresponse.json();
+  document.getElementById('currentpfp').src = data.profilepicture;
+  document.getElementById("preview-pfp").src = data.profilepicture;
+  
+</script>
+</html>

@@ -5,17 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Error 404</title>
-  <link rel="shortcut icon" href="favicon.ico" type="image/png">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png">
 </head>
 
 <body>
-  <span id="navbar"></span>
+  <!-- inject:navbar -->
   <center><img src="/src/images/assets/404.png" style="height: 200px; margin-top: 80px;">
-    <p>The page you're looking for doesn't exist or has been removed.</p><a href="/"><button class="buttonFrBx">Go
+    <p>We could not find <span id="route">the page you were looking for</span>.<br/><br/>The reasons why this page might display the error is: <br/>mispelled URL, <br/>page doesn't exist anymore, <br/>page has been moved to a new location.</p>
+    <a href="/"><button class="buttonFrBx">Go
         home</button></a>
   </center>
+  <br/>
+  <!-- inject:footer -->
 </body>
-<script src="https://bark-coding.vercel.app/index.js"></script>
-<script src="src/scripts/replacer.js"></script>
-
+<script>
+  document.getElementById("route").innerHTML = "route " + document.URL.replaceAll(window.location.origin, "");
+</script>
+<script src="/index.js"></script>
+<script src="/src/scripts/replacer.js"></script>
 </html>

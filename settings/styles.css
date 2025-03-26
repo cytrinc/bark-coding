@@ -6,6 +6,17 @@ main {
     align-items: center;
 }
 
+
+@font-face {
+  font-family: ipix;
+  src: url("https://bark.dumorando.com/src/fonts/Ipix.ttf");
+}
+
+@font-face {
+  font-family: "Bazin";
+  src: url("https://bark.dumorando.com/src/Bazin.ttf");
+}
+
 section, #warning {
     margin-top: 5%;
     background-color: #ffffff;
@@ -41,6 +52,7 @@ input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
+/* BlueDodger */
 button {
     padding: 8px 16px;
     background-color: #007bff;
@@ -120,4 +132,104 @@ input[type="color"]::-moz-color-swatch {
 
 #warning {
     background-color: #f5f5f5;
+}
+
+/* Pranidhi */
+.pranidhiButton {
+  font-family: Poppins;
+  background-color: #bc4749;
+  padding: 12px 17px;
+  border-radius: 7px;
+  cursor: pointer;
+  border: none;
+  color: #ffffff;
+  font-size: 10pt;
+  text-decoration: none;
+}
+
+.pranidhiButton:hover {
+  background-color: #e29578;
+  border: none;
+}
+
+/* Cherry Blossom */
+.CherryBlossomButton {
+  font-family: "Merriweather", "Bazin", sans-serif;
+  background-color: rgb(255 0 129);
+  padding: 13px 17px;
+  border-radius: 15px;
+  cursor: pointer;
+  border: none;
+  color: #ffffff;
+  font-size: 10pt;
+  text-decoration: none;
+}
+
+.CherryBlossomButton:hover {
+  background-color: rgb(221 0 153);
+  border: none;
+}
+
+/* Shelled Gastropod */
+.SnailButton {
+  background-color: Purple;
+  padding: 12px 17px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  color: #ffffff;
+  font-size: 10pt;
+  text-decoration: none;
+}
+
+.SnailButton:hover {
+  background-color: rgb(51, 7, 59);
+  border: none;
+}
+
+/* Crap Brown Dodger */
+.BrownDodgerButton {
+  background-color: #a85400;
+  padding: 9px 17px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  color: #ffffff;
+}
+
+.BrownDodgerButton:hover {
+  background-color: #783c00;
+  border: none;
+}
+
+/* Basically the same thing as the one above */
+
+.oldWebButton {
+  font-family: ipix;
+  background-color: rgb(18, 150, 106);
+  padding: 9px 17px;
+  cursor: pointer;
+  border: none;
+  color: #ffffff;
+  font-size: 10pt;
+  text-decoration: none;
+}
+
+.oldWebButton:hover {
+  background-color: rgb(14, 99, 55);
+  border: none;
+}
+
+.ProfProgButton {
+  background-color: #f55231;
+  color: white;
+  border: none;
+  border-radius: 0px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.ProfProgButton:hover {
+  background-color: #c94328;
+  border: none;
 }

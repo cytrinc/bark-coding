@@ -1,0 +1,14 @@
+.githuburlcontributer-error-container {
+  display: flex;
+  align-items: center;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.githuburlcontributer-error-container .error-message {
+  font-size: 18px;
+}

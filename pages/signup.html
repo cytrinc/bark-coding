@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bark - Signup</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/png">
+  <meta name="title" content="Bark coding - Signup">
+  <meta name="description" content="Bark is a programming language building off of Google's Blockly.">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bark.dumorando.com/">
+  <meta property="og:title" content="Bark coding - Signup">
+  <meta property="og:description" content="Bark is a programming language building off of Google's Blockly.">
+  <meta property="og:image" content="https://bark.dumorando.com/src/images/Logo.svg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://bark.dumorando.com/">
+  <meta property="twitter:title" content="Bark coding - Signup">
+  <meta property="twitter:description" content="Bark is a programming language building off of Google's Blockly.">
+  <meta property="twitter:image" content="https://bark.dumorando.com/src/images/Logo.svg">
+  
+  <!-- Optional Meta Tags -->
+  <meta name="keywords" content="coding, blockly, block coding, bark coding">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content=" days">
+  <meta name="author" content="mariocraft">
+  <link rel="stylesheet" href="/src/css/main.css">
+</head>
+
+<body>
+
+  <!-- inject:navbar -->
+  <br />
+  <div class="textCenter">
+    <span id="page">
+      <h2>Create an account</h2>
+      <br />
+      <form action="/signedup" method="get">
+        <label for="username">Username:</label>
+        <input type="username" id="username" placeholder="Username" required="required" />
+        <span id="userGen"></span>
+        <br/>
+        <details>
+          <ul>
+            <li><a href="https://jimpix.co.uk/words/random-username-generator.php">Jimpix.co.uk's Random Username Generator</a></li>
+            <li><a href="https://nordpass.com/username-generator/#Generator">Nordpass Username Generator</a></li>
+          </ul>   
+          <summary>Can't Think of anything?</summary>
+        </details>
+        <br/>
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="A unique password" required="required" />
+        <br/>
+        <label for="showhidepw">Show password:</label>
+        <input id="showhidepw" name="showhidepw" type="checkbox" onclick="showandhidepw()">
+        <br />
+        <br />
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="example@domain.com" required="required" />
+        <br />
+        <br />
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" required="required" />
+        <br />
+        <br />
+        <label for="gender">Gender:</label>
+        <select name="gender" id="gender" onchange="checkGender()" required>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="none">Non-Binary</option>
+          <option value="other">Other</option>
+        </select>
+        <br/>
+          <center>
+            <input type="other_gender" id="other_gender" placeholder="Other Gender/Sexuality" />
+          </center>
+        <br />
+        <!-- verify button -->
+        <br/>
+        <button class="buttonFrBx glow" onclick="checkSignup()">Sign up</button>
+        <span style="color: red;" id="errormsg"></span>
+        <p>Note: Bark accounts are currently a beta feature.</p>
+        <p>Second Note: Due to the server being ran on tape and rope/j making an account may not be available at some times.</p>
+      </form>
+    </span>
+  </div>
+</body>
+<!-- hCaptcha -->
+<script src="/index.js"></script>
+<script>
+
+  function showandhidepw() {
+    if (document.getElementById("showhidepw").checked) {
+        document.getElementById("password").type = "text";
+    } else {
+        document.getElementById("password").type = "password";
+    }
+  }
+
+  let gender_value = document.getElementById("gender").value;
+  let other_gender = document.getElementById("other_gender");
+  
+  async function checkSignup() {
+
+    let username = document.getElementById('username').value;
+
+    let password = document.getElementById('password').value;
+    let email = document.getElementById('email').value;
+    let gender = document.getElementById('gender').value;
+    let dob = document.getElementById('birthday').value;
+    let errormsg = document.getElementById("errormsg")
+
+    if (username != '', password != '', email != '', dob != '') {
+      if (password.length < 3) { errormsg.innerHTML = "Please make your username more than 3 characters!" } else
+        if (password.length > 12) { errormsg.innerHTML = "Please make your username lower than 13 characters!" } else {
+          const response = await fetch(`https://api.bark.dumorando.com/api/v2/createAccount?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`, {
+            method: 'POST'
+          });
+          if (response.status !== 200) {
+            let message = await response.json();
+            errormsg.innerHTML = message.error;
+          } else {
+            //laziness
+            errormsg.style.color = 'white';
+            errormsg.innerText = 'Creating your Bark account..';
+            const loginresponse = await fetch(`https://api.bark.dumorando.com/api/v2/login?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`, {
+              method: 'POST'
+            });
+            if (loginresponse.status !== 200) {
+              errormsg.style.color = 'red';
+              errormsg.innerText = 'Something went wrong';
+            } else {
+              let message2 = await loginresponse.json();
+              localStorage.setItem('myBarkUsername', username);
+              localStorage.setItem("barktoken", message2.token);
+              document.getElementById('page').innerHTML = '<br/><h2>Welcome to Bark ' + username + '!</h2>';
+              setTimeout(() => window.location.replace("/"), 1000);
+            }
+          }
+        }
+    }
+
+    document.getElementById('submitbutton').setAttribute('disabled', false);
+  }
+
+  function checkGender() {
+    gender_value = document.getElementById("gender").value;
+    other_gender = document.getElementById("other_gender");
+    if (gender_value == "other") {
+      other_gender.style.display = "block";
+      other_gender.style.textAlign = "center";
+    }else{
+      other_gender.style.display = "none";
+    }
+  }
+
+  checkGender()
+
+window.addEventListener('beforeunload', function (e) {
+    if (document.getElementById("username").value !== '' || document.getElementById("password").value !== '' || document.getElementById("email").value !== '') {
+        e.preventDefault();
+        e.returnValue = '';
+    }
+});
+</script>
+<script src="/src/scripts/usernameGen.js"></script>
+
+</html>
+

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="Bark coding - Home">
+  <meta name="description" content="Bark is a programming language building off of Google's Blockly.">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bark.dumorando.com/">
+  <meta property="og:title" content="Bark coding - Home">
+  <meta property="og:description" content="Bark is a programming language building off of Google's Blockly.">
+  <meta property="og:image" content="https://bark.dumorando.com/src/images/Logo.svg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://bark.dumorando.com/">
+  <meta property="twitter:title" content="Bark coding - Home">
+  <meta property="twitter:description" content="Bark is a programming language building off of Google's Blockly.">
+  <meta property="twitter:image" content="https://bark.dumorando.com/src/images/Logo.svg">
+  
+  <!-- Optional Meta Tags -->
+  <meta name="keywords" content="coding, blockly, block coding, bark coding">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content=" days">
+  <meta name="author" content="mariocraft">
+  <title>Bark - Home</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/png">
+  <meta name="description"
+    content="Bark Coding is a Blockly Based coding language created by mariocraft987 and more!" />
+  <style>
+    .linkoncommits {
+      text-decoration: none;
+    }
+
+    .linkoncommits:hover {
+      text-decoration: underline;
+    }
+
+    #dog {
+      display: none;
+    }
+
+    #dog.active {
+      display: block;
+    }
+
+    .dogcage {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- inject:navbar -->
+  <div class="box">
+    <h2 class="welcome">Welcome!</h2>
+    <p class="barkfromblockly">Bark is a programming language building off of Google's <i>Blockly</i>.</p>
+    <p class="barkinspiredscratch">Bark is inspired by <a class="link" href="https://scratch.mit.edu">Scratch</a>. <img
+        src='/src/emojis/svg/normal/smiley.svg' alt="smiley emoji" width="20" height="20"><img src='/src/emojis/svg/normal/thumb.svg'
+        alt="thumbs up emoji" width="20" height="20"></p>
+    <p class="createdby">Created by <a href="https://mariocraft987.github.io">AtomicBolts</a> and many awesome <a
+        href="/contributors">contributors</a>!</p>
+    <iframe width="280" height="160" src="https://www.youtube.com/embed/OmJAIourvDI?si=Phe9fc7XcRbENm1e"
+      title="YouTube video player" frameborder="0" referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+  </div>
+  <div class="box">
+    <span id="boxChanger">
+      <h2 class="whatsnew">Whats New?</h2>
+      <p class="nothingyet">Nothing yet..</p>
+    </span>
+    <button class="buttonFrBx whatsnew" onclick="whatsNew()" >Whats new?</button>
+    <button class="buttonFrBx recentcommitsbutton" onclick="recentCom()" >Recent commits</button>
+  </div>
+  <div class="box">
+    <h3 class="petmascot">Pet our mascot!</h3>
+    <p class="checkeditor">And then you can check out the <a href="https://bark.dumorando.com/editor/">editor</a>!</p>
+    <!--
+      <button
+      style="background: none;background-image: url(src/images/dog/idle.svg);width: 73px;height: 96px;cursor: grab;background-size: cover;border: none;transition: 0.1s;"
+      alt="Bark Dog" onclick="this.style.backgroundImage = 'url(src/images/dog/happy.svg)';"
+      onmouseleave="this.style.backgroundImage = 'url(src/images/dog/umm.svg)';"></button>
+    -->
+    <div class="dogcage">
+      <button id="dog" style="background: none;width: 73px;height: 96px;cursor: grab;background-size: cover;border: none;" alt="Bark Dog"></button>
+    </div>
+    <p id="loadingdog">Loading..</p>
+  </div>
+  <!--
+<div class="box">
+  <h2>Also see:</h2>
+  <a href="https://bark.dumorando.com/donate"><button class="buttonFrBx">Donate page</button></a>
+  </div>
+  -->
+  <!-- inject:footer -->
+</body>
+<!--
+  <script src="/index.js"></script>
+  ???????????
+-->
+<script src="/index.js"></script>
+<script src="/src/scripts/replacer.js"></script>
+<script>
+
+  //**blob to dataURL**
+  function blobToDataURL(blob) {
+      return new Promise((resolve, reject) => {
+        let a = new FileReader();
+        a.onload = function(e) {resolve(e.target.result);}
+        a.readAsDataURL(blob);
+      });
+  }
+
+  //utillity function to set the backround image of an element to a url.
+  function changeImage(element, url) {
+    element.style.backgroundImage = `url(${url})`;
+  }
+
+  async function setupDog() {
+    const idleblob = await fetch("/src/images/dog/idle.svg").then(data => data.blob());
+    const happyblob = await fetch("/src/images/dog/happy.svg").then(data => data.blob());
+    const ummblob = await fetch("/src/images/dog/umm.svg").then(data => data.blob());
+    const idle = await blobToDataURL(idleblob);
+    const happy = await blobToDataURL(happyblob);
+    const umm = await blobToDataURL(ummblob);
+    const dog = document.getElementById("dog");
+    let barksound = new Audio('src/bark.mp3')
+    dog.addEventListener("mouseleave", () => changeImage(dog, umm));
+    dog.addEventListener("click", () => changeImage(dog, happy));
+    dog.addEventListener("click", () => barksound.play());
+    changeImage(dog, idle);
+    dog.classList.add('active');
+    document.getElementById('loadingdog').remove();
+  }
+
+  function recentCom() {
+    document.getElementById("boxChanger").innerHTML = "<h2>Fetching commits...</h2><p>please wait...</p>"; // get it? "fetching" commits??? eh????........anyone?
+    fetch('https://api.github.com/repos/Mariocraft987/bark.github.io/commits?per_page=50')
+      .then(response => response.json())
+      .then(commits => {
+        let Commits = '<h2>Recent Commits</h2><ul style="overflow-y: scroll; height: 150px;"><br/>';
+        commits.slice(0, commitsLength).forEach(commit => {
+          Commits += `<div title="${replace(commit.author.login)}: ${replace(commit.commit.message)}"><li><a href="https://github.com/${replace(commit.author.login)}"><img style="border-radius:12px;margin-top:-4px;margin-left:-6px" src="https://github.com/${commit.author.login}.png" width="21"></a><a class="linkoncommits" href="${commit.html_url}">${replace(commit.commit.message)}</a></li></div>`;
+        });
+        Commits += '</ul><br><a class="buttonFrBx" href="https://github.com/Mariocraft987/bark.github.io/commits/main/" style="text-align: center;">See all</a><br>';
+        finalCommits = Commits.replaceAll(":trollface:", "<img src='/src/emojis/svg/troll.svg' width='23'>")
+        document.getElementById("boxChanger").innerHTML = finalCommits + "<br/>"
+      })
+      .catch(error => {
+        console.error('Error fetching commits:', error);
+        document.getElementById("boxChanger").innerHTML = '<h2>Oops... :(</h2><p>Failed to load commits. Check your connection and try again.</p>';
+      });
+  }
+
+  setupDog();
+</script>
+
+</html>

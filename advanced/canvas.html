@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            display: grid;
+            overflow: auto;
+        }
+
+        canvas {
+            background-color: #ffffff;
+        }
+
+        #projecttext {
+            background-color: #000000;
+            font-family: monospace;
+            padding: 10px;
+            padding-left: 20px;
+            margin: 0px;
+            resize: none;
+            border: none;
+            color: #ffffff;
+            outline: none;
+            width: 670px;
+            height: 160px;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="700" height="400"></canvas>
+    <textarea id="projecttext" spellcheck="false"></textarea>
+    <script>
+        const canvas = document.getElementsByTagName("canvas")[0].getContext("2d");
+
+        window.addEventListener("message", function(msg) {
+            try {
+                eval(msg.data);
+            } catch (error) {
+                document.getElementById("projecttext").value += error + "\n";
+            }
+        })
+
+        class sprite {
+            constructor(costume="dog", x=0, y=0, size=100) {
+                this.costume = costume;
+                this.x = x;
+                this.y = y;
+                this.size = size;
+            }
+
+            draw() {
+                canvas.moveTo(this.x, this.y);
+                if (this.costume == "dog") {
+                    let img = new Image();
+                    img.src = "https://bark.dumorando.com/src/images/dog/scratch_dog.png";
+                    img.onload = () => {
+                        canvas.drawImage(img, this.x, this.y, img.width * (this.size / 300), img.height * (this.size / 300));
+                    }
+                } else if (this.costume == "jonathan") {
+                    canvas.lineTo(this.x+20, this.y-10);
+                    canvas.lineTo(this.x+30, this.y-10);
+                    canvas.lineTo(this.x+50, this.y-5);
+                    canvas.lineTo(this.x+60, this.y+5);
+                    canvas.lineTo(this.x+60, this.y+20);
+                    canvas.lineTo(this.x+50, this.y+30);
+                    canvas.lineTo(this.x+30, this.y+35);
+                    canvas.lineTo(this.x, this.y+20);
+                    canvas.lineTo(this.x, this.y);
+                    canvas.moveTo(this.x+30, this.y+35);
+                    canvas.lineTo(this.x+30, this.y+55);
+                    canvas.lineTo(this.x+20, this.y+75);
+                    canvas.lineTo(this.x+10, this.y+75);
+                    canvas.moveTo(this.x+30, this.y+55);
+                    canvas.lineTo(this.x+35, this.y+75);
+                    canvas.lineTo(this.x+40, this.y+75);
+                    canvas.moveTo(this.x+30, this.y+40);
+                    canvas.lineTo(this.x+20, this.y+60);
+                    canvas.moveTo(this.x+30, this.y+40);
+                    canvas.lineTo(this.x+40, this.y+55);
+                    canvas.stroke();
+                } else if (this.costume == "greenman") {
+                    let img = new Image();
+                    img.src = "/advanced/sprites/greenman.png";
+                    img.onload = () => {
+                        canvas.drawImage(img, this.x, this.y, img.width * (this.size / 30), img.height * (this.size / 30));
+                    }
+                } else if (this.costume == "spaceman") {
+                    let img = new Image();
+                    img.src = "/advanced/sprites/spaceman.png";
+                    img.onload = () => {
+                        canvas.drawImage(img, this.x, this.y, img.width * (this.size / 30), img.height * (this.size / 30));
+                    }
+                } else if (this.costume == "jerry") {
+                    let img = new Image();
+                    img.src = "/advanced/sprites/jerry.png";
+                    img.onload = () => {
+                        canvas.drawImage(img, this.x, this.y, img.width * (this.size / 60), img.height * (this.size / 60));
+                    }
+                }
+            }
+        }
+
+        let rect = function(x=0, y=0, w=50, h=50, color="red") {
+            canvas.beginPath();
+            canvas.rect(x, y, w, h);
+            canvas.fillStyle = color;
+            canvas.fill();
+        }
+
+        let text = function(x=0, y=50, text="Hello, world!", font="48px serif", color="black") {
+            canvas.font = font;
+            canvas.fillStyle = color;
+            canvas.fillText(text, x, y);
+        }
+
+        let clear = function() {
+            canvas.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        let log = function(string="", newline=true) {
+            document.getElementById("projecttext").value += string + (newline ? "\n" : "")
+        }
+
+        let alert = function(message) {
+            alert(message)
+        }
+
+        let kb_left_arrow = false;
+        let kb_right_arrow = false;
+        let kb_up_arrow = false;
+        let kb_down_arrow = false;
+
+        document.onkeydown = function(event) {
+	        switch (event.keyCode) {
+		        case 37: { // left arrow
+			        kb_left_arrow = true;
+                    break;
+		        }
+		        case 39: { // right arrow
+			        kb_right_arrow = true;
+                    break;
+		        }
+		        case 38: { // up arrow
+			        kb_up_arrow = true;
+                    break;
+		        }
+		        case 40: { // down arrow
+			        kb_down_arrow = true;
+                    break;
+		        }
+	        }
+        }
+
+        document.onkeyup = function(event) {
+	        switch (event.keyCode) {
+		        case 37: { // left arrow
+			        kb_left_arrow = false;
+                    break;
+		        }
+		        case 39: { // right arrow
+			        kb_right_arrow = false;
+                    break;
+		        }
+		        case 38: { // up arrow
+			        kb_up_arrow = false;
+                    break;
+		        }
+		        case 40: { // down arrow
+			        kb_down_arrow = false;
+                    break;
+		        }
+	        }
+        }
+    </script>
+</body>
+</html>

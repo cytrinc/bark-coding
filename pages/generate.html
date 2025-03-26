@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bark's Magic Idea Generator</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+		html {
+			--bg: #171717;
+			--cyan: #37ffcd;
+			--text: #f9f9f9;
+			color-scheme: dark;
+		}
+
+		body {
+			margin: 0;
+			overflow: hidden;
+			font-family: "Poppins", "Franklin Gothic Medium", Arial, sans-serif;
+			background-color: var(--bg);
+			color: var(--text);
+		}
+
+		content {
+			max-width: 800px;
+			margin-left: auto;
+			margin-right: auto;
+			position: absolute;
+			left: 50%;
+			top: 110vh;
+			transform: translate(-50%, -50%);
+			display: none;
+			transition: 1s;
+		}
+
+		content.show {
+			display: block;
+			top: 50%;
+		}
+
+		content * {
+			text-align: center;
+		}
+
+		button {
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			margin-top: 40px;
+		}
+
+		button, select {
+			padding: 10px 50px;
+			font-family: inherit;
+			border-radius: 100px;
+			border: none;
+			background-color: var(--text);
+			outline: 2px solid var(--text);
+			color: var(--bg);
+			cursor: pointer;
+		}
+
+		button:hover, select:hover {
+			background-color: var(--bg);
+			color: var(--cyan);
+			outline: 2px solid var(--cyan);
+		}
+
+		h1 {
+			text-decoration-line: underline;	
+			text-decoration-style: wavy;
+			text-decoration-color: var(--cyan);
+		}
+
+		#output-box {
+			width: 700px;
+			height: 500px;
+			overflow-y: auto;
+		}
+	</style>
+</head>
+<body>
+	<a href="/"><img src="/src/images/Logo.svg" alt="bark" width="25" height="25" style="padding: 12px"></a>
+	<content>
+		<h1>Bark's Magic Idea Generator</h1>
+		<p>When you're out of ideas but want to feed your hunger for programming, Bark's Magic Idea Generator gives you creative ideas to spend your time on!</p>
+		<button onclick="next()">Start</button>
+	</content>
+	<content>
+		<h1>Experience</h1>
+		<p>What is your experience level?</p>
+		<form>
+			<select>
+				<option value="1">1 | New</option>
+				<option value="2" selected>2 | Average</option>
+				<option value="3">3 | Advanced</option>
+				<option value="4">4 | Expert</option>
+			</select>
+		</form>
+		<button onclick="next()">Next</button>
+	</content>
+	<content>
+		<h1>Genre</h1>
+		<p>What kind of project would you like to make?</p>
+		<form>
+			<select>
+				<option value="1">Animation</option>
+				<option value="2" selected>Game</option>
+				<option value="3">Music</option>
+				<option value="4">Story</option>
+				<option value="5">Misc.</option>
+			</select>
+		</form>
+		<button onclick="generatenext()">Next</button>
+	</content>
+	<content>
+		<h1 id="idea-title">Loading..</h1>
+		<div id="output-box">
+			<div id="idea-output"></div>
+		</div>
+	</content>
+	<script type="module">
+		import markdownIt from 'https://cdn.jsdelivr.net/npm/markdown-it@14.1.0/+esm'
+
+		const cards = document.getElementsByTagName("content");
+		document.addEventListener("DOMContentLoaded", function() {
+			cards[0].classList.add("show");
+		})
+
+		let current_card = 0;
+
+		const next = () => {
+			cards[current_card].classList.remove("show");
+			current_card++;
+			cards[current_card].classList.add("show");
+		}
+
+		const back = () => {
+			cards[current_card].classList.remove("show");
+			current_card--;
+			cards[current_card].classList.add("show");
+		}
+
+		const generatenext = () => {
+			next();
+			generate();
+		}
+
+		function getValuefromoption(idx) {
+			const element = document.querySelectorAll("select")[idx];
+			return element.options[element.selectedIndex].text;
+		}
+
+		const generate = async () => {
+			//generate using ai (i hate ai too, but there is 12 possible combinations and that would take so long to do)
+			const skill = getValuefromoption(0);
+			const projecttype = getValuefromoption(1);
+			//tell the user its generating. it takes a while to generate so its nice to know that the app didnt crash
+			document.getElementById("idea-title").innerText = "Idea - Generating..";
+
+			const response = await fetch("https://reverse.mubi.tech/v1/chat/completions", {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					'Origin': 'https://gptcall.net/',
+					'Referer': 'https://gptcall.net/'//spelling is intentional
+				},
+				body: JSON.stringify({
+					model: 'gpt-4o',
+					messages: [
+						{
+							"role": "system",
+							"content": "You are an AI idea generator for a block-based programming program called Bark. Bark is based off of Blockly and it is mostly similar to scratch.mit.edu."
+						},
+						{
+							"role": "user",
+							"content": `hello! I want an idea! My skill at Bark is ${skill} and i want to make a project with the type of ${projecttype}, please add extra details to everything!`
+						}
+					]
+				})
+			}).then(data => data.json()).catch(e=>console.log(e));			
+			//it will probably generate markdown
+			const res = response.choices[0].message.content
+			console.log(res)
+			if(!res.error){
+				document.getElementById("idea-title").innerText = "Idea";
+				const md = markdownIt();
+				document.getElementById("idea-output").innerHTML = md.render(res);
+			}else{
+				document.getElementById("idea-title").innerText = "An error has occured";
+				document.getElementById("idea-output").innerText = "Please try again later.";
+			}
+		}
+
+		window.generate = generate;
+		window.generatenext = generatenext;
+		window.next = next;
+		window.back = back;
+	</script>
+</body>
+</html>

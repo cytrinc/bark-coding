@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+html:has(body.dark) {
+    --bg: #0d0d0d;
+    --code-bg: #181818;
+    --code-text: #ffffff;
+    --scrollbar: #505050;
+    color-scheme: dark;
+}
+
+html:has(body) {
+    --bg: #e0e0e0;
+    --code-bg: #ffffff;
+    --code-text: #181818;
+    --scrollbar: #a0a0a0;
+    color-scheme: light;
+}
+
+html {
+    --black: #0c090f;
+    --code: #171827;
+    --lavender: #ae95ff;
+    --pink: #e695ff;
+    --white: #fefcff;
+    --red: #ff3e3e;
+    color-scheme: dark;
+}
+
+::-webkit-scrollbar {
+	width: 13px;
+    height: 13px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: var(--code-bg);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--scrollbar);
+	border-radius: 9px;
+	border: 4px solid var(--code-bg);
+}
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Montserrat";
+    background-color: var(--black);
+    color: var(--white);
+}
+.navbar {
+    overflow: hidden;
+    height: 40px;
+    background-color: DodgerBlue;
+    display: flex;
+    align-items: center;
+}
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: left;
+    padding: 20px 15px;
+    text-decoration: none;
+    height: calc(100% - 20px);
+    display: flex;
+    gap: 10px;
+    white-space: nowrap;
+}
+.navbar a.right {
+    float: right;
+}
+.navbar a:hover {
+    background-color: #0000ff38;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+  
+}
+* {
+    scroll-behavior: smooth;
+}
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+.section a {
+    color: var(--lavender);
+    font-weight: 700;
+}
+.link {
+    right: 0px;
+}
+.link:hover {
+    left: 0px;
+}
+#skiptocontent {
+    font-size: 0%;
+    transition: 0s;
+    margin: 0px;
+    padding: 0px;
+}
+#skiptocontent:focus {
+    font-size: inherit;
+}
+#logo {
+    width: 40px;
+    height: 40px;
+
+}
+.separator {
+    font-size: 150%;
+    cursor: default;
+}
+a:hover {
+    text-decoration: underline;
+}
+.section {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+#content {
+    width: 80%;
+    padding-top: 80px;
+    padding-left: 10%;
+    transition: 0.2s;
+}
+#content-header {
+    width: 100%;
+    background-size: cover;
+    overflow: hidden;
+}
+#content-header div {
+    width: 100%;
+    height: 100%;
+}
+#content-header div h1 {
+    text-shadow: 0px 5px 5px #0000001c;
+    text-align: center;
+    padding-top: 300px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 400px;
+    font-size: 400%;
+    margin: 0px;
+}
+#footer {
+    background-position: 50%;
+    background-size: cover;
+    padding: 60px;
+    text-shadow: 0px 0px 5px #00000056;
+}
+.footer-row {
+    float: left;
+    width: 33.333%;
+    margin-bottom: 40px;
+}
+.button {
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    background-color: var(--pink);
+    color: var(--black)!important;
+    border-radius: 5px;
+    font-size: 14px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: inherit;
+    transition: 0.2s;
+}
+.button:hover {
+    background-color: var(--lavender);
+    text-decoration: none;
+}
+#code {
+    background-color: var(--code);
+    font-family: monospace;
+    padding: 10px;
+    padding-left: 40px;
+    margin: 0px;
+    resize: none;
+    border: none;
+    color: var(--white);
+    outline: none;
+    width: calc(100% - 750px);
+    height: calc(100vh - 90px);
+    position: absolute;
+    scroll-behavior: auto;
+    font-size: 12pt;
+    caret-color: var(--pink);
+    transition: 0.15s;
+    tab-size: 4;
+    position: absolute;
+    bottom: 0;
+}
+.blink {
+    animation: blink 1s infinite;
+}
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.right {
+    text-align: right;
+}
+li {
+    margin-bottom: 10px;
+}
+#footer .footer-row h3 {
+    color: var(--lavender);
+    margin-top: 65px;
+    border-bottom: 1px solid;
+    padding-bottom: 6px;
+    padding-right: 50px;
+    width: fit-content;
+    text-wrap: nowrap;
+}
+#headerseperator {
+    font-weight: 700;
+    border-right: 2px solid var(--white);
+}
+#programplayer {
+    background-color: var(--black);
+    overflow: hidden;
+}
+#stage {
+    width: 700px;
+    height: 580px;
+}
+.programtoolbar {
+    padding: 0;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    float: right;
+    border-radius: 100%;
+    transition: 0.2s;
+    cursor: pointer;
+    border: none;
+    background-color: #00000056;
+}
+.programtoolbar:hover {
+    background-color: #ffffff48;
+}
+.programtoolbar:active {
+    transition: 0s;
+    background-color: #ffffff6e;
+}
+.codezooming {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    bottom: 0;
+    border: none;
+    background-color: #00000056;
+    color: var(--white);
+    font-family: inherit;
+    font-size: 15pt;
+    width: 30px;
+    height: 30px;
+    transition: 0.2s;
+    border-radius: 0px;
+    cursor: pointer;
+}
+.codezooming:hover {
+    background-color: #ffffff48;
+}
+.codezooming:active {
+    transition: 0s;
+    background-color: #ffffff6e;
+}
+::selection {
+    background-color: var(--pink);
+    color: var(--black);
+}
+::-moz-selection {
+    background-color: var(--pink);
+    color: var(--black);
+}
+#notification {
+    position: absolute;
+    width: 50%;
+    height: fit-content;
+    background-color: #00000083;
+    margin-left: 25%;
+    bottom: 100%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    z-index: 10002;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    overflow: hidden;
+    transition: 0.2s;
+    border-radius: 10px;
+}
+#notification.open {
+    bottom: 15%;
+    box-shadow: 0px 5px 5px #00000056;
+}
+#blur-overlay {
+    position: absolute;
+    z-index: 10001;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    display: none;
+}
+#blur-overlay.on {
+    backdrop-filter: blur(10px);
+    display: block;
+}
+#notifpreview {
+    height: 200px;
+    font-family: monospace;
+    overflow-y: scroll;
+    background-color: #ffffff;
+    color: #000000;
+    text-align: left;
+}
+#go.disabled {
+    filter: opacity(0.2);
+    background: none;
+    cursor: not-allowed;
+}
+.float-right {
+    float: right;
+}

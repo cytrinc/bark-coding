@@ -1,4 +1,5 @@
 # How to Contribute to Bark?
+*Using AI to create commits is no longer permitted. If you need to use AI for anything here, we probably don't need your contribution. **This applies to members of the Bark Team as well.***
 ## Have you found a bug?
 - Before creating an issue, please use the search bar on the [issues](https://github.com/mariocraft987/bark.github.io/issues) tab to make sure you don't create a duplicate.
 - If there are no issues with the same bug, [open a new one](https://github.com/mariocraft987/bark.github.io/issues/new).

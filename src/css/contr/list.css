@@ -1,0 +1,39 @@
+/* contributors/grid.css */
+
+/* Style for each contributor container */
+#githuburlcontributer-list a,
+#githuburlcontributer-list div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--contributor-bg-color, #f9f9f9); /* Default background color */
+    text-decoration: none;
+    color: #333;
+    margin-top: var(--list-p, 2%);
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+#githuburlcontributer-list a:hover,
+#githuburlcontributer-list div:hover {
+    background-color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Style for contributor image */
+#githuburlcontributer-list img {
+    max-width: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Style for contributor login text */
+#githuburlcontributer-list p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 14px;
+}

@@ -1,0 +1,23 @@
+{
+  "welcome": "Welcome!",
+  "barkfromblockly": "Bark is a programming language building off of Google's <i>Blockly</i>.",
+  "barkinspiredscratch": "Bark is inspired by <a class='link' href='https://scratch.mit.edu'>Scratch</a>.",
+  "createdby": "Created by <a href='https://github.com/mariocraft987'>mariocraft987</a> and many awesome <a href='/contributors'>contributors</a>!",
+  "whatsnew": "Whats New?",
+  "nothingyet": "Nothing Yet...",
+  "recentcommitsbutton": "Recent commits",
+  "petmascot": "Pet our mascot!",
+  "checkeditor": "And then you can check out the <a href='https://bark.dumorando.com/editor/'>editor</a>!",
+  "fromcountries": "Visitors from other countries",
+  "donatebutton": "Donate page",
+  "fetchingloading": "Fetching commits...",
+  "pleasewaitloading": "please wait...",
+  "nocommits": "<h2>Oops... :(</h2><p>Failed to load commits. Check your connection and try again.</p>",
+  "projectsdisclaimer": "Bark projects don't exist yet.. Please stay patient.",
+  "needideas": "Need Ideas?",
+  "workingprog": "This page is a work in progress.",
+  "newblocks": "Bark's newest series of blocks.",
+  "selecttheme": "Select a theme:",
+  "warninglang": "This feature is a work in progress.",
+  "langnotwork": "Some features may not work"
+}

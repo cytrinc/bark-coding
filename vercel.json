@@ -1,0 +1,132 @@
+{
+  "rewrites": [
+    {
+      "source": "/profile/:username",
+      "destination": "/pages/profile.html"
+    },
+    {
+      "source": "/donate",
+      "destination": "/pages/donates.html"
+    },
+    {
+      "source": "/donate/members",
+      "destination": "/pages/donatemembers.html"
+    },
+    {
+      "source": "/contributors",
+      "destination": "/pages/contributors.html"
+    },
+    {
+      "source": "/ideas/generate",
+      "destination": "/pages/generate.html"
+    },
+    {
+      "source": "/search",
+      "destination": "/pages/search.html"
+    },
+    {
+      "source": "/ideas",
+      "destination": "/pages/ideas.html"
+    },
+    {
+      "source": "/signup",
+      "destination": "/pages/signup.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/pages/about.html"
+    },
+    {
+      "source": "/credits",
+      "destination": "/pages/credits.html"
+    },
+    {
+      "source": "/special",
+      "destination": "/pages/special.html"
+    },
+    {
+      "source": "/settings",
+      "destination": "/pages/settings.html"
+    },
+    {
+      "source": "/lua",
+      "destination": "/pages/lua.html"
+    },
+    {
+      "source": "/login",
+      "destination": "/pages/login.html"
+    },
+    {
+      "source": "/explore",
+      "destination": "/pages/explore.html"
+    },
+    {
+      "source": "/discord/bot",
+      "destination": "/pages/discordbot.html"
+    },
+    {
+      "source": "/discord",
+      "destination": "/pages/discord.html"
+    },
+    {
+      "source": "/signout",
+      "destination": "/special/logout.html"
+    },
+    {
+      "source": "/settings/profile",
+      "destination": "/pages/profilesettings.html"
+    },
+    {
+      "source": "/users",
+      "destination": "/pages/users.html"
+    },
+    {
+      "source": "/docs",
+      "destination": "/pages/docs.html"
+    },
+    {
+      "source": "/link",
+      "destination": "/pages/external.html"
+    },
+    {
+      "source": "/new",
+      "destination": "/pages/newproject.html"
+    },
+    {
+      "source": "/mail",
+      "destination": "/pages/mail.html"
+    },
+    {
+      "source": "/create",
+      "destination": "/pages/create.html"
+    },
+    {
+      "source": "/contributors",
+      "destination": "/pages/contr.html"
+    },
+    {
+      "source": "/terminal",
+      "destination": "/pages/terminal.html"
+    },
+    {
+      "source": "/share",
+      "destination": "/pages/share.html"
+    },
+    {
+      "source": "/tos",
+      "destination": "/pages/tos.html"
+    },
+    {
+      "source": "/download",
+      "destination": "/pages/download.html"
+    },
+    {
+      "source": "/signedup",
+      "destination": "/pages/signedup.html"
+    },
+    {
+      "source": "/reportuser/:username",
+      "destination": "/pages/reportuser.html"
+    }
+  ]
+}

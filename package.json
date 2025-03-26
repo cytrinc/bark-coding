@@ -1,5 +1,12 @@
 {
-  "name": "barkdesktop",
+  "name": "bark-coding",
+  "description": "A Fun block based coding editor similar to Scratch.",
+  "scripts": {
+    "dev": "node devserver/development.js"
+  },
   "main": "index.html",
-  "version": "0.1.7"
+  "version": "0.60",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }

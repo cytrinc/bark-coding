@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bark - Lua Editor</title>
+    <meta name="title" content="Bark coding - Lua editor" />
+    <meta name="description" content="Bark is a programming language building off of Google's Blockly." />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bark.dumorando.com/" />
+    <meta property="og:title" content="Bark coding - Lua editor" />
+    <meta property="og:description" content="Bark is a programming language building off of Google's Blockly." />
+    <meta property="og:image" content="https://bark.dumorando.com/src/images/Logo.svg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://bark.dumorando.com/" />
+    <meta property="twitter:title" content="Bark coding - Lua Editor" />
+    <meta property="twitter:description" content="Bark is a programming language building off of Google's Blockly." />
+    <meta property="twitter:image" content="https://bark.dumorando.com/src/images/Logo.svg" />
+
+    <!-- Optional Meta Tags -->
+    <meta name="keywords" content="coding, blockly, block coding, bark coding, lua, online coding" />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content=" days" />
+    <meta name="author" content="mariocraft" />
+    <!-- Include CodeMirror stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.1/codemirror.min.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/png">
+    <style id="dark-reader-style" type="text/css">
+        @media screen {
+            html {
+                -webkit-transition: -webkit-filter 300ms linear;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- inject:navbar -->
+    <nav id="subnav">
+        <div>
+            <button id="compile-btn">Compile</button>
+            <button id="run-btn">Run</button>
+        </div>
+        <h2>LUA EDITOR</h2>
+    </nav>
+    <!--
+    <h2>Write Lua Code and Share it With The Bark Community!</h2>
+    <-->
+    <main>
+        <textarea id="code-editor"></textarea>
+
+        <div id="output">fdv;'dkhd[vpljk</div>
+    </main>
+
+    <!-- Include CodeMirror -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.1/codemirror.min.js"></script>
+    <!-- Include Lua mode for CodeMirror -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.1/mode/lua/lua.min.js"></script>
+    <!-- Include Fengari -->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/fengari/0.1.2/fengari.js"></script>-->
+    <script src="/lua/fengari.js"></script>
+
+    <script>
+        // Function to compile Lua code
+        function compileCode() {
+            let luaCode = editor.getValue();
+            let result = '';
+
+            // Try compiling the Lua code
+            try {
+                // Create Lua VM
+                let vm = new fengari.vm.LuaVM(new fengari.vm.State());
+                // Compile Lua code
+                let chunk = vm.load(luaCode);
+                // Execute the compiled chunk
+                vm.call(chunk);
+                result = 'Compilation successful!';
+            } catch (error) {
+                result = 'Compilation error: ' + error.message;
+            }
+
+            // Display the result
+            document.getElementById('output').innerText = result;
+        }
+
+        // Function to run compiled Lua code
+        function runCode() {
+            let luaCode = editor.getValue();
+            let result = '';
+
+            // Try running the Lua code
+            try {
+                // Create Lua VM
+                let vm = new fengari.vm.LuaVM(new fengari.vm.State());
+                // Compile Lua code
+                let chunk = vm.load(luaCode);
+                // Execute the compiled chunk
+                vm.call(chunk);
+                result = 'Execution successful!';
+            } catch (error) {
+                result = 'Execution error: ' + error.message;
+            }
+
+            // Display the result
+            document.getElementById('output').innerText = result;
+        }
+
+        // Initialize CodeMirror
+        let editor = CodeMirror.fromTextArea(document.getElementById("code-editor"), {
+            mode: "lua",
+            lineNumbers: true
+        });
+
+        // Attach event listeners to buttons
+        document.getElementById('compile-btn').addEventListener('click', compileCode);
+        document.getElementById('run-btn').addEventListener('click', runCode);
+    </script>
+    <script src="/index.js"></script>
+</body>
+
+</html>

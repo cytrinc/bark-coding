@@ -4,22 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="title" content="Bark coding - Home">
-  <meta name="description" content="Bark is a programming language building off of Google's Blockly.">
+  <meta name="title" content="Bark coding">
+  <meta name="description" content="Web developer tool">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://bark-coding.vercel.app/">
-  <meta property="og:title" content="Bark coding - Home">
+  <meta property="og:url" content="https://bark.dumorando.com/">
+  <meta property="og:title" content="Bark coding">
   <meta property="og:description" content="Bark is a programming language building off of Google's Blockly.">
-  <meta property="og:image" content="https://bark-coding.vercel.app/src/images/Logo.svg">
+  <meta property="og:image" content="https://bark.dumorando.com/src/images/Logo.svg">
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://bark-coding.vercel.app/">
-  <meta property="twitter:title" content="Bark coding - Home">
+  <meta property="twitter:url" content="https://bark.dumorando.com/">
+  <meta property="twitter:title" content="Bark coding">
   <meta property="twitter:description" content="Bark is a programming language building off of Google's Blockly.">
-  <meta property="twitter:image" content="https://bark-coding.vercel.app/src/images/Logo.svg">
+  <meta property="twitter:image" content="https://bark.dumorando.com/src/images/Logo.svg">
   
   <!-- Optional Meta Tags -->
   <meta name="keywords" content="coding, blockly, block coding, bark coding">
@@ -28,10 +28,11 @@
   <meta name="language" content="English">
   <meta name="revisit-after" content=" days">
   <meta name="author" content="mariocraft">
-  <title>Bark - Home</title>
+  <title>BARK CODING</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/png">
   <meta name="description"
     content="Bark Coding is a Blockly Based coding language created by mariocraft987 and more!" />
+  <link rel="stylesheet" href="/src/css/main.css">
   <style>
     .linkoncommits {
       text-decoration: none;
@@ -40,67 +41,198 @@
     .linkoncommits:hover {
       text-decoration: underline;
     }
+
+    #dog {
+      display: none;
+    }
+
+    #dog.active {
+      display: block;
+    }
+
+    .dogcage {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
   </style>
 </head>
 
 <body>
-  <span id="navbar"></span>
+  <!-- inject:navbar -->
+   <noscript><h1 style="color: red;">Yikes! Either your browser doesn't support Javascript, or you have "Javascript" turned off.</h1></noscript>
+  
+  <center>
+    <p>Note: this website is under development; therefore, some features may not work.</p>
+      <a href="https://github.com/cytrinc/bark-coding/discussions/280">Github Announcement</a>
+  </center>
+
+  <!--
+   <span>
+    <br/>
+    <center>
+      <img src="/src/images/assets/pixel/tree.png" width="40" style="image-rendering: pixelated;"><a href="https://extra-treats.vercel.app"><img src="/src/images/assets/pixel/present.png" width="40" style="image-rendering: pixelated;"></a>
+    </center>
+    <br/>
+  </span>
+  -->
+
+   <div class="box" id="profilebox">
+    <h3><span id="wussup_msg">Wussup</span>, <span id="usernameforprofilebox">fellow user</span>!</h3>
+    <button class="buttonFrBx" onclick='window.location = "https://bark.dumorando.com/settings/profile"'>Edit your profile?</button>
+   </div>
   <div class="box">
-    <h2>Welcome!</h2>
-    <p>Bark is a programming language building off of Google's <i>Blockly</i>.</p>
-    <p>Bark is inspired by <a class="link" href="https://scratch.mit.edu">Scratch</a>. <img
-        src='src/emojis/svg/smiley.svg' alt="smiley emoji" width="20" height="20"><img src='src/emojis/svg/thumb.svg'
+    <h2 class="welcome" id="welcome">Welcome!</h2>
+
+    <!-- elements on the left -->
+     <span style="float:left;">
+    <p class="barkfromblockly">Bark is an upcoming web developer tool.</p>
+    <p class="barkinspiredscratch">Bark is inspired by <a class="link" href="https://scratch.mit.edu">Scratch MIT</a>. <img
+        src='/src/emojis/svg/normal/smiley.svg' alt="smiley emoji" width="20" height="20"><img src='/src/emojis/svg/normal/thumb.svg'
         alt="thumbs up emoji" width="20" height="20"></p>
-    <p>Created by <a href="https://github.com/mariocraft987">mariocraft987</a> and many awesome <a
+    <p class="createdby">Created by <a href="https://github.com/mariocraft987">AtomicBolts</a> and many awesome <a
         href="/contributors">contributors</a>!</p>
     <iframe width="280" height="160" src="https://www.youtube.com/embed/OmJAIourvDI?si=Phe9fc7XcRbENm1e"
       title="YouTube video player" frameborder="0" referrerpolicy="strict-origin-when-cross-origin"
       allowfullscreen></iframe>
+    </span>
+    
+
+    <!-- elements on the right -->
+    <span style="float:right;">
+     <b>What Bark has to offer</b>
+     <ol>
+      <li>A small coding community.</li>
+       <li>Bark is <abbr title="The code source is viewable by other people outside the developer team.">open-sourced</abbr>!!</li>
+       <li>A <i>custom</i> Javascript editor</li>
+       <li>A <i>custom</i> Blockly editor</li>
+      <li>No doubleclick ads or PUPs!</li>
+     </ol>
+    </span>
+
   </div>
   <div class="box">
     <span id="boxChanger">
-      <h2>Whats New?</h2>
-      <p>Nothing yet..</p>
+      <h2 class="whatsnew">Whats New?</h2>
+      <p class="nothingyet">Nothing yet..</p>
     </span>
-    <button class="buttonFrBx" onclick="whatsNew()">Whats new?</button>
-    <button class="buttonFrBx" onclick="recentCom()">Recent commits</button>
+    <button class="buttonFrBx whatsnew" onclick="whatsNew()" >Whats new?</button>
+    <button class="buttonFrBx recentcommitsbutton" onclick="recentCom()" >Recent commits</button>
+    <button class="buttonFrBx" onclick="Todo()" >Todo list</button>
   </div>
   <div class="box">
-    <h3>Pet our mascot!</h3>
-    <h3>Or, you can check out the <a href="https://bark-coding.vercel.app/editor_new/">editor</a>!</h3>
-    <button
+    <h3 class="petmascot">Pet our mascot!</h3>
+    <p class="checkeditor">And then you can check out the <a href="https://bark.dumorando.com/advanced/">editor</a>!</p>
+    <!--
+      <button
       style="background: none;background-image: url(src/images/dog/idle.svg);width: 73px;height: 96px;cursor: grab;background-size: cover;border: none;transition: 0.1s;"
       alt="Bark Dog" onclick="this.style.backgroundImage = 'url(src/images/dog/happy.svg)';"
       onmouseleave="this.style.backgroundImage = 'url(src/images/dog/umm.svg)';"></button>
+    -->
+    <div class="dogcage">
+      <button id="dog" style="background: none;width: 73px;height: 96px;cursor: grab;background-size: cover;border: none;" alt="Bark Dog"></button>
+    </div>
+    <p id="loadingdog">Loading..</p>
     <br />
-    <br />
-    <h3>Visitors from other countries </h3>
-    <a href="https://info.flagcounter.com/z8GL"><img
-        src="https://s01.flagcounter.com/count2/z8GL/bg_FFFFFF/txt_4B52B8/border_949494/columns_4/maxflags_12/viewers_0/labels_0/pageviews_1/flags_0/percent_1/"
-        alt="Flag Counter" border="0"></a>
+    <div align='center'><a href='https://www.free-website-hit-counter.com'><img src='https://www.free-website-hit-counter.com/zc.php?d=9&id=7328&s=5' border='0' alt='Free Website Hit Counter'></a><br /><small><a href='https://www.free-website-hit-counter.com' title="Free Website Hit Counter">Free website hit counter</a></small></div>
   </div>
-  <!--
+  
+
+<!--
+      maybe someday we will have a cashapp or paypal account
 <div class="box">
   <h2>Also see:</h2>
-  <a href="https://bark-coding.vercel.app/donate"><button class="buttonFrBx">Donate page</button></a>
+  <a href="https://bark.dumorando.com/donate"><button class="buttonFrBx">Donate page</button></a>
   </div>
   -->
-  <button onclick="scrollToTop()" id="topBtn">Top</button>
+
+<br/>
+<br/>
+<br/>
+
+<center>
+
+  <a href="https://bark.dumorando.com"><img width="110" src="https://bark.dumorando.com/src/images/assets/buttons/banner1.png" alt="Bark Coding!!" title="BARK CODING!!"></a>
+  <textarea readonly="readonly"><a href="https://bark.dumorando.com"><img src="https://bark.dumorando.com/src/images/assets/buttons/banner1.png" alt="Bark Coding!!" title="BARK CODING!!"></a></textarea>
+
+  <br/>
+
+  <a href="https://bark.dumorando.com"><img width="110" src="https://bark.dumorando.com/src/images/assets/buttons/banner2.png" alt="Bark Coding: Dev Tool" title="Bark Coding: Dev Tool"></a>
+  <textarea readonly="readonly"><a href="https://bark.dumorando.com"><img src="https://bark.dumorando.com/src/images/assets/buttons/banner2.png" alt="Bark Coding: Dev Tool" title="Bark Coding: Dev Tool"></a></textarea>
+
+  <br/>
+
+  <a href="https://bark.dumorando.com"><img width="110" src="https://bark.dumorando.com/src/images/assets/buttons/banner3.png" alt="Bark Coding" title="BARK"></a>
+  <textarea readonly="readonly"><a href="https://bark.dumorando.com"><img src="https://bark.dumorando.com/src/images/assets/buttons/banner3.png" alt="Bark Coding" title="BARK"></a></textarea>
+
+  <p style="font-size: 7pt;">Note: these buttons are smaller when pasted into another website to keep consistency.</p>
+
+</center>
+
+  <!-- inject:footer -->
 </body>
-<script src="https://bark-coding.vercel.app/index.js"></script>
-<script src="src/scripts/replacer.js"></script>
+<!--
+  <script src="/index.js"></script>
+  ???????????
+-->
+<script src="/index.js"></script>
+<script src="/src/scripts/replacer.js"></script>
 <script>
+
+  if (localStorage.myBarkUsername) {
+    document.getElementById("usernameforprofilebox").innerHTML = localStorage.myBarkUsername;
+    document.getElementById("welcome").remove();
+  } else {
+    document.getElementById("profilebox").remove();
+  }
+
+  if (new Date().getMonth() === 12 && new Date().getDate() === 31) {
+    document.getElementById("wussup_msg").innerHTML = "Happy New Years Eve! see ya in 2025";
+  }
+  
+  //**blob to dataURL**
+  function blobToDataURL(blob) {
+      return new Promise((resolve, reject) => {
+        let a = new FileReader();
+        a.onload = function(e) {resolve(e.target.result);}
+        a.readAsDataURL(blob);
+      });
+  }
+
+  //utillity function to set the backround image of an element to a url.
+  function changeImage(element, url) {
+    element.style.backgroundImage = `url(${url})`;
+  }
+
+  async function setupDog() {
+    const idleblob = await fetch("/src/images/dog/idle.svg").then(data => data.blob());
+    const happyblob = await fetch("/src/images/dog/happy.svg").then(data => data.blob());
+    const ummblob = await fetch("/src/images/dog/umm.svg").then(data => data.blob());
+    const idle = await blobToDataURL(idleblob);
+    const happy = await blobToDataURL(happyblob);
+    const umm = await blobToDataURL(ummblob);
+    const dog = document.getElementById("dog");
+    let barksound = new Audio('src/bark.mp3')
+    dog.addEventListener("mouseleave", () => changeImage(dog, umm));
+    dog.addEventListener("click", () => changeImage(dog, happy));
+    dog.addEventListener("click", () => barksound.play());
+    changeImage(dog, idle);
+    dog.classList.add('active');
+    document.getElementById('loadingdog').remove();
+  }
+
   function recentCom() {
     document.getElementById("boxChanger").innerHTML = "<h2>Fetching commits...</h2><p>please wait...</p>"; // get it? "fetching" commits??? eh????........anyone?
     fetch('https://api.github.com/repos/Mariocraft987/bark.github.io/commits?per_page=50')
       .then(response => response.json())
       .then(commits => {
-        var Commits = '<h2>Recent Commits</h2><ul style="overflow-y: scroll; height: 150px;"><br/>';
+        let Commits = '<h2>Recent Commits</h2><ul style="overflow-y: scroll; height: 150px;"><br/>';
         commits.slice(0, commitsLength).forEach(commit => {
           Commits += `<div title="${replace(commit.author.login)}: ${replace(commit.commit.message)}"><li><a href="https://github.com/${replace(commit.author.login)}"><img style="border-radius:12px;margin-top:-4px;margin-left:-6px" src="https://github.com/${commit.author.login}.png" width="21"></a><a class="linkoncommits" href="${commit.html_url}">${replace(commit.commit.message)}</a></li></div>`;
         });
         Commits += '</ul><br><a class="buttonFrBx" href="https://github.com/Mariocraft987/bark.github.io/commits/main/" style="text-align: center;">See all</a><br>';
-        finalCommits = Commits.replaceAll(":trollface:", "<img src='src/emojis/svg/troll.svg' width='23'>")
+        finalCommits = Commits.replaceAll(":trollface:", "<img src='/src/emojis/svg/troll.svg' width='23'>")
         document.getElementById("boxChanger").innerHTML = finalCommits + "<br/>"
       })
       .catch(error => {
@@ -108,6 +240,8 @@
         document.getElementById("boxChanger").innerHTML = '<h2>Oops... :(</h2><p>Failed to load commits. Check your connection and try again.</p>';
       });
   }
+
+  setupDog();
 </script>
 
 </html>

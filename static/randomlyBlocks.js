@@ -154,7 +154,7 @@
 
     YesNoAlert(args) {
       let jtext = args.STR
-      var pressLog
+      let pressLog
       if (confirm(jtext) == true) {
         pressLog = true
       } else {

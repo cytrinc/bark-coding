@@ -1,0 +1,179 @@
+/* This is from a very old version of Bark Coding, straight from the saved files from my computer! */
+
+/*CSS styles for Bark, without them Bark would not be structured correctly*/
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: White;
+  font-weight: 500;
+  margin: 0;
+}
+
+.dark-mode {
+  background-color: rgb(29, 29, 29);
+  color: #ffffff;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.navbar {
+  overflow: hidden;
+  height: 45px;
+  background-color: DodgerBlue;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: left;
+  padding: 10px 16px;
+  text-decoration: none;
+  height: 100%;
+  line-height: 25px;
+}
+
+.navbar a.right {
+  float: right;
+}
+
+.navbar a:hover {
+  background-color: blue;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+.box {
+  display: inline-block;
+  padding: 16px 26px;
+  font-size: 17px;
+  text-align: center;
+  outline: none;
+  color: #1b007a;
+  background-color: rgb(173, 214, 255);
+  border-radius: 10px;
+}
+
+a.link {
+  color: dodgerblue;
+}
+
+button.buttonFrBx {
+  background-color: rgb(0, 128, 255);
+  padding: 9px 17px;
+  border-radius: 7px;
+  cursor: pointer;
+  border: none;
+  color: #ffffff;
+}
+
+button.buttonFrBx:hover {
+  background-color: rgb(0, 111, 221);
+  border: none;
+}
+
+.searchBar {
+  display: inline-block;
+  padding: 13px 20px;
+  font-size: 17px;
+  text-align: center;
+  border: none;
+  color: #ffffff;
+  background-color: rgb(120, 188, 255);
+  border-radius: 5px;
+}
+
+code {
+  font-family: monospace;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+body.dark-mode {
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+.dark-mode-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 10px;
+}
+
+.dark-mode-button:hover {
+  background-color: blue;
+  border-radius: 5px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.dark-mode-button img {
+  width: 25px;
+  height: 25px;
+}
+
+.blockbar {
+  background-color: #e5e4e4; 
+  height: 650px; 
+  width: 200px; 
+  text-align: center; 
+  box-shadow: 1px 1px 3px;
+  float: left;
+}
+
+.screen {
+border:2px solid #000000;
+border-radius: 5px;
+float: right;
+}
+
+a {
+color: dodgerblue;
+}
+
+.slNav {
+background-color: rgb(255, 153, 0);
+border-radius: 10px;
+cursor: pointer;
+color: white;
+}
+
+.font {
+font-family: Tahoma, sans-serif;
+}
+
+.creditsHeader {
+ color: white;
+  background-color: dodgerBlue;
+  padding: 35px;
+  font-size: 20pt;
+  margin-top: 14px;
+  font-family: Tahoma, sans-serif;
+  text-align: center;
+}
+
+.CreditsPT {
+  margin: 60px;
+  padding: 5px;
+  margin-top: -47px;
+  margin-left: 52px;
+  font-size: 17px;
+}
+
+#TextI {
+resize: none;
+}
+
+.linkButText {
+color: black;
+text-decoration: none;
+}
+
+li {
+list-style-type: none;
+}

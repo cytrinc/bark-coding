@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="Create">
+  <meta name="description" content="Bark is a programming language building off of Google's Blockly.">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bark.dumorando.com/">
+  <meta property="og:title" content="Bark coding - Create">
+  <meta property="og:description" content="Bark is a programming language building off of Google's Blockly.">
+  <meta property="og:image" content="https://bark.dumorando.com/src/images/Logo.svg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://bark.dumorando.com/">
+  <meta property="twitter:title" content="Bark coding - Create">
+  <meta property="twitter:description" content="Bark is a programming language building off of Google's Blockly.">
+  <meta property="twitter:image" content="https://bark.dumorando.com/src/images/Logo.svg">
+  
+  <!-- Optional Meta Tags -->
+  <meta name="keywords" content="coding, blockly, block coding, bark coding">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content=" days">
+  <meta name="author" content="mariocraft">
+    <title>Bark - Create</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/png">
+  <meta name="description"
+    content="Bark Coding is a Blockly Based coding language created by mariocraft987 and more!" />
+</head>
+
+<body>
+  <!-- inject:navbar -->
+  <center>
+    
+      <h1>Make something!</h1>
+      <img src="/src/images/assets/build.png" alt="Building blocks with colors of red, green, and blue." width="100">
+      <br/>
+      <a href="https://bark.dumorando.com/advanced">Advanced Editor</a>
+      <br/>
+      <br/>
+      <a href="https://bark-editor.vercel.app">Blockly Editor Archive</a>
+      <br/>
+      <br/>
+
+      <h1>Publish it!</h1>
+      <img src="/src/images/assets/earth.png" alt="A blue sphere with small green spheres in it representing the Earth." width="80">
+      <br/>
+      <details>
+        <summary>
+          Publish a new Blockly project (BETA)
+        </summary>
+
+        <p>Upload your Blockly project<span style="color: red;">*</span></p>
+        <input type="file" accept=".barkf">
+        
+        <p>Upload your thumbnail<span style="color: red;">*</span></p>
+        <input type="file" accept="image/*">
+
+        <p>Enter your title<span style="color: red;">*</span></p>
+        <input type="text" id="title">
+
+        <p>Enter a description</p>
+        <textarea cols="50" rows="9" placeholder="This is my project! Use the WASD/arrow keys to move, I made this in the Bark Blockly Editor."></textarea>
+      </details>
+</center>
+  
+  <!-- inject:footer -->
+</body>
+<script src="/index.js"></script>
+<script src="/src/scripts/replacer.js"></script>
+<script>
+  title_list = [
+    "Flappy Birb", 
+    "Escape the Platformer", 
+    "RPG Game", 
+    "Pancake [Animation]", 
+    "shooter game", 
+    "Bark Dog goes shopping" 
+  ]
+
+  // so input isnt blank on start
+  document.getElementById("title").placeholder = title_list[Math.floor(Math.random()*title_list.length)];
+  
+  setInterval(function () {
+    document.getElementById("title").placeholder = title_list[Math.floor(Math.random()*title_list.length)];
+}, 2000);
+</script>
+</html>

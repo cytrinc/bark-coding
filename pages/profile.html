@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="Bark coding - Profile">
+  <meta name="description" content="Bark is a programming language building off of Google's Blockly.">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bark.dumorando.com/">
+  <meta property="og:title" content="Bark coding - Profile">
+  <meta property="og:description" content="Bark is a programming language building off of Google's Blockly.">
+  <meta property="og:image" content="https://bark.dumorando.com/src/images/Logo.svg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://bark.dumorando.com/">
+  <meta property="twitter:title" content="Bark coding - Profile">
+  <meta property="twitter:description" content="Bark is a programming language building off of Google's Blockly.">
+  <meta property="twitter:image" content="https://bark.dumorando.com/src/images/Logo.svg">
+  
+  <!-- Optional Meta Tags -->
+  <meta name="keywords" content="coding, blockly, block coding, bark coding">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content=" days">
+  <meta name="author" content="mariocraft">
+    <title>Bark - Profile</title>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png">
+  <meta name="description"
+    content="Bark Coding is a Blockly Based coding language created by mariocraft987 and more!" />
+    <link rel="stylesheet" href="/src/css/main.css">
+  <style>
+    .flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #pfp {
+      margin-right: 5px;
+      border-radius: 50%;
+      aspect-ratio: 1/1;
+      width: 75px;
+    }
+
+    #admin {
+      display: none;
+    }
+
+    #admin.show {
+      display: block;
+    }
+
+    admin-pin {
+      background-color: rgb(0, 127, 255, 0.24);
+      font-size: 1rem;
+      padding: 10px;
+      border-radius: 12px;
+      margin-left: 15px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    /* basicly admin-pin retextured and for badges  :P */
+    badge-box {
+      background-color: rgba(255, 38, 215, 0.24);
+      font-size: 1rem;
+      padding: 6px;
+      border-radius: 12px;
+      margin-left: 15px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    #commenterror {
+      color: red;
+    }
+
+    .profile-comment {
+      border-radius: 5px;
+      background-color: rgb(0, 127, 255, 0.24);
+      color: #1b007a;
+      text-align: center;
+      padding: 19px;
+      width: 400px;
+      margin-left: calc(50% - 50);
+    }
+
+    .dark-mode .profile-comment {
+      color: white;
+    }
+
+    .project-box {
+	background-color: rgb(0, 127, 255, 0.24);
+	border-radius: 10px;
+	text-align: center;
+	padding: 15px;
+	margin: 4px;
+	width: 90px;
+	height: 60px;
+	font-size: 12pt;
+	float:left;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- inject:navbar -->
+  <div class="box">
+    <div style="float: left;">
+      <img style="border-radius: 50%" height="75" src="" id="pfp" alt="Profile picture">
+      <h1 id="username">User</h1>
+    </div>
+
+    <div>
+      <p id="bio" style="float: right; overflow: auto; height: 180px;"></p>
+    </div>
+
+  </div>
+
+  <div class="box">
+    <br/>
+
+    <button class="buttonFrBx followButton" onclick="alert(`sorry, following doesn't work yet :(`);" title="you can follow this user, if you want" style="color: gold;">Follow</button>
+    <br/>
+    <br/>
+    <button class="buttonFrBx" id="changeprofiledetails" onclick="location.replace('/settings/profile')">Change profile details</button>
+    <br/>
+    <a href="/reportuser" id="report_link" style="float:left;">Report this user</a>
+    <div id="admin">
+      <br/>
+      <details>
+        <summary><b>ADMIN</b></summary>
+        <br/>
+        <button class="buttonFrBx danger" id="buttonadmininvalidatepfp">[admin] invalidate pfp</button>
+        <br/>
+        <br/>
+        <button class="buttonFrBx danger" id="buttonadmininvalidatebio">[admin] change bio to</button>
+        <br/>
+        <textarea id="texttoexecute" placeholder="[Removed by bark team]" rows="2" cols="20"></textarea>
+        </details>
+    </div>
+  </div>
+
+<div class="box">
+
+	<div>
+		<!-- example project box in html -->
+    		<div class="project-box">
+			<div>Example Project</div>
+			<div><img src="example project image"></div>
+    		</div>
+
+		<div class="project-box">
+			<div>Example Project</div>
+			<div><img src="example project image"></div>
+    		</div>
+
+		<div class="project-box">
+			<div>Example Project</div>
+			<div><img src="example project image"></div>
+    		</div>
+
+		<div class="project-box">
+			<div>Example Project</div>
+			<div><img src="example project image"></div>
+    		</div>
+
+		<div class="project-box">
+			<div>Example Project</div>
+			<div><img src="example project image"></div>
+    		</div>
+
+		<div class="project-box">
+			<div>Example Project</div>
+			<div><img src="example project image"></div>
+    		</div>
+
+		<div class="project-box">
+			<div>Example Project</div>
+			<div><img src="example project image"></div>
+    		</div>
+	</div>
+</div>
+
+  <div style="text-align: center;">
+  <br/>
+  <br/>
+    <div id="commentposter">
+      <textarea id="commentbox" placeholder="Lorem Lpsum..." rows="3" cols="25" spellcheck="false"></textarea>
+      <br/>
+      <button class="buttonFrBx" id="postprofilecomment">Post</button>
+      <span id="commenterror"></span>
+    </div>
+    <br/>
+    <center>
+      <span id="comments">Loading...</span>
+  </center>
+
+  </div>
+  
+  <!-- inject:footer -->
+</body>
+<!--
+  <script src="/index.js"></script>
+  ???????????
+-->
+<script src="/index.js"></script>
+<script src="/src/scripts/replacer.js"></script>
+<script src="/src/scripts/admin.js"></script>
+<script src="/src/scripts/badge.js"></script>
+<script type="module">
+  const commentPlaceholders = ["Hello... I made this small project...", "Collab?", "Cool game!", "Hihihihihihi :3", "What's your favorite video game?"];
+
+  var randomCommentPlaceholder = commentPlaceholders[Math.floor(Math.random()*commentPlaceholders.length)];
+
+  document.getElementById("commentbox").placeholder = randomCommentPlaceholder;
+
+  if((!localStorage.myBarkUsername)) {
+    document.getElementById('commentposter').remove();
+  }
+  
+  let parts = window.location.href.split("/");
+  const username = parts[parts.length - 1];
+  if (username !== localStorage.getItem('myBarkUsername')) {
+    let btn = document.querySelector("button#changeprofiledetails");
+    btn.remove();
+  }
+	
+  document.getElementById("report_link").href = `/reportuser/${username}`;
+  document.getElementById('username').innerText = username;
+  document.title = username + " on Bark";
+  document.getElementById('username').title = `${username}, this is a user`;
+  const token = localStorage.getItem('barktoken');
+
+  const response = await fetch(`https://api.bark.dumorando.com/api/v2/fetchUser?username=${encodeURIComponent(username)}`);
+
+  if (response.status === 404) window.location.replace("/404");
+
+  const data = await response.json();
+  const pfpbox = document.getElementById('pfp');
+  pfpbox.src = data.profilepicture;
+
+  const bio = document.getElementById('bio');
+  bio.innerHTML = replace(data.bio);
+
+  if (await isuseradmin(username)) {
+    document.getElementById('username').outerHTML += "<admin-pin>Bark team<img title='This user is apart of the Bark Team!' src='/src/images/assets/other/wrench.png' width='17' style='image-rendering: pixelated; opacity: 0.5;'></admin-pin>";
+    document.getElementById('username').style.color = "#ffa70f";
+  }
+
+  setup_badges(username);
+
+  fetch(`https://api.bark.dumorando.com/api/v2/profileComments?username=${username}`)
+    .then(data => data.json())
+    .then(data => {
+	console.log(data)
+
+      document.getElementById("comments").innerHTML = "";
+	for (i = 0; i < data.length; i++) {
+		document.getElementById("comments").innerHTML += `
+  	<br/>
+	<div class="profile-comment">
+		<p>${replace(data[i].content)}</p>
+  		<!-- <p><span onload="this.remove();" title="Delete this profile comment">Delete Comment</span></p> -->
+	</div>
+ `
+	}
+	    
+    });
+
+  document.getElementById("postprofilecomment").addEventListener('click', async () => {
+    const postcommentresponse = await fetch(`https://api.bark.dumorando.com/api/v2/postProfileComment?token=${encodeURIComponent(token)}&username=${encodeURIComponent(parts[parts.length - 1])}&comment=%5B${localStorage.myBarkUsername}%5D%28https://bark.dumorando.com/profile/${localStorage.myBarkUsername}%29:%20${encodeURIComponent(document.getElementById("commentbox").value).replaceAll("_", "%5F")}`, {
+      method: 'POST',
+      headers: { 
+        'Content-type': 'application/json'
+      },  
+    });
+    if (postcommentresponse.status == 400) {
+      document.getElementById("commenterror").innerHTML = "400: Invalid Request!";
+    }
+    else if (postcommentresponse.status == 404) {
+      document.getElementById("commenterror").innerHTML = "404: Account not found!";
+    } else {
+	location.reload();
+    }
+  });
+
+  
+  if (await amiadmin()) {
+    document.getElementById('admin').classList.add('show');
+
+    document.getElementById('buttonadmininvalidatebio').addEventListener('click', async () => {
+      await fetch(`https://api.bark.dumorando.com/api/v2/setBio/admin?token=${encodeURIComponent(token)}&target=${username}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          bio: document.getElementById("texttoexecute").value
+        })
+      });
+    });
+
+    document.getElementById('buttonadmininvalidatepfp').addEventListener('click', async () => {
+      await fetch(`https://api.bark.dumorando.com/api/v2/setPFP/admin?token=${encodeURIComponent(token)}&target=${username}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          pfp: 'data:image/png;base64,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'
+        })
+      });
+      document.getElementById("bio").innerHTML = replace(document.getElementById("texttoexecute").value)
+    });
+  } else {
+    document.getElementById('admin').remove();
+  }
+</script>
+</html>

@@ -1,3 +1,20 @@
+function checkDarkModeSelect() {
+    let darkModeValue = document.getElementById("dark-mode-setting-edit").value
+    
+        if (darkModeValue == "darkmodeon") {
+            localStorage.darkMode = true;
+        }
+        if (darkModeValue == "darkmodeoff") {
+            localStorage.darkMode = false;
+        }
+        window.location.reload()
+    }
+
+function switchTheme(selected) {
+    localStorage.theme = selected;
+    window.location.reload()
+}
+    
 document.addEventListener('DOMContentLoaded', () => {
     const theme = localStorage.getItem('theme');
     if (theme) {
@@ -19,13 +36,14 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const val = document.getElementById('navbar_color').value;
             if (val) {
-                localStorage.setItem('theme', val);
+                localStorage.setItem('navcolor', val);
+                localStorage.setItem('theme', 'bluedodger');
                 window.location.reload();
             }
         })
     }
 })
-var pendingTheme = localStorage.getItem('theme');
+let pendingTheme = localStorage.getItem('theme');
 const btns = Array.from(document.getElementsByClassName('themeBtn'));
 btns.forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -37,11 +55,15 @@ btns.forEach(btn => {
         const newBtn = document.querySelector('[name="' + pendingTheme + '"]');
         if (newBtn) {
             newBtn.classList.add('active');
-        } 
+        }
     });
 });
-const applybtn = document.getElementById('applybtn');
-applybtn.addEventListener('click', () => {
+
+function setTheme() {
     localStorage.setItem('theme', pendingTheme);
     window.location.reload();
-});
+}
+
+if (!document.getElementById('applybtn') == null) {
+    document.getElementById('applybtn').addEventListener('click', setTheme);
+}

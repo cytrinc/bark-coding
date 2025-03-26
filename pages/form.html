@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mod Form</title>
+    <style>
+        @font-face {
+            font-family: ipix;
+            src: url(/src/fonts/Ipix.ttf);
+        }
+
+        body {
+            background-color: white;
+            font-family: ipix;
+        }
+    </style>
+</head>
+<body>
+    <input placeholder="Username..." id="username">
+    <br/>
+    <br/>
+    <input placeholder="Discord Username..." id="discord-username">
+    <br/>
+    <br/>
+    <textarea id="reason" placeholder="Enter why you want to be mod..." cols="50" rows="8"></textarea>
+    <br/>
+    <p>If someone is breaking a rule, what will you do?</p>
+    <select>
+        <option>-- Please select an option --</option>
+        <option value="ttt">Tell the team</option>
+        <option value="iu">Invalidate user</option>
+        <option value="mu">Mute user</option>
+    </select>
+    <p>You will understand if you get demoted because you weren't doing your job?</p>
+    Yes:<input type="checkbox" id="understand">
+    <br/>
+    <br/>
+    <button>Submit</button>
+</body>
+</html>

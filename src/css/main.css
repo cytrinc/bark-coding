@@ -1,0 +1,51 @@
+@keyframes y-glow {
+  0% {box-shadow: 0px 0px 5px gold;}
+  50% {box-shadow: 0px 0px 15px yellow;}
+  100% {box-shadow: 0px 0px 5px gold;}
+}
+
+@keyframes b-glow {
+  0% {box-shadow: 0px 0px 5px cyan;}
+  50% {box-shadow: 0px 0px 25px cyan;}
+  100% {box-shadow: 0px 0px 5px cyan;}
+}
+
+.dark-mode .special {
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+
+.special {
+    text-decoration: underline;
+}
+
+button.danger {
+  background-color: red;
+  color: white;
+}
+
+button.danger:hover {
+  background-color: maroon;
+}
+
+button.followButton:hover {
+  animation-name: y-glow;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+button.glow {
+  animation-name: b-glow;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+canvas {
+  border: 1px solid black;
+  background-color: white;
+}
+
+abbr {
+  cursor: help;
+}

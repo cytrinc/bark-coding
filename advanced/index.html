@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bark Advanced Editor</title>
+	<link rel="shortcut icon" href="https://bark.dumorando.com/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/advanced/style.css">
+	<link rel="stylesheet" type="text/css" href="/src/css/colors.css">
+</head>
+<body>
+	<div class="navbar">
+		<a href="https://bark.dumorando.com"><img src="https://bark.dumorando.com/src/images/logos/normal.png" alt="Bark" width="25" height="25"></a>
+		<a href="#" onclick="alert('You can\'t download projects yet! :(');" id="downloadbutton" onclick="downloadproject();" title="download project to your computer.">Download</a>
+		<input type="file" id="fileInput" style="display: none;" onchange="loadWorkspaceFromFile(this.files[0])" />
+		<a href="#" onclick="openFileInput();" title="open a saved project">Open</a>
+		<a  href="https://bark.dumorando.com/docs#/Advanced%20editor" >Documentation</a>
+	</div>
+
+	<div id="code-tab">
+		<textarea id="code" spellcheck="false">let dog = new sprite("dog", 0, 0, 100); <br/>dog.draw();<br/><br/>// draws a dog on the stage</div>
+		<button class="codezooming" onclick="zoomout()" title="zoom out">-</button>
+		<button class="codezooming" onclick="zoom()" style="bottom: 30px;" title="zoom in">+</button>
+		<button class="codezooming" onclick="resetzoom()" style="bottom: 60px;" title="reset zoom">=</button>
+		<button id="zi" class="codezooming" onclick="document.getElementById('code').focus()" style="bottom: 90px; font-size: 18px; border-top-right-radius: 7px; cursor: default; background-color: #00000056;">12</button>
+	</textarea>
+	<div id="programplayer" style="height: calc(100vh - 40px); width: 700px; position: absolute; right: 0;">
+		<button class="programtoolbar" title="stop"><img src="/src/projecttoolbar/stop.svg"></button>
+		<button class="programtoolbar" title="pause"><img src="/src/projecttoolbar/pause.svg"></button>
+		<button class="programtoolbar" title="start" id="start"><img src="/src/projecttoolbar/run.svg"></button>
+		<iframe frameborder="0" sandbox="allow-scripts" id="stage" src="/advanced/canvas.html"></iframe>
+	</div>
+	<div id="blur-overlay"></div>
+	<div id="notification">
+		<h3>looks like you're trying to delete a lot of code! (<span id="notiflettercount"></span> characters)</h3><br>
+		<div id="notifpreview"></div>
+		<p>are you sure? (this action <span style="color: #ff6b6b; font-weight: 1000;">cannot</span> be undone!)</p>
+		<button class="button" style="background-color: #d8d4e7;" onclick="closenotif()">no, keep</button><button class="button" style="background-color: #ff6b6b;" onclick="deleteselection()">yes, delete</button>
+		<p style="font-size: 13px;">hint: to bypass this notification in the future, use ctrl+backspace.</p>
+	</div>
+
+	<script src="/advanced/script.js"></script>
+</body>
+</html>

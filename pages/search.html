@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bark - Search</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/png">
+</head>
+
+<body>
+  <!-- inject:navbar -->
+  
+  <h1><span id="header"></span></h1>
+  <p>Sorry, but searching projects don't work yet :(</p>
+
+  <!-- inject:footer -->
+</body>
+<script>
+  let q = new URLSearchParams(location.search).get("q".toString()) || "";
+  document.title = 'Bark Search - ' + q;
+  document.getElementById('header').innerHTML += q;
+</script>
+<script src="/index.js"></script>
+
+</html>

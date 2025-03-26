@@ -1,0 +1,24 @@
+{
+    "welcome": "مرحبًا!",
+    "barkfromblockly": "بارك هي لغة برمجة مبنية على مكتبة جوجل <i>Blockly</i>.",
+    "barkinspiredscratch": "بارك مستوحى من <a class='link' href='https://scratch.mit.edu'>Scratch</a>.",
+    "createdby": "تم الإنشاء بواسطة <a href='https://github.com/mariocraft987'>mariocraft987</a> والعديد من <a href='/contributors'>المساهمين</a> الرائعين!",
+    "whatsnew": "ما الأخبار",
+    "nothingyet": "ليس هناك شيء ...",
+    "recentcommitsbutton": "أخبار بناء الموقع",
+    "petmascot": "العب معه!",
+    "checkeditor": "وبعد ذلك يمكنك الاطلاع على <a href='https://bark.dumorando.com/editor/'>المحرر</a>!",
+    "fromcountries": "الزوار من بلدان أخرى",
+    "donatebutton": "صفحة الطبرع",
+    "fetchingloading": "تحميل أحدث أخبار",
+    "pleasewaitloading": "من فضلك انتظر",
+    "nocommits": "<h2>عفوًا... :(</h2><p>فشل تحميل الالتزامات. تحقق من اتصالك وحاول مرة أخرى.</p>",
+    "projectsdisclaimer": "مشاريع بارك غير موجودة بعد.. يرجى التحلي بالصبر.",
+    "needideas": "هل تحتاز لأفكار؟",
+    "workingprog": "هذه الصفحة تحت الإنشاء",
+    "newblocks": "أحدث تقنيات بارك",
+    "selecttheme": "حدد موضوعًا:",
+    "warninglang": "هذه الميزة قيد التقدم.",
+    "langnotwork": "قد لا تعمل بعض الميزات"
+  }
+  

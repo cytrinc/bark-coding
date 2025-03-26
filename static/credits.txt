@@ -1,0 +1,19 @@
+CREDITS:
+
+PROGRAMMERS
+AtomicBolts (mariocraft987)
+Breakfast for Dinner (qwertyytheartist)
+Dumorando
+Rubiidev
+Nmsderp
+Bashagama
+Steve0Greatness
+
+
+EXTENSIONS
+Futestamo
+
+
+EXTRA CREDITS
+Google's Blockly
+Github

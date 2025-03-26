@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="/documentation/docsify/theme/theme.css"
+    />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      window.$docsify = {
+        basePath: '/documentation/content/',
+        icon: 'https://bark.dumorando.com/favicon',
+        name: 'Bark Coding Docs',
+        loadSidebar: true,
+        alias: {
+        '/.*/_sidebar.md': '/documentation/content/_sidebar.md'
+        }
+      };
+      const theme = localStorage.getItem('theme');
+      let color;
+      switch (theme.toLocaleLowerCase()) {
+        case "pranidhi":
+          color = "#c95757";
+          break;
+        case "cherryblossom":
+          color = "#ff66bb";
+          break;
+        case "shelledgastropod":
+          color = "purple";
+          break;
+        default:
+          color = "dodgerblue";
+          break;
+      }
+      document.body.style = `--theme-color:${color}`
+    </script>
+    <script src="/documentation/docsify/index.js"></script>
+  </body>
+</html>

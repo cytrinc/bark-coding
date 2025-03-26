@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bark - Login</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta name="title" content="Bark coding - Login">
+  <meta name="description" content="Bark is a programming language building off of Google's Blockly.">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bark.dumorando.com/">
+  <meta property="og:title" content="Bark coding - Login">
+  <meta property="og:description" content="Bark is a programming language building off of Google's Blockly.">
+  <meta property="og:image" content="https://bark.dumorando.com/src/images/Logo.svg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://bark.dumorando.com/">
+  <meta property="twitter:title" content="Bark coding - Login">
+  <meta property="twitter:description" content="Bark is a programming language building off of Google's Blockly.">
+  <meta property="twitter:image" content="https://bark.dumorando.com/src/images/Logo.svg">
+  
+  <!-- Optional Meta Tags -->
+  <meta name="keywords" content="coding, blockly, block coding, bark coding">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content=" days">
+  <meta name="author" content="mariocraft">
+</head>
+
+<body>
+
+  <!-- inject:navbar -->
+  <center>
+    <h1 class="text-center">Sign in</h1>
+      <div class="form-group"> <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="username" required>
+      </div>
+      <br />
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="password" required>
+        <br/>
+        <label for="showhidepw">Show password:</label>
+        <input id="showhidepw" name="showhidepw" type="checkbox" onclick="showandhidepw()">
+      </div>
+      <br />
+      <div class="text-center">
+        <button class="buttonFrBx" id="loginbutton" onclick="login()">Login</button>
+      </div>
+    <p id="err" style="color: red;"></p>
+    <p id="feedback"></p>
+  </center>
+
+  <!-- zepto cuz i got tired of doing dom stuff -->
+  <script src="/index.js"></script>
+  <script>
+
+function showandhidepw() {
+    if (document.getElementById("showhidepw").checked) {
+        document.getElementById("password").type = "text";
+    } else {
+        document.getElementById("password").type = "password";
+    }
+  }
+
+    async function login() {
+      document.querySelector('#feedback').innerText = 'logging in..';
+      document.querySelector('#err').innerText = "";
+      let username = document.getElementById('username').value;
+      let password = document.getElementById('password').value;
+      const response = await fetch(`https://api.bark.dumorando.com/api/v2/login?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`, {
+        method: 'POST'
+      });
+      const data = await response.json();
+      if (data.error || !data.token) {
+        document.querySelector('#err').innerText = data.error;
+      } else {
+        localStorage.setItem('myBarkUsername', username);
+        localStorage.setItem('barktoken', data.token);
+        window.location.replace("/");
+      }
+    };
+  </script>
+</body>
+
+</html>
