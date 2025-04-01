@@ -266,15 +266,23 @@ document.addEventListener("click", closeAllSelect);
 
 // check if afd, then run script
 if (new Date().getMonth() === 3 && new Date().getDate() === 1) {
-    document.getElementById("flip-it-afd-btn")?.addEventListener("click", function () {
+
+  var existCondition = setInterval(function() {
+ if ($('#flip-afd-btn').length) {
+  
+    document.getElementById("flip-it-afd-btn").addEventListener("click", function () {
         document.body.classList.toggle("afd-upside-down");
         localStorage.setItem("flip-it-afd", document.body.classList.contains("afd-upside-down"));
     })
+  
     window.addEventListener("load", function () {
         if (localStorage.getItem("flip-it-afd") == "true") {
             this.document.body.classList.add("afd-upside-down");
         }
     })
+
+    }
+}, 100); 
   }
 
 console.log("-----------------------------------------");
