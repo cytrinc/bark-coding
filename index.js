@@ -85,7 +85,7 @@ function CheckLoggedIn() {
 }
 CheckLoggedIn();
 
-if (document.getElementById("flip-it-afd-btn") != null)
+if (document.getElementById("flip-it-afd-btn") != null) {
 if (new Date().getMonth() === 3 && new Date().getDate() === 1) {
     document.getElementById("flip-it-afd-btn").addEventListener("click", function () {
         document.body.classList.toggle("afd-upside-down");
