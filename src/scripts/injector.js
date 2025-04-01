@@ -13,7 +13,7 @@ let afdbtn = new Date().getMonth() === 3 && new Date().getDate() === 1 ? "<a id=
 const components = {
     //navbar
     "navbar": `
-    <div id="navbar" class="navbar"><a href="/"><img id="bark_logo" src="/src/images/logos/normal.png" alt="Bark" title="Home" width="25" height="25" onclick="location.href = 'https://www.youtube.com/watch?v=gtSBzXEI7Ko';"></a>
+    <div id="navbar" class="navbar" onclick="location.href = 'https://www.youtube.com/watch?v=gtSBzXEI7Ko';><a href="/"><img id="bark_logo" src="/src/images/logos/normal.png" alt="Bark" title="Home" width="25" height="25""></a>
     <a href="/create">Create</a>
     <a href="/explore">Explore</a>
     <a href="/about">About</a>
