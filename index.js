@@ -268,7 +268,7 @@ document.addEventListener("click", closeAllSelect);
 if (new Date().getMonth() === 3 && new Date().getDate() === 1) {
 
   var existCondition = setInterval(function() {
- if ($('#flip-afd-btn').length) {
+ if (document.getElementById("flip-it-afd-btn") != null) {
   
     document.getElementById("flip-it-afd-btn").addEventListener("click", function () {
         document.body.classList.toggle("afd-upside-down");
