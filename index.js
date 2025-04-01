@@ -85,20 +85,6 @@ function CheckLoggedIn() {
 }
 CheckLoggedIn();
 
-if (document.getElementById("flip-it-afd-btn") != null) {
-if (new Date().getMonth() === 3 && new Date().getDate() === 1) {
-    document.getElementById("flip-it-afd-btn").addEventListener("click", function () {
-        document.body.classList.toggle("afd-upside-down");
-        localStorage.setItem("flip-it-afd", document.body.classList.contains("afd-upside-down"));
-    })
-    window.addEventListener("load", function () {
-        if (localStorage.getItem("flip-it-afd") == "true") {
-            this.document.body.classList.add("afd-upside-down");
-        }
-    })
-  }
-}
-
 function whatsNew() {
   if (location.pathname !== "/")
     return;
@@ -276,6 +262,18 @@ function closeAllSelect(elemnt) {
   }
 }
 document.addEventListener("click", closeAllSelect);
+
+if (new Date().getMonth() === 3 && new Date().getDate() === 1) {
+    document.getElementById("flip-it-afd-btn").addEventListener("click", function () {
+        document.body.classList.toggle("afd-upside-down");
+        localStorage.setItem("flip-it-afd", document.body.classList.contains("afd-upside-down"));
+    })
+    window.addEventListener("load", function () {
+        if (localStorage.getItem("flip-it-afd") == "true") {
+            this.document.body.classList.add("afd-upside-down");
+        }
+    })
+  }
 
 console.log("-----------------------------------------");
 console.log("All scripts were ran successfully!")
