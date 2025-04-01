@@ -263,8 +263,10 @@ function closeAllSelect(elemnt) {
 }
 document.addEventListener("click", closeAllSelect);
 
+
+// check if afd, then run script
 if (new Date().getMonth() === 3 && new Date().getDate() === 1) {
-    document.getElementById("flip-it-afd-btn").addEventListener("click", function () {
+    document.getElementById("flip-it-afd-btn")?.addEventListener("click", function () {
         document.body.classList.toggle("afd-upside-down");
         localStorage.setItem("flip-it-afd", document.body.classList.contains("afd-upside-down"));
     })
