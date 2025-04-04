@@ -246,13 +246,14 @@
   const bio = document.getElementById('bio');
   bio.innerHTML = replace(data.bio);
 
+  if (["breakfast", "dumo"].includes(username)) {
+    document.getElementById('username').outerHTML += "<admin-pin>Retired</admin-pin>";
+  }
+	
   if (await isuseradmin(username)) {
     document.getElementById('username').outerHTML += "<admin-pin>Bark team<img title='This user is apart of the Bark Team!' src='/src/images/assets/other/wrench.png' width='17' style='image-rendering: pixelated; opacity: 0.5;'></admin-pin>";
     document.getElementById('username').style.color = "#ffa70f";
-  }
-
-  if (["breakfast", "dumo"].includes(username)) {
-    document.getElementById('username').outerHTML += "<admin-pin>Retired</admin-pin>";
+    document.getElementById('username') += "✓"
   }
 
   setup_badges(username);
