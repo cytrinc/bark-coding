@@ -253,7 +253,7 @@
   if (await isuseradmin(username)) {
     document.getElementById('username').outerHTML += "<admin-pin>Bark team<img title='This user is apart of the Bark Team!' src='/src/images/assets/other/wrench.png' width='17' style='image-rendering: pixelated; opacity: 0.5;'></admin-pin>";
     document.getElementById('username').style.color = "#ffa70f";
-    document.getElementById('username').innerHTML += "✓"
+    document.getElementById('username').innerHTML += '<span style="font-size: 20pt;">✓</span>';
   }
 
   setup_badges(username);
