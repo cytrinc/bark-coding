@@ -251,6 +251,10 @@
     document.getElementById('username').style.color = "#ffa70f";
   }
 
+  if (["breakfast", "dumo"].includes(username)) {
+    document.getElementById('username').outerHTML += "<admin-pin>Retired</admin-pin>";
+  }
+
   setup_badges(username);
 
   fetch(`https://api.bark.dumorando.com/api/v2/profileComments?username=${username}`)
