@@ -156,6 +156,7 @@ input {
   padding: 6px 15px;
   font-size: 15px;
   border: none;
+  width: 300px;
   color: #000000 !important;
   background-color: rgb(120, 188, 255) !important;
   border-radius: 100px;
