@@ -82,7 +82,7 @@
     <button class="buttonFrBx" onclick='window.location = "https://bark.dumorando.com/settings/profile"'>Edit your profile?</button>
    </div>
 
-  <div class="box">
+   <div class="box">
     <span id="boxChanger">
       <h2 class="whatsnew">Whats New?</h2>
       <p class="nothingyet">Nothing yet..</p>
@@ -90,6 +90,30 @@
     <button class="buttonFrBx whatsnew" onclick="whatsNew()" >Whats new?</button>
     <button class="buttonFrBx recentcommitsbutton" onclick="recentCom()" >Recent commits</button>
     <button class="buttonFrBx" onclick="Todo()" >Todo list</button>
+  </div>
+
+  <div class="box">
+
+    <!-- elements on the left -->
+     <span style="float:left;">
+    <iframe width="280" height="160" src="https://www.youtube.com/embed/OmJAIourvDI?si=Phe9fc7XcRbENm1e"
+      title="YouTube video player" frameborder="0" referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+    </span>
+    
+
+    <!-- elements on the right -->
+    <span style="float:right;">
+     <b>What Bark has to offer</b>
+     <ol>
+      <li>A small coding community.</li>
+       <li>Bark is <abbr title="The code source is viewable by other people outside the developer team.">open-sourced</abbr>!!</li>
+       <li>A <i>custom</i> Javascript editor</li>
+       <li>A <i>custom</i> Blockly editor</li>
+      <li>No doubleclick ads or PUPs!</li>
+     </ol>
+    </span>
+
   </div>
   
 
@@ -136,7 +160,6 @@
 
   if (localStorage.myBarkUsername) {
     document.getElementById("usernameforprofilebox").innerHTML = `<a href="/profile/${localStorage.myBarkUsername}">${localStorage.myBarkUsername}</a>`;
-    document.getElementById("welcome").remove();
   } else {
     document.getElementById("profilebox").remove();
   }
