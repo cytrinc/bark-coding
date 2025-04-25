@@ -65,7 +65,6 @@
   
   <center>
     <p>Note: this website is under development; therefore, some features may not work.</p>
-      <a href="https://github.com/cytrinc/bark-coding/discussions/280">Github Announcement</a>
   </center>
 
   <!--
@@ -179,7 +178,7 @@
 <script>
 
   if (localStorage.myBarkUsername) {
-    document.getElementById("usernameforprofilebox").innerHTML = localStorage.myBarkUsername;
+    document.getElementById("usernameforprofilebox").innerHTML = `<a href="/profile/${localStorage.myBarkUsername}">${localStorage.myBarkUsername}</a>`;
     document.getElementById("welcome").remove();
   } else {
     document.getElementById("profilebox").remove();
