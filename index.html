@@ -81,9 +81,6 @@
     <h3><span id="wussup_msg">Whats new,</span> <span id="usernameforprofilebox">fellow user</span>?</h3>
     <button class="buttonFrBx" onclick='window.location = "https://bark.dumorando.com/settings/profile"'>Edit your profile?</button>
    </div>
-  <div class="box">
-    <h2 class="welcome" id="welcome">Welcome!</h2>
-
 
   <div class="box">
     <span id="boxChanger">
@@ -93,20 +90,6 @@
     <button class="buttonFrBx whatsnew" onclick="whatsNew()" >Whats new?</button>
     <button class="buttonFrBx recentcommitsbutton" onclick="recentCom()" >Recent commits</button>
     <button class="buttonFrBx" onclick="Todo()" >Todo list</button>
-  </div>
-  <div class="box">
-    <h3 class="petmascot">Our mascot!</h3>
-    <p class="checkeditor">This is the Bark Dog</p>
-    <!--
-      <button
-      style="background: none;background-image: url(src/images/dog/idle.svg);width: 73px;height: 96px;cursor: grab;background-size: cover;border: none;transition: 0.1s;"
-      alt="Bark Dog" onclick="this.style.backgroundImage = 'url(src/images/dog/happy.svg)';"
-      onmouseleave="this.style.backgroundImage = 'url(src/images/dog/umm.svg)';"></button>
-    -->
-    <div class="dogcage">
-      <button id="dog" style="background: none;width: 73px;height: 96px;cursor: grab;background-size: cover;border: none;" alt="Bark Dog"></button>
-    </div>
-    <p id="loadingdog">Loading..</p>
   </div>
   
 
@@ -176,6 +159,12 @@
     element.style.backgroundImage = `url(${url})`;
   }
 
+  /*
+      <div class="dogcage">
+      <button id="dog" style="background: none;width: 73px;height: 96px;cursor: grab;background-size: cover;border: none;" alt="Bark Dog"></button>
+    </div>
+    <p id="loadingdog">Loading..</p>
+  */
   async function setupDog() {
     const idleblob = await fetch("/src/images/dog/idle.svg").then(data => data.blob());
     const happyblob = await fetch("/src/images/dog/happy.svg").then(data => data.blob());
