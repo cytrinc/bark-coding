@@ -13,14 +13,13 @@ html:has(.dark-mode) {
 body {
   font-family: Arial, Helvetica, "Bazin", sans-serif;
   background-color: White;
-  background-image: url("https://web.archive.org/web/20091027045239/http://hk.geocities.com/hogsmeadehk/backgroundstar.gif");
-  color: white;
   font-weight: 450;
   margin: 0;
 }
 
 .dark-mode {
   background-color: rgb(29, 29, 29);
+  background-image: url("https://web.archive.org/web/20091027045239/http://hk.geocities.com/hogsmeadehk/backgroundstar.gif");
   color: #ffffff;
 }
 
@@ -68,8 +67,7 @@ body {
   font-size: 17px;
   text-align: center;
   outline: none;
-  /* color: #1b007a; */
-  color: white;
+  color: #1b007a;
   border-radius: 5px;
   background-color: rgb(0, 127, 255, 0.24);
   margin-top: 15px;
