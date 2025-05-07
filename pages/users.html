@@ -102,12 +102,16 @@
       aspect-ratio: 1/1;
       width: 60px;
     }
+
+    .joke {
+      color: magenta;
+    }
   </style>
   <body>
     <!-- inject:navbar -->
     <div class="box">
       <h1>All users registered on Bark</h1>
-      <p id="amountofusers">Loading... What grade are dogs are in?</p>
+      <p id="amountofusers">Loading... <span class="joke">Why did the dog get scared of the tree?</span></p>
       <div id="usercontainer"></div>
     </div>
     <!-- inject:footer -->
@@ -144,6 +148,6 @@
       container.append(userContainer);
     });
 
-    container.outerHTML += "<br/><p>Most dogs are in K9!</p>"
+    container.outerHTML += "<br/><p><span class='joke'>The tree barked!</span></p>"
   </script>
 </html>
