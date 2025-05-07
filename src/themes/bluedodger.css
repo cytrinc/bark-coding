@@ -67,7 +67,8 @@ body {
   font-size: 17px;
   text-align: center;
   outline: none;
-  color: #1b007a;
+  /* color: #1b007a; */
+  color: white;
   border-radius: 5px;
   background-color: rgb(0, 127, 255, 0.24);
   margin-top: 15px;
