@@ -295,7 +295,7 @@ function addOption(text, value, elm) {
 
 setTimeout(function(){
     addOption("Español", "es", "lang-select"); 
-}, 2000);
+}, 200);
 
 console.log("-----------------------------------------");
 console.log("All scripts were ran successfully!")
