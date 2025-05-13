@@ -293,9 +293,9 @@ function addOption(text, value, elm) {
   document.getElementById(elm).add(option);
 }
 
-if (document.getElementById("lang-select")) {
-  addOption("Español", "es", "lang-select")
-}
+setTimeout(function(){
+    addOption("Español", "es", "lang-select"); 
+}, 2000);
 
 console.log("-----------------------------------------");
 console.log("All scripts were ran successfully!")
