@@ -10,10 +10,21 @@ switch (localStorage.language) {
     case "en": 
         // because english is the default language DUH!!
         break;
-    case "uwu":     
-        documentReplaceWord(false, "Wussup", "hi");
-        documentReplaceWord(true, "barkfromblockly", "bark added to blocky");
-        documentReplaceWord(true, "barkinspiredscratch", "bark amazed by scratch");
-        documentReplaceWord(true, "createdby", "create by me and other people");
+    case "uwu":  
+        // test thingy   
+        break;
+    case "ar":     
+        break;
+    case "ch":     
+        break;
+    case "es":     
+        break;
+    case "fr":     
+        break;
+    case "it":     
+        break;
+    case "ja":     
+        break;
+    case "pt":     
         break;
 }

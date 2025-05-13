@@ -11,6 +11,14 @@ toevaluate.forEach(path => {
     });
 });
 
+// add option function
+function addOption(text, value, elm) {
+  var option = document.createElement("option");
+  option.text = text;
+  option.value = value;
+  elm.add(option);
+}
+
 if (document.URL == "https://bark.dumorando.com/profile/" || document.URL == "https://bark.dumorando.com/profile") {
   window.location.href = "https://bark.dumorando.com/users";
 }
@@ -284,6 +292,10 @@ if (new Date().getMonth() === 3 && new Date().getDate() === 1) {
     }
 }, 100); 
   }
+
+if (document.getElementById("lang-select")) {
+  addOption("Español", "es", document.getElementById("lang-select"))
+}
 
 console.log("-----------------------------------------");
 console.log("All scripts were ran successfully!")
