@@ -48,7 +48,7 @@ const components = {
     <p style="font-size: 9pt; color: #777;">© 2023-2025 Bark Coding<br/>
     Even though this project is hosted on a dumorando.com domain, this project is barely affiliated with dumorando.</p>
     <select>
-        <option value="en">English</option>
+        <option value="en" id="lang-select">English</option>
     </select>
     </footer>
     `
