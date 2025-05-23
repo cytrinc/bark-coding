@@ -71,13 +71,15 @@
       padding: 10px;
       width: 190px;
       display: flex;
+      float: left;
     }
 
-    .flair .near {
+    .near {
       border: 1px solid black;
       background-color: rgb(168, 168, 168);
       height: auto;
       width: 40px;
+      float: left;
       display: flex;
     }
   </style>
@@ -106,7 +108,10 @@
     <div class="box2" style="float: right; overflow: auto; height: 180px;">
       <h2>Flair</h2>
       <!--<p>In progress... </p>-->
-      <div class="near">Bruh</div><div class="flair">Hi :)</div>
+      <div>
+        <div class="near">Bruh</div>
+        <div class="flair">Hi :)</div>
+      </div>
     </div>
 
   </div>
