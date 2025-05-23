@@ -65,12 +65,15 @@
     }
 
     .flair {
+      display: flex;
+    }
+
+    .inner {
       border: 1px solid black;
       background-color: lightgray;
       color: black;
       padding: 10px;
       width: 190px;
-      display: flex;
     }
 
     .near {
@@ -78,8 +81,6 @@
       background-color: rgb(168, 168, 168);
       height: auto;
       width: 40px;
-      float: left;
-      display: flex;
     }
   </style>
 </head>
@@ -107,9 +108,9 @@
     <div class="box2" style="float: right; overflow: auto; height: 180px;">
       <h2>Flair</h2>
       <!--<p>In progress... </p>-->
-      <div>
-        <div class="near">Bruh</div>
-        <div class="flair">Hi :)</div>
+      <div class="flair">
+        <div class="near">Random thingy</div>
+        <div class="inner">This user is the best!</div>
       </div>
     </div>
 
