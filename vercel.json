@@ -130,7 +130,7 @@
     },
     {
       "source": "/contact",
-      "destination": "/contact"
+      "destination": "/pages/contact"
     }
   ]
 }
