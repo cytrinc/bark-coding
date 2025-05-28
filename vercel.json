@@ -127,6 +127,10 @@
     {
       "source": "/reportuser/:username",
       "destination": "/pages/reportuser.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact"
     }
   ]
 }
