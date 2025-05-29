@@ -40,7 +40,7 @@ body {
   display: block;
   color: white;
   text-align: left;
-  padding: 20px 15px;
+  padding: 24px 16px;
   text-decoration: none;
   height: calc(100% - 20px);
   line-height: 25px;
@@ -159,7 +159,7 @@ input {
   border: none;
   width: 100px;
   color: #000000 !important;
-  background-color: rgb(120, 188, 255) !important;
+  background-color: #0eaf9b !important;
   border-radius: 100px;
   flex: 1 0 auto;
 }
