@@ -107,7 +107,7 @@ input {
 }
 
 .dropdown-content {
-  background-color: dodgerblue;
+  background-color: #1ebc73;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   padding: 20px;
@@ -122,7 +122,7 @@ input {
 }
 
 .dropdown-content a:hover {
-  background-color: rgb(21, 95, 169);
+  background-color: #239063;
 }
 
 .buttonFrBx {
@@ -410,7 +410,7 @@ footer {
 /*style items (options):*/
 .select-items {
   position: absolute;
-  background-color: #1ebc73;
+  background-color: DodgerBlue;
   top: 100%;
   left: 0;
   right: 0;
