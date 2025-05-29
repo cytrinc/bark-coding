@@ -1,1 +1,0 @@
-let ctx = document.getElementById("game1").getContext("2d");

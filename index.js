@@ -161,12 +161,12 @@ function InitTheme() {
 
     const link = document.createElement('link');
     link.rel = "stylesheet";
-    link.href = `/src/themes/bluedodger.css`;
+    link.href = `/src/themes/spink.css`;
       
     document.head.append(link);
 
     if (isSafari) {
-        document.getElementsByTagName('head')[0].innerHTML += "<link rel='stylesheet' href='/src/themes/bluedodger.css'>";
+        document.getElementsByTagName('head')[0].innerHTML += "<link rel='stylesheet' href='/src/themes/spink.css'>";
     } else {
       document.head.append(link);
     }
