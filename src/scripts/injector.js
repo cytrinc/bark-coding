@@ -46,7 +46,7 @@ const components = {
     <a href="https://bark.dumorando.com/docs">Docs</a>
     <a href="/users">Users</a></p>
     <p style="font-size: 9pt; color: #777;">© 2023-2025 Bark Coding<br/>
-    Even though this project is hosted on a dumorando.com domain, this project is barely affiliated with dumorando.</p>
+    Even though this project is hosted on a dumorando.com domain, this project is not affiliated with dumorando anymore.</p>
     <select id="lang-select">
         <option value="en">English</option>
     </select>
