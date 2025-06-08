@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <title>Bark Blockly Editor</title>
-    <link rel="shortcut icon" href="https://bark-coding.vercel.app/favicon.ico">
+    <link rel="shortcut icon" href="https://bark.dumorando.com/favicon.ico">
     <script src="https://unpkg.com/blockly/blockly.min.js"></script>
-    <script src="https://bark-coding.vercel.app/editor_new/p5.min.js"></script>
-    <script src="https://bark-coding.vercel.app/editor_new/sketch.js"></script>
+    <script src="https://bark.dumorando.com/editor_new/p5.min.js"></script>
+    <script src="https://bark.dumorando.com/editor_new/sketch.js"></script>
     
     <script src="custom_category_es6.js"></script>
     <script src="toolbox_label_es6.js"></script>
-    <link rel="stylesheet" lang="css" href="https://bark-coding.vercel.app/src/themes/bluedodger.css">
+    <link rel="stylesheet" lang="css" href="https://bark.dumorando.com/src/themes/bluedodger.css">
     <style>
       @import url(https://fonts.googleapis.com/css?family=Montserrat);
       html,
@@ -154,7 +154,7 @@
     <div id="costumeseditordiv" class="tabpage">
       <h1>Upload costume</h1>
       <input type='file' accept='image/*' id="fileupload" onchange='openFile(event)'><br>
-      <img id='costume' style="width:70px;" src="https://bark-coding.vercel.app/src/images/dog/idle.svg">
+      <img id='costume' style="width:70px;" src="https://bark.dumorando.com//src/images/dog/idle.svg">
     </div>
                                   <!-- Sounds Tab -->
     <div id="soundseditordiv" class="tabpage">
@@ -167,7 +167,7 @@
         
     <div id="extensionseditordiv" class="tabpage">
         <h1>Choose An Extension</h1>
-          <img src="https://bark-coding.vercel.app/src/images/assets/extension_sine.png" alt="Sine Extension" title="Sine (created by nmsderp)" style="cursor: pointer">
+          <img src="https://bark.dumorando.com//src/images/assets/extension_sine.png" alt="Sine Extension" title="Sine (created by nmsderp)" style="cursor: pointer">
         <h3>Or Upload a Extension to use.</h3>
       <input type="file" accept='.js' id="upload">
       
@@ -180,10 +180,10 @@
     </div>
     <div id="projectPlayer">
         <div id="projectToolbar">
-          <img class="projectToolbarButton" style="cursor:pointer;" src="https://bark-coding.vercel.app/src/projecttoolbar/run.svg" width="10" onclick="run_code();">
-          <img class="projectToolbarButton" style="cursor:pointer;" src="https://bark-coding.vercel.app/src/projecttoolbar/pause.svg">
-          <img class="projectToolbarButton" style="cursor:pointer;" src="https://bark-coding.vercel.app/src/projecttoolbar/stopped.svg">
-          <img class="projectToolbarButton" src="https://bark-coding.vercel.app/src/projecttoolbar/maximize.svg" onclick="toggleFullscreen();" style="position: absolute; right: 0; cursor: pointer;">
+          <img class="projectToolbarButton" style="cursor:pointer;" src="https://bark.dumorando.com/src/projecttoolbar/run.svg" width="10" onclick="run_code();">
+          <img class="projectToolbarButton" style="cursor:pointer;" src="https://bark.dumorando.com/src/projecttoolbar/pause.svg">
+          <img class="projectToolbarButton" style="cursor:pointer;" src="https://bark.dumorando.com/src/projecttoolbar/stopped.svg">
+          <img class="projectToolbarButton" src="https://bark.dumorando.com/src/projecttoolbar/maximize.svg" onclick="toggleFullscreen();" style="position: absolute; right: 0; cursor: pointer;">
         </div>
         <div id="stage-container"></div>
     </div>
@@ -588,7 +588,7 @@
   init: function() {
     this.appendDummyInput()
         .appendField("when")
-        .appendField(new Blockly.FieldImage("https://bark-coding.vercel.app/src/projecttoolbar/run.svg", 25, 25, { alt: "*", flipRtl: "FALSE" }))
+        .appendField(new Blockly.FieldImage("https://bark.dumorando.com/src/projecttoolbar/run.svg", 25, 25, { alt: "*", flipRtl: "FALSE" }))
         .appendField("clicked");
     this.appendStatementInput("start")
         .setCheck(null);
@@ -866,5 +866,5 @@ Blockly.Blocks['fetch'] = {
     </script>
   </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://bark-coding.vercel.app/index.js"></script>
+    <script src="/index.js"></script>
 </html>
