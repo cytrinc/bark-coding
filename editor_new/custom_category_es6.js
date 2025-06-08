@@ -41,7 +41,7 @@ class CustomCategory extends Blockly.ToolboxCategory {
         this.rowDiv_.style.backgroundColor = 'white';
         // Set the colour of the text to the colour of the category.
         labelDom.style.color = this.colour_;
-        this.iconDom_.style.color = this.colour_;
+        //    this.iconDom_.style.color = this.colour_;
       } else {
         // Set the background back to the original colour.
         this.rowDiv_.style.backgroundColor = this.colour_;
