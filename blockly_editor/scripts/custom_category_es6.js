@@ -24,7 +24,9 @@ class CustomCategory extends Blockly.ToolboxCategory {
      * @override
      */
     addColourBorder_(colour) {
+      this.rowDiv_.style.borderRadius = '12px';
       this.rowDiv_.style.backgroundColor = colour;
+      this.rowDiv_.style.transition = "0.1s";
     }
   
     /**
@@ -36,7 +38,6 @@ class CustomCategory extends Blockly.ToolboxCategory {
     setSelected(isSelected) {
       // We do not store the label span on the category, so use getElementsByClassName.
       const labelDom = this.rowDiv_.getElementsByClassName('blocklyTreeLabel')[0];
-      console.log(labelDom)
       if (isSelected) {
         // Change the background color of the div to white.
         this.rowDiv_.style.backgroundColor = 'white';
@@ -50,6 +51,7 @@ class CustomCategory extends Blockly.ToolboxCategory {
         labelDom.style.color = 'white';
         this.iconDom_.style.color = 'white';
       }
+      
       // This is used for accessibility purposes.
       Blockly.utils.aria.setState(
         /** @type {!Element} */ (this.htmlDiv_),
@@ -65,7 +67,7 @@ class CustomCategory extends Blockly.ToolboxCategory {
      */
     createIconDom_() {
       const iconImg = document.createElement('img');
-      iconImg.src = './logo_only.svg';
+      iconImg.src = '/blockly_editor/logo_only.svg';
       iconImg.alt = 'Blockly Logo';
       iconImg.width = '25';
       iconImg.height = '25';

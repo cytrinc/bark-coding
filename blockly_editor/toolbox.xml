@@ -1,9 +1,5 @@
-<xml
-      xmlns="https://developers.google.com/blockly/xml"
-      id="toolbox"
-      style="display: none"
-    >
-      <category name="Logic" colour="#f5ca20">
+    <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+      <category name="Logic" colour="#cf9100">
         <block type="onstart"></block>
         <block type="controls_if"></block>
         <block type="logic_compare">
@@ -13,33 +9,33 @@
           <field name="OP">AND</field>
         </block>
         <block type="logic_negate"></block>
+        <block type="logic_keypressed"></block>
         <block type="logic_boolean">
           <field name="BOOL">TRUE</field>
         </block>
         <block type="logic_null"></block>
         <block type="logic_ternary"></block>
       </category>
-      <category name="Movement" colour="#3399ff">
-        <block type="movement_move"></block>
-        <block type="movement_moveback"></block>
-        <block type="pointdir">
-          <field name="NAME">90</field>
-        </block>
+      
+      <category name="Motion" colour="#3399ff">
+        <block type="set_position"></block>
+        <block type="get_position"></block>
+        <block type="movement_move_x"></block>
+        <block type="movement_move_y"></block>
+        <block type="goto_mouse"></block>
       </category>
+
       <category name="Style" colour="#cd17ff">
         <block type="change_costume"></block>
         <block type="next_costume"></block>
-        <block type="change_stage_bg"></block>
-        <block type="colour_picker">
-        <field name="COLOUR">#ff0000</field>
-        </block>
-        <block type="colour_random"/>
-        <block type="colour_rgb">
-        <value name="RED">
-        <shadow type="math_number">
-        <field name="NUM">100</field>
       </category>
-      <category name="Loops" colour="#20e374">
+
+      <category name="Sounds" colour="#c7b31c">
+        <block type="play_sound"></block>
+        <block type="play_sound_url"></block>
+      </category>
+        
+      <category name="Loops" colour="#689c00">
         <block type="controls_repeat_ext">
           <value name="TIMES">
             <shadow type="math_number">
@@ -50,6 +46,7 @@
         <block type="controls_whileUntil">
           <field name="MODE">WHILE</field>
         </block>
+        <block type="forever"></block>
         <block type="controls_for">
           <field name="VAR" id="QX?tv8_Oe7g@:yT:^:JX">i</field>
           <value name="FROM">
@@ -72,6 +69,7 @@
           <field name="VAR" id="FegKP.X,(A|]G*?OeW.k">j</field>
         </block>
       </category>
+      
       <category name="Math" colour="#1b85d1">
         <block type="math_number">
           <field name="NUM">0</field>
@@ -137,8 +135,10 @@
             </shadow>
           </value>
         </block>
+        <block type="math_random_float"></block>
       </category>
-      <category name="Text" colour="#2fe3f7">
+      
+      <category name="Text" colour="#21d9b7">
         <block type="text">
           <field name="TEXT"></field>
         </block>
@@ -188,8 +188,20 @@
             </shadow>
           </value>
         </block>
+        <block type="text_prompt_ext">
+      <mutation type="TEXT"></mutation>
+      <field name="TYPE">TEXT</field>
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+        <block type="letters_from"></block>
       </category>
+      
       <category name="Variables" colour="#f2951b" custom="VARIABLE"></category>
+      
       <category name="Lists" colour="#f2461b">
         <block type="lists_create_with">
           <mutation items="0"></mutation>
@@ -232,7 +244,20 @@
           </value>
         </block>
       </category>
-      <category name="More" colour="#0fbd8c">
-        <block type="javascript_block"></block>
+
+      <category name="Functions" custom="PROCEDURE" colour="#e643d2"></category>
+
+      <!--
+      <category name="Colours" custom="COLOUR_PALETTE" colour="#323aa8"></category>
+      -->
+      
+      <category name="Custom" colour="#a826ff">
+        <button text="Add Extension.." callbackKey="showExtsMenu"></button>
+        <block type="end_block"></block>
+        <block type="test_block"></block>
+        <block type="random_dorito"></block>
+        <block type="custom_onstop"></block>
+        <block type="bruh_wait"></block>
+        <block type="reapete"></block>
       </category>
     </xml>
