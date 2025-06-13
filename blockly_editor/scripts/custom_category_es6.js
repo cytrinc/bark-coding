@@ -53,7 +53,7 @@ class CustomCategory extends Blockly.ToolboxCategory {
         labelDom.style.color = 'white';
         this.iconDom_.style.color = 'white';
       }
-      ```
+
       
       // This is used for accessibility purposes.
       Blockly.utils.aria.setState(
@@ -61,7 +61,7 @@ class CustomCategory extends Blockly.ToolboxCategory {
         Blockly.utils.aria.State.SELECTED,
         isSelected,
       );
-
+        ```
     }
   
     /**
