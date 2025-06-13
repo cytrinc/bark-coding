@@ -1,6 +1,6 @@
 const actionsecret = localStorage.getItem("secret");
 let profile = !!localStorage.getItem("myBarkUsername") ? `
-<a class="right" onclick="hideshowProfileDropdown()">${localStorage.getItem("myBarkUsername")}</a></div>
+<a class="right" onclick="hideshowProfileDropdown()">${localStorage.getItem("myBarkUsername")}<img src="/src/images/assets/dropdown.png"></a></div>
 <div id="myProfileDropDown" class="dropdown-content" style="display: none;">
 <a href="/profile/${localStorage.getItem("myBarkUsername")}">My Profile</a>
 <br/>
