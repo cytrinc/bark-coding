@@ -36,6 +36,8 @@ class CustomCategory extends Blockly.ToolboxCategory {
      * @override
      */
     setSelected(isSelected) {
+      ``` comment it out until i find a fix for it
+
       // We do not store the label span on the category, so use getElementsByClassName.
       const labelDom = this.rowDiv_.getElementsByClassName('blocklyTreeLabel')[0];
       if (isSelected) {
@@ -58,6 +60,7 @@ class CustomCategory extends Blockly.ToolboxCategory {
         Blockly.utils.aria.State.SELECTED,
         isSelected,
       );
+      ```
 
     }
   
