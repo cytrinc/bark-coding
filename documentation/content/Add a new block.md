@@ -51,7 +51,7 @@ after that the block is now in the blockbar!
 
 If you want to make a library of custom blocks, go see `Create an extension.md`!
 
-*Last updated April 19th, 2024*
+*Last updated April 19th, 2024. Restored June 14th, 2025*
 
 <!--
     Make sure to change date to the current commit date!
