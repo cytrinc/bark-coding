@@ -1,6 +1,6 @@
 let timeouts = []; // Array to hold timeout IDs
 let img; // Declare variable to hold the image
-let imgsrc = window.location.origin + '/src/images/dog/idle.png'; // Default image source
+let imgsrc = window.location.origin + '/src/images/dog/idle.svg'; // Default image source
 let x = 270; // Initial x position (centered)
 let y = 130; // Initial y position (centered)
 let imgWidth = 110; // Initial width of the image
