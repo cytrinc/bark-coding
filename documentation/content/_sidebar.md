@@ -1,6 +1,8 @@
   - [Start](/README.md)
   - [History](/History.md)
   - [Contributing](/Contributing.md)
+  - [Add a new block](/Add%20a%20new%20block.md)
+  - [Create an extension](/Create%20an%20extension.md)
   - [Advanced editor](/Advanced%20editor.md)
   - [Badges](/Badges.md)
   - [API](/API.md)
