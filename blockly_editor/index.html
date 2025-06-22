@@ -89,6 +89,11 @@
       padding: 7px;
     }
 
+    body.workbench #workbencheditordiv {
+      display: block;
+      padding: 7px;
+    }
+
     body.moreextension #moreextensionseditordiv {
       display: block;
       padding: 7px;
@@ -316,6 +321,11 @@ span.extensionbox {
     <p>Under dev now, im kinda lazy to do it yet</p>
   </div>
 
+    <!-- More extensions Tab -->
+  <div id="workbencheditordiv" class="tabpage">
+    <h1>Workbench</h1>
+  </div>
+
   <div class="popupholder">
     <div id="extensionseditordiv" class="popup">
       <h1>Choose An Extension</h1>
@@ -331,13 +341,15 @@ span.extensionbox {
   </div>
   <div id="editortabs">
     <button
-      onclick="document.body.classList.add('code'); document.body.classList.remove('costumes'); document.body.classList.remove('sounds'); document.body.classList.remove('moreextension'); window.workspace.updateToolbox(toolbox);">Code</button>
+      onclick="document.body.classList.add('code'); document.body.classList.remove('costumes'); document.body.classList.remove('sounds'); document.body.classList.remove('moreextension'); document.body.classList.remove('workbench'); window.workspace.updateToolbox(toolbox);">Code</button>
     <button
-      onclick="document.body.classList.remove('code'); document.body.classList.add('costumes'); document.body.classList.remove('sounds'); document.body.classList.remove('moreextension');">Costumes</button>
+      onclick="document.body.classList.remove('code'); document.body.classList.add('costumes'); document.body.classList.remove('sounds'); document.body.classList.remove('moreextension'); document.body.classList.remove('workbench');">Costumes</button>
     <button
-      onclick="document.body.classList.remove('code'); document.body.classList.remove('costumes'); document.body.classList.add('sounds'); document.body.classList.remove('moreextension');">Sounds</button>
+      onclick="document.body.classList.remove('code'); document.body.classList.remove('costumes'); document.body.classList.add('sounds'); document.body.classList.remove('moreextension'); document.body.classList.remove('workbench');">Sounds</button>
     <button
-      onclick="document.body.classList.remove('code'); document.body.classList.remove('costumes'); document.body.classList.remove('sounds'); document.body.classList.add('moreextension');">Extensions</button>
+      onclick="document.body.classList.remove('code'); document.body.classList.remove('costumes'); document.body.classList.remove('sounds'); document.body.classList.add('moreextension'); document.body.classList.remove('workbench');">Extensions</button>
+    <button
+      onclick="document.body.classList.remove('code'); document.body.classList.remove('costumes'); document.body.classList.remove('sounds'); document.body.classList.remove('moreextension'); document.body.classList.add('workbench');">Workbench</button>
   </div>
   <div id="projectPlayer">
     <div id="projectToolbar">
