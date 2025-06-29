@@ -51,7 +51,7 @@
         </summary>
 
         <p>Upload your Blockly project<span style="color: red;">*</span></p>
-        <input type="file" accept=".barkf">
+        <input type="file" accept=".barkf" onchange="console.log(getprojectcontent())">
         
         <p>Upload your thumbnail<span style="color: red;">*</span></p>
         <input type="file" accept="image/*">
@@ -61,21 +61,25 @@
 
         <p>Enter a description</p>
         <textarea cols="50" rows="9" placeholder="This is my project! Use the WASD/arrow keys to move, I made this in the Bark Blockly Editor."></textarea>
+
+        <button class="buttonFrBx" id="publishbutton">Publish</button>
       </details>
     </div>
   
   <!-- inject:footer -->
 </body>
 <script src="/index.js"></script>
+<script src="/src/scripts/publish.js"></script>
 <script src="/src/scripts/replacer.js"></script>
 <script>
   title_list = [
     "Flappy Birb", 
-    "Escape the Platformer", 
+    "Escape: the Platformer", 
     "RPG Game", 
     "Pancake [Animation]", 
     "shooter game", 
-    "Bark Dog goes shopping" 
+    "Bark Dog goes shopping",
+    "Mario Fangame"
   ]
 
   // so input isnt blank on start
@@ -84,5 +88,7 @@
   setInterval(function () {
     document.getElementById("title").placeholder = title_list[Math.floor(Math.random()*title_list.length)];
 }, 2000);
+
+
 </script>
 </html>
