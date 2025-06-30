@@ -152,10 +152,7 @@
 
     <div class="box2" style="float: right; overflow: auto; height: 180px;">
       <h2>Flair</h2>
-      <div class="flair">
-        <div class="near"><img src="/src/images/assets/flair/earth.gif" width="40" alt="a spinning earth"></div>
-        <div class="inner">This user lives on earth!</div>
-      </div>
+      <span id="flair"></span>
     </div>
 
   </div>
@@ -209,7 +206,7 @@
 <script src="/index.js"></script>
 <script src="/src/scripts/replacer.js"></script>
 <script src="/src/scripts/admin.js"></script>
-<script src="/src/scripts/badge.js"></script>
+<script src="/src/scripts/flair.js"></script>
 <script type="module">
   const commentPlaceholders = ["Hello... I made this small project...", "Collab?", "Cool game!", "Hihihihihihi :3", "What's your favorite video game?"];
 
@@ -254,8 +251,6 @@
     document.getElementById('username').style.color = "#ffa70f";
     document.getElementById('username').innerHTML += '<span style="font-size: 20pt;">✓</span>';
   }
-
-  setup_badges(username);
 
   fetch(`https://api.bark.dumorando.com/api/v2/profileComments?username=${username}`)
     .then(data => data.json())
