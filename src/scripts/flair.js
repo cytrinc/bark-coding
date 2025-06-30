@@ -6,6 +6,6 @@ document.getElementById("flair").innerHTML += `
 
 document.getElementById("flair").innerHTML += `
 <div class="flair">
-<div class="near" style="background-color: #fcba03;"><img src="https://neo-neighborhoods.neocities.org/SiliconValley/6603/clown.gif" width="40" alt="a clown"></div>
+<div class="near" style="background-color: #fcba03;"><img src="https://neo-neighborhoods.neocities.org/SiliconValley/6603/clown.gif" width="35" alt="a clown"></div>
 <div class="inner" style="background-color: #fcba03;">This user is funny!</div>
 </div>`
