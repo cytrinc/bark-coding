@@ -303,8 +303,7 @@ xml category {
 
 textarea {
   font-family: inherit;
-  border-radius: 6px;
-  padding: 7px;
+  padding: 2px;
   transition: 0.1s;
 }
 

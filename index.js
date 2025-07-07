@@ -15,9 +15,11 @@ if (document.URL == "https://bark.dumorando.com/profile/" || document.URL == "ht
   window.location.href = "https://bark.dumorando.com/users";
 }
 
+// bark news box (apears in the homepage)
 let newsBox =  `
 Bark Coding now has a working comment system!!!
 `;
+
 let baseUrl = window.location.origin;
 let commitsLength = 150;
 
@@ -88,7 +90,7 @@ CheckLoggedIn();
 function whatsNew() {
   if (location.pathname !== "/")
     return;
-  document.getElementById("boxChanger").innerHTML = "<h2>News</h2><p>" + newsBox + "</p>";
+  document.getElementById("boxChanger").innerHTML = "<h1>News</h1><p>" + newsBox + "</p>";
 }
 
 function Todo() {
