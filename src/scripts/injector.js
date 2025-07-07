@@ -36,15 +36,10 @@ const components = {
     //footer
     "footer": `
     <footer><p style="color: #777;">Looks like you\'ve reached the bottom.</p><p>
-    <a href="https://discord.gg/hXmHw7H9BF">Discord</a>
-    <a href="https://x.com/barkcoding">Twitter</a>
-    <a href="https://barkcoding.bsky.social">Bluesky</a>
-        <br/><br/>
     <a href="/">Home</a>
     <a href="/advanced">Editor</a>
     <a href="https://github.com/mariocraft987/bark.github.io/">Source</a>
     <a href="https://bark.dumorando.com/docs">Docs</a>
-    <a href="/users">Users</a></p>
     <p style="font-size: 9pt; color: #777;">© 2023-2025 Bark Coding<br/>
     Even though this project is hosted on a dumorando.com domain, this project is not affiliated with dumorando anymore.</p>
     <select id="lang-select">
