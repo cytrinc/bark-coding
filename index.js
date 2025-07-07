@@ -88,7 +88,7 @@ CheckLoggedIn();
 function whatsNew() {
   if (location.pathname !== "/")
     return;
-  document.getElementById("boxChanger").innerHTML = "<h2>Whats New?</h2><p>" + newsBox + "</p>";
+  document.getElementById("boxChanger").innerHTML = "<h2>News</h2><p>" + newsBox + "</p>";
 }
 
 function Todo() {
