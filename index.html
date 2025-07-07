@@ -28,7 +28,7 @@
   <meta name="language" content="English">
   <meta name="revisit-after" content=" days">
   <meta name="author" content="mariocraft">
-  <title>BARK CODING</title>
+  <title>Bark Coding</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/png">
   <meta name="description"
     content="Bark Coding is a Blockly Based coding language created by mariocraft987 and more!" />
@@ -93,7 +93,11 @@
       <h2>What is Bark?</h2>
     
       <span style="float:right;">
-      <p>Bark is a blockly mod, which features a <a href="https://scratch.mit.edu">Scratch</a> based website with a dog mascot.</p>
+      <p>Bark is a blockly mod, which features a <a href="https://scratch.mit.edu">Scratch</a> based <br/>website with a dog mascot.</p>
+      <div class="dogcage">
+        <button id="dog" style="background: none;width: 73px;height: 96px;cursor: grab;background-size: cover;border: none;" alt="Bark Dog"></button>
+      </div>
+      <p id="loadingdog">Loading..</p>
       </span>
     </span>
     
@@ -101,7 +105,7 @@
     <!-- elements on the right -->
     <span style="float:right;">
       <h3>What Bark has to offer?</h3>
-     <ol style="padding: 7px;">
+     <ol style="padding: 10px;">
       <li>A small coding community.</li>
        <li>Bark is <abbr title="The code source is viewable by other people outside the developer team.">open-sourced</abbr>!!</li>
        <li>A <i>custom</i> Javascript editor</li>
@@ -178,12 +182,6 @@
     element.style.backgroundImage = `url(${url})`;
   }
 
-  /*
-      <div class="dogcage">
-      <button id="dog" style="background: none;width: 73px;height: 96px;cursor: grab;background-size: cover;border: none;" alt="Bark Dog"></button>
-    </div>
-    <p id="loadingdog">Loading..</p>
-  */
   async function setupDog() {
     const idleblob = await fetch("/src/images/dog/idle.svg").then(data => data.blob());
     const happyblob = await fetch("/src/images/dog/happy.svg").then(data => data.blob());
