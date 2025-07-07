@@ -63,15 +63,13 @@
   <!-- inject:navbar -->
    <noscript><h1 style="color: red;">Yikes! Either your browser doesn't support Javascript, or you have "Javascript" turned off.</h1></noscript>
 
-  <!--
    <span>
     <br/>
     <center>
-      <img src="/src/images/assets/pixel/tree.png" width="40" style="image-rendering: pixelated;"><a href="https://extra-treats.vercel.app"><img src="/src/images/assets/pixel/present.png" width="40" style="image-rendering: pixelated;"></a>
+      <img src="/src/images/assets/pixel/tree.png" width="40" style="image-rendering: pixelated;"><img src="/src/images/assets/pixel/present.png" width="40" style="image-rendering: pixelated;">
     </center>
     <br/>
   </span>
-  -->
 
    <div class="box" id="profilebox">
     <h3><span id="wussup_msg">How are you,</span> <span id="usernameforprofilebox">fellow user</span>?</h3>
@@ -198,6 +196,8 @@
     dog.classList.add('active');
     document.getElementById('loadingdog').remove();
   }
+
+  setupDog();
 
   function recentCom() {
     document.getElementById("boxChanger").innerHTML = "<h2>Fetching commits...</h2><p>please wait...</p>"; // get it? "fetching" commits??? eh????........anyone?
