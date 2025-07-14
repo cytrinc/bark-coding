@@ -15,6 +15,8 @@ if (document.URL == "https://bark.dumorando.com/profile/" || document.URL == "ht
   window.location.href = "https://bark.dumorando.com/users";
 }
 
+localStorage.setItem('theme', 'bluedodger')
+
 // bark news box (apears in the homepage)
 let newsBox =  `
 Bark Coding now has a working comment system!!!
@@ -156,8 +158,7 @@ function initializeDarkMode() {
 }
 
 function InitTheme() {
-  // const theme = localStorage.getItem('theme') ?? "bluedodger";
-  const theme = "bluedodger"
+  const theme = localStorage.getItem('theme') ?? "bluedodger";
   if (theme.startsWith('#')) {
     const style = document.createElement('style');
     document.head.append(style);

@@ -13,25 +13,8 @@ let afdbtn = new Date().getMonth() === 3 && new Date().getDate() === 1 ? "<a id=
 const components = {
     //navbar
     "navbar": `
-    <div id="navbar" class="navbar"><a href="/"><img id="bark_logo" src="/src/images/logos/normal.png" alt="Bark" title="Home" width="25" height="25""></a>
-    <a href="/create">Create</a>
-    <a href="/explore">Explore</a>
-    <a href="/about">About</a>
-    ${afdbtn}
-    <a class="dark-mode-button" onclick="toggleDarkMode()" id="darkModeToggle"><dmbico alt="Dark Mode"></dmbico></a><form action="/search" style="display: contents;"><input class="searchBar" id="search" name="q" placeholder="Search for Projects"></input></form>
-    ${profile}
-    `,
-    // editor_navbar
-    "editor_navbar": `
-    <div id="navbar" class="navbar"><a href="/"><img src="/src/images/Logo.svg" alt="Bark" width="25" height="25"></a>
-    <input type="file" id="fileInput" accept=".barkf" style="display: none;" onchange="loadWorkspaceFromFile(this.files[0])" />
-    <a href="#" onclick="openFileInput();" title="open a saved project">Open</a>
-    <a href="#" id="downloadbutton" onclick="downloadproject();" title="download project to your computer.">Download</a>
-    <a href="/advanced/">Advanced</a>
-    <a class="dark-mode-button" id="darkModeToggle">
-      <dmbico alt="Dark Mode"></dmbico>
-    </a>
-    <input class="searchBar" id="projectname" placeholder="Project name..." value="project"></input></div>
+    <div id="sidebar" class="sidebar"><a href="/"><img id="bark_logo" src="/src/images/logos/normal.png" alt="Bark" title="Home" width="25" height="25""></a>
+    </div>
     `,
     //footer
     "footer": `

@@ -27,38 +27,24 @@ body {
   text-align: center;
 }
 
-.navbar {
-  overflow: hidden;
-  height: 45px;
-  background-color: DodgerBlue;
-  display: flex;
-  align-items: center;
+.sidebar {
+    float: left;
+    background-color: lightgray;
+    width: 100px;
+    height: 100%;
+    padding: 25px;
+    margin-right: 14px;
+    padding-bottom: 70%;
 }
 
-.navbar a {
-  float: left;
-  display: block;
-  color: white;
-  text-align: left;
-  padding: 20px 15px;
-  text-decoration: none;
-  height: calc(100% - 20px);
-  line-height: 25px;
-  display: flex;
-  gap: 10px;
-  white-space: nowrap;
-}
-
-.navbar a.right {
-  float: right;
-}
-
-.navbar a:hover {
-  background-color: #0000ff38;
-  border-radius: 5px;
-  cursor: pointer;
-  color: white;
-
+.sidebar {
+    float: left;
+    background-color: dodgerblue;
+    width: 100px;
+    height: 100%;
+    padding: 25px;
+    margin-right: 14px;
+    padding-bottom: 70%;
 }
 
 .box {
@@ -68,7 +54,7 @@ body {
   text-align: center;
   outline: none;
   color: #1b007a;
-  border-radius: 5px;
+  border-radius: 0px;
   background-color: rgb(0, 127, 255, 0.24);
   margin-top: 15px;
   width: 900px;
