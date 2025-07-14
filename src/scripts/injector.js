@@ -15,9 +15,9 @@ const components = {
     "navbar": `
     <div id="sidebar" class="sidebar">
     <a href="/"><img id="bark_logo" src="/src/images/logos/normal.png" alt="Bark" title="Home" width="35" height="35""></a><br/>
-    <a href="/create">Create</a><br/>
-    <a href="/explore">Explore</a><br/>
-    <a href="/about">About</a><br/>
+    <a href="/create">CREATE</a><br/>
+    <a href="/explore">EXPLORE</a><br/>
+    <a href="/about">ABOUT</a><br/>
     </div>
     `,
     //footer
