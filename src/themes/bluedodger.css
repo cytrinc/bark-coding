@@ -28,7 +28,6 @@ body {
 }
 
 .sidebar {
-    display: inline-block;
     float: left;
     position: sticky;
     background-color: dodgerblue;
