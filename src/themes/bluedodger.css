@@ -27,16 +27,16 @@ body {
   text-align: center;
 }
 
-.sidebar {
-    float: left;
-    position: relative;
-    background-color: dodgerblue;
-    width: 100px;
-    height: 100%;
-    padding: 25px;
-    z-index: 1;
-    margin-right: 14px;
-    padding-bottom: 70%;
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: dodgerblue;
+  overflow-x: hidden;
+  padding-top: 20px;
 }
 
 .box {
