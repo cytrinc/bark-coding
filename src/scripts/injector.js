@@ -21,7 +21,7 @@ const components = {
     <a class="dark-mode-button" onclick="toggleDarkMode()" id="darkModeToggle"><dmbico alt="Dark Mode"></dmbico></a><form action="/search" style="display: contents;"><input class="searchBar" id="search" name="q" placeholder="Search for Projects"></input></form>
     <br/>
     <br/>
-    <a>Please be calm! this site is under maintanance! We are replacing the navigatin bar with a sidebar! THE LINKS TO YOUR ACCOUNT WILL RETURN SHORTLY.</a>
+    <a>Please be calm! this site is under maintanance! We are replacing the navigation bar with a sidebar! THE LINKS TO YOUR ACCOUNT WILL RETURN SHORTLY.</a>
     </div>
     `,
     //footer
