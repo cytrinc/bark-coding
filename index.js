@@ -156,19 +156,20 @@ function initializeDarkMode() {
 }
 
 function InitTheme() {
-  const theme = localStorage.getItem('theme') ?? "bluedodger";
+  // const theme = localStorage.getItem('theme') ?? "bluedodger";
+  const theme = "bluedodger"
   if (theme.startsWith('#')) {
     const style = document.createElement('style');
     document.head.append(style);
 
     const link = document.createElement('link');
     link.rel = "stylesheet";
-    link.href = `/src/themes/spink.css`;
+    link.href = `/src/themes/bluedodger.css`;
       
     document.head.append(link);
 
     if (isSafari) {
-        document.getElementsByTagName('head')[0].innerHTML += "<link rel='stylesheet' href='/src/themes/spink.css'>";
+        document.getElementsByTagName('head')[0].innerHTML += "<link rel='stylesheet' href='/src/themes/bluedodger.css'>";
     } else {
       document.head.append(link);
     }
