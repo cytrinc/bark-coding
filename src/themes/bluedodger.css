@@ -45,7 +45,7 @@ body {
     padding: 25px;
     margin-right: 14px;
     padding-bottom: 70%;
-    z-index: 10;
+    display: flex;
 }
 
 .box {
