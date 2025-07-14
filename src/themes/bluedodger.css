@@ -39,6 +39,10 @@ body {
   padding-top: 20px;
 }
 
+.sidebar {
+  color: white;
+}
+
 .box {
   display: inline-block;
   padding: 16px 26px;
