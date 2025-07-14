@@ -30,10 +30,12 @@ body {
 .sidebar {
     display: inline-block;
     float: left;
+    position: sticky;
     background-color: dodgerblue;
     width: 100px;
     height: 100%;
     padding: 25px;
+    z-index: 1;
     margin-right: 14px;
     padding-bottom: 70%;
 }
