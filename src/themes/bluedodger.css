@@ -29,7 +29,7 @@ body {
 
 .sidebar {
     float: left;
-    position: sticky;
+    position: relative;
     background-color: dodgerblue;
     width: 100px;
     height: 100%;
