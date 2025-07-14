@@ -99,7 +99,7 @@ function Todo() {
 
   document.getElementById("boxChanger").innerHTML = "<h2>Fetching file...</h2><p>please wait...</p>";
 
-  fetch("https://bark.dumorando.com/static/todolist.txt")
+  fetch("https://bark.dumorando.com/src/random/todolist.txt")
 .then(x => x.text())
 .then(y => toDoContent = y);
   
