@@ -14,7 +14,7 @@ const components = {
     //navbar
     "navbar": `
     <div id="sidebar" class="sidebar">
-    <a href="/"><img id="bark_logo" src="/src/images/logos/normal.png" alt="Bark" title="Home" width="35" height="35""></a><br/>
+    <a href="/">HOME<img id="bark_logo" src="/src/images/logos/normal.png" alt="Bark" title="Home" width="30" height="30"></a><br/>
     <a href="/create">CREATE</a><br/><br/>
     <a href="/explore">EXPLORE</a><br/><br/>
     <a href="/about">ABOUT</a><br/><br/>
