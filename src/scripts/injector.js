@@ -15,11 +15,12 @@ const components = {
     "navbar": `
     <div id="sidebar" class="sidebar">
     <a href="/"><img id="bark_logo" src="/src/images/logos/normal.png" alt="Bark" title="Home" width="35" height="35""></a><br/>
-    <a href="/create">CREATE</a><br/>
-    <a href="/explore">EXPLORE</a><br/>
-    <a href="/about">ABOUT</a><br/>
-    <form action="/search" style="position: relative;" style="display: contents;"><input class="searchBar" id="search" name="q" placeholder="Search for Projects"></input></form>
-    <a class="dark-mode-button" style="position: absolute;" onclick="toggleDarkMode()" id="darkModeToggle"><dmbico alt="Dark Mode"></dmbico></a>
+    <a href="/create">CREATE</a><br/><br/>
+    <a href="/explore">EXPLORE</a><br/><br/>
+    <a href="/about">ABOUT</a><br/><br/>
+    <form action="/search" style="display: contents;"><input class="searchBar" id="search" name="q" placeholder="Search for Projects"></input></form>
+    <a class="dark-mode-button" style="cursor: pointer;" onclick="toggleDarkMode()" id="darkModeToggle"><dmbico alt="Dark Mode"></dmbico></a>
+    <br/>
     <br/>
     <br/>
     <a>Please be calm! this site is under maintanance! We are replacing the navigation bar with a sidebar! THE LINKS TO YOUR ACCOUNT WILL RETURN SHORTLY.</a>
