@@ -25,7 +25,10 @@ const components = {
     <a class="dark-mode-button" style="cursor: pointer;" onclick="toggleDarkMode()" id="darkModeToggle"><dmbico alt="Dark Mode"></dmbico></a>
     <br/><br/>
     ${profile}
+    <br/><br/>
+    <img src="/src/images/assets/other/construction.gif" width="80" alt="This site is under construction!">
     <br/>
+     <img src="/src/images/assets/boxes/BESTUSEDONACOMPUTER456789.gif" alt="This site is best viewed on a computer!">
     </div>
     `,
     //footer
