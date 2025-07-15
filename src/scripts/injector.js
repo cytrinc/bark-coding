@@ -1,13 +1,14 @@
 const actionsecret = localStorage.getItem("secret");
 let profile = !!localStorage.getItem("myBarkUsername") ? `
-<a class="right" onclick="hideshowProfileDropdown()">${localStorage.getItem("myBarkUsername")}<img src="/src/images/assets/dropdown.png" width="15" height="10" style="padding: 0px;"></a></div>
-<div id="myProfileDropDown" class="dropdown-content" style="display: none;">
 <a href="/profile/${localStorage.getItem("myBarkUsername")}">My Profile</a>
-<br/>
+<br/><br/>
 <a href="/settings/profile">Edit Profile</a>
-<br/>
+<br/><br/>
 <a href="/settings">Site Settings</a>
-</div>` : '<a href="login" class="right">Login</a><a href="signup" class="right">Join bark</a></div>'
+</div>` : `
+<a href="/login">LOGIN</a>
+<br/><br/>
+<a href="signup">SIGNUP</a>`
 let afdbtn = new Date().getMonth() === 3 && new Date().getDate() === 1 ? "<a id='flip-it-afd-btn'>FLIP IT</a>" : '';
 
 const components = {
@@ -24,7 +25,9 @@ const components = {
     <br/><br/>
     <form action="/search" style="display: contents;"><input class="searchBar" id="search" name="q" placeholder="Search for Projects"></input></form>
     <a class="dark-mode-button" style="cursor: pointer;" onclick="toggleDarkMode()" id="darkModeToggle"><dmbico alt="Dark Mode"></dmbico></a>
-    <br/><br/><br/>
+    <br/><br/>
+    ${profile}
+    <br/>
     <a>Please be calm! this site is under maintanance! We are replacing the navigation bar with a sidebar! THE LINKS TO YOUR ACCOUNT WILL RETURN SHORTLY.</a>
     </div>
     `,
