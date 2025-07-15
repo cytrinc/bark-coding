@@ -25,8 +25,7 @@ const components = {
     <a class="dark-mode-button" style="cursor: pointer;" onclick="toggleDarkMode()" id="darkModeToggle"><dmbico alt="Dark Mode"></dmbico></a>
     <br/><br/>
     ${profile}
-    <br/><br/>
-    <p>Please be calm! this site is under maintanance! We are replacing the navigation bar with a sidebar! THE LINKS TO YOUR ACCOUNT WILL RETURN SHORTLY.</p>
+    <br/>
     </div>
     `,
     //footer
