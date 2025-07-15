@@ -1,6 +1,6 @@
 const actionsecret = localStorage.getItem("secret");
 let profile = !!localStorage.getItem("myBarkUsername") ? `
-<a href="/profile/${localStorage.getItem("myBarkUsername")}">MY PROFILE</a>
+<a href="/profile/${localStorage.getItem("myBarkUsername")}">My Profile</a>
 <br/><br/>
 <a href="/settings/profile">SETTINGS</a>
 ` : `
