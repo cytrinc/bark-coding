@@ -39,7 +39,7 @@ body {
   padding-top: 20px;
 }
 
-.sidebar a, p, img {
+.sidebar a, .sidebar p, .sidebar img {
   color: white;
   margin-left: 10%;
 }
