@@ -1,6 +1,6 @@
 const actionsecret = localStorage.getItem("secret");
 let profile = !!localStorage.getItem("myBarkUsername") ? `
-<a href="/profile/${localStorage.getItem("myBarkUsername")}">My Profile</a>
+<a href="/profile/${localStorage.getItem("myBarkUsername")}"><i>My Profile</i></a>
 <br/><br/>
 <a href="/settings/profile">SETTINGS</a>
 ` : `
@@ -23,7 +23,7 @@ const components = {
     <br/><br/>
     <form action="/search" style="display: contents;"><input class="searchBar" id="search" name="q" placeholder="Search for Projects"></input></form>
     <a class="dark-mode-button" style="cursor: pointer;" onclick="toggleDarkMode()" id="darkModeToggle"><dmbico alt="Dark Mode"></dmbico></a>
-    <br/><br/>
+    <br/>
     ${profile}
     <br/><br/>
     <img src="/src/images/assets/other/construction.gif" width="80" alt="This site is under construction!">
