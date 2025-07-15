@@ -36,6 +36,11 @@ let isSafari = window.safari !== undefined;
 
 let showHoldOn = true;
 
+// google translate
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+
 // conditionals
 
 if (document.URL.includes('bark-coding.vercel.app') || document.URL.includes('mariocraft987.github.io/bark-coding')) {
@@ -296,10 +301,6 @@ function addOption(text, value, elm) {
   option.value = value;
   document.getElementById(elm).add(option);
 }
-
-setTimeout(function(){
-    addOption("Español", "es", "lang-select"); 
-}, 200);
 
 console.log("-----------------------------------------");
 console.log("All scripts were ran successfully!")
