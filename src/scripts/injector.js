@@ -1,14 +1,12 @@
 const actionsecret = localStorage.getItem("secret");
 let profile = !!localStorage.getItem("myBarkUsername") ? `
-<a href="/profile/${localStorage.getItem("myBarkUsername")}">My Profile</a>
+<a href="/profile/${localStorage.getItem("myBarkUsername")}">MY PROFILE</a>
 <br/><br/>
-<a href="/settings/profile">Edit Profile</a>
-<br/><br/>
-<a href="/settings">Site Settings</a>
-</div>` : `
+<a href="/settings/profile">SETTINGS</a>
+` : `
 <a href="/login">LOGIN</a>
 <br/><br/>
-<a href="signup">SIGNUP</a>`
+<a href="/signup">SIGNUP</a>`
 let afdbtn = new Date().getMonth() === 3 && new Date().getDate() === 1 ? "<a id='flip-it-afd-btn'>FLIP IT</a>" : '';
 
 const components = {
@@ -27,8 +25,8 @@ const components = {
     <a class="dark-mode-button" style="cursor: pointer;" onclick="toggleDarkMode()" id="darkModeToggle"><dmbico alt="Dark Mode"></dmbico></a>
     <br/><br/>
     ${profile}
-    <br/>
-    <a>Please be calm! this site is under maintanance! We are replacing the navigation bar with a sidebar! THE LINKS TO YOUR ACCOUNT WILL RETURN SHORTLY.</a>
+    <br/><br/>
+    <p>Please be calm! this site is under maintanance! We are replacing the navigation bar with a sidebar! THE LINKS TO YOUR ACCOUNT WILL RETURN SHORTLY.</p>
     </div>
     `,
     //footer
