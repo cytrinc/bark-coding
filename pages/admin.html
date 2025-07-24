@@ -15,4 +15,17 @@
     <!-- inject:footer -->
 </body>
 <script src="/index.js"></script>
+<script>
+    const response = await fetch(`https://api.bark.dumorando.com/api/v2/fetchUser?username=${encodeURIComponent(username)}`);
+
+    if (response.status === 404) window.location.replace("/");
+
+    const data = await response.json();
+
+    if (await amiadmin()) {
+
+    } else {
+        location.href = "/";
+    }
+</script>
 </html>
