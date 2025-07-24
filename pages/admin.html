@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/png">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/png">
     <link rel="stylesheet" href="/src/css/main.css">
 </head>
 <body>
@@ -15,7 +15,7 @@
     <!-- inject:footer -->
 </body>
 <script src="/index.js"></script>
-<script>
+<script type="module">
     const response = await fetch(`https://api.bark.dumorando.com/api/v2/fetchUser?username=${encodeURIComponent(username)}`);
 
     if (response.status === 404) window.location.replace("/");
