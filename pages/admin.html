@@ -16,12 +16,11 @@
 </body>
 <script src="/index.js"></script>
 <script type="module">
-    const response = await fetch(`https://api.bark.dumorando.com/api/v2/fetchUser?username=${encodeURIComponent(username)}`);
-
+    
+    const response = await fetch(`https://api.bark.dumorando.com/api/v2/fetchUser?username=${encodeURIComponent(localStorage.myBarkUsername)}`);
     if (response.status === 404) window.location.replace("/");
 
     const data = await response.json();
-
     if (await amiadmin()) {
 
     } else {
