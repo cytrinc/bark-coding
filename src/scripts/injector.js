@@ -30,7 +30,7 @@ const components = {
     <br/>
     <img src="/src/images/assets/boxes/BESTUSEDONACOMPUTER456789.gif" alt="This site is best viewed on a computer!">
     <br/>
-    <img src="/src/images/assets/boxes/1nft.gif" alt="This is an anti NFT site">
+    <img src="/src/images/assets/boxes/1nft.png" alt="This is an anti NFT site">
     </div>
     `,
     //footer

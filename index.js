@@ -41,6 +41,10 @@ function googleTranslateElementInit() {
   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
 }
 
+if (mobile) {
+  document.getElementById("sidebar").style.width = "110px";
+}
+
 // conditionals
 
 if (document.URL.includes('bark-coding.vercel.app') || document.URL.includes('mariocraft987.github.io/bark-coding')) {
