@@ -44,6 +44,40 @@ body {
   margin-left: 10%;
 }
 
+.navbar {
+  overflow: hidden;
+  height: 45px;
+  background-color: DodgerBlue;
+  display: flex;
+  align-items: center;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: left;
+  padding: 20px 15px;
+  text-decoration: none;
+  height: calc(100% - 20px);
+  line-height: 25px;
+  display: flex;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.navbar a.right {
+  float: right;
+}
+
+.navbar a:hover {
+  background-color: #0000ff38;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+
+}
+
 .box {
   display: inline-block;
   padding: 16px 26px;
