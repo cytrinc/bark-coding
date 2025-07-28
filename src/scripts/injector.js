@@ -28,7 +28,9 @@ const components = {
     <br/><br/>
     <img src="/src/images/assets/other/construction.gif" width="80" alt="This site is under construction!">
     <br/>
-     <img src="/src/images/assets/boxes/BESTUSEDONACOMPUTER456789.gif" alt="This site is best viewed on a computer!">
+    <img src="/src/images/assets/boxes/BESTUSEDONACOMPUTER456789.gif" alt="This site is best viewed on a computer!">
+    <br/>
+    <img src="/src/images/assets/boxes/1nft.gif" alt="This is an anti NFT site">
     </div>
     `,
     //footer
