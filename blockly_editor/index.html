@@ -1124,6 +1124,14 @@ const extensions = [
 
       
     </script>
+
+    <script>
+      function advanced_editor() {
+        document.getElementById("blocklyDiv").innerHTML = `
+        <textarea id="code" spellcheck="false">let dog = new sprite("dog", 0, 0, 100); <br/>dog.draw();<br/><br/>// draws a dog on the stage</div>
+        </textarea>`
+      }
+    </script>
     
   <script src="/blockly_editor/scripts/custom.js"></script>
   <script src="/blockly_editor/scripts/contrast.js"></script>
@@ -1132,7 +1140,6 @@ const extensions = [
   <script src="/blockly_editor/scripts/demo_projects.js"></script>
   <script src="/blockly_editor/scripts/fullscreen.js"></script>
   <script src="/blockly_editor/beta/projectjsonopener.js"></script>
-  <script src="/blockly_editor/advanced_editor.js"></script>
   <script>
     console.log("All editor scripts were ran successfully!");
   </script> 
