@@ -275,29 +275,16 @@ dialog {
     padding-bottom: 50px;
 }
 
-::backdrop {
-  background-image: linear-gradient(
-    45deg,
-    magenta,
-    rebeccapurple,
-    dodgerblue,
-    green
-    orangered
-  );
-  opacity: 0.75;
-  z-index: 98; /* 1 less than dialog z-index */
-}
-
   </style>
 </head>
 
-<body onload="" class="code">
+<body class="code">
 
   <!-- code using blockly or rayne editor? -->
 <dialog open>
   <p>What are going to use?</p>
   <form method="dialog">
-    <button>Blockly Drag & Drop</button>
+    <button onclick="start()">Blockly Drag & Drop</button>
     <button>Text Coding</button>
   </form>
 </dialog>
