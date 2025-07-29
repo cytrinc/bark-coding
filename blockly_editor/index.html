@@ -328,7 +328,7 @@ dialog {
 
     <a href="/docs#/Add%20a%20new%20block" target="_blank" title="documentation for developers.">Docs</a>
     
-    <a class="dark-mode-button" id="darkModeToggle">
+    <a class="dark-mode-button" id="darkModeToggle" onclick="toggleDarkMode()">
       
       <dmbico alt="Dark Mode"></dmbico>
     </a>
@@ -1128,8 +1128,7 @@ const extensions = [
     <script>
       function advanced_editor() {
         document.getElementById("blocklyDiv").innerHTML = `
-        <textarea id="code" spellcheck="false">let dog = new sprite("dog", 0, 0, 100); dog.draw();</div>
-        </textarea>`
+        <textarea id="code" spellcheck="false">let dog = new sprite("dog", 0, 0, 100); dog.draw();</div></textarea>`
       }
     </script>
     
