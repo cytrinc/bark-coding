@@ -318,7 +318,7 @@ dialog {
 </dialog>
   
   <div class="navbar">
-    <a href="/"><img src="/src/images/logos/normal.png" alt="Bark"
+    <a onclick="confirm(`Leave the editor? Your project won't be saved!`) ? location.href = '/' : return false"><img src="/src/images/logos/normal.png" alt="Bark"
         width="25" height="25"></a>
     
     <input type="file" id="fileInput" accept=".barkf" style="display: none;" onchange="loadWorkspaceFromFile(this.files[0])" />
