@@ -270,13 +270,18 @@ span.extensionbox {
     box-shadow: 0 12px 8px rgba(0, 0, 0, 0.1);
 }
 
+dialog {
+    z-index: 99;
+    padding-top: 50px;
+}
+
   </style>
 </head>
 
 <body onload="setTimeout(start, 50);" class="code">
 
   <!-- code using blockly or rayne editor? -->
-  <dialog open>
+<dialog open>
   <p>What are going to use?</p>
   <form method="dialog">
     <button>Blockly Drag & Drop</button>
