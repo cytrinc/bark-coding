@@ -47,6 +47,12 @@
       height: 100%;
       margin: 0;
       padding: 0;
+      --black: #0c090f;
+      --code: #171827;
+      --lavender: #ae95ff;
+      --pink: #e695ff;
+      --white: #fefcff;
+      --red: #ff3e3e;
     }
 
     body {
@@ -275,6 +281,28 @@ dialog {
     padding-bottom: 50px;
 }
 
+#code {
+    background-color: var(--code);
+    font-family: monospace;
+    padding: 10px;
+    padding-left: 40px;
+    margin: 0px;
+    resize: none;
+    border: none;
+    color: var(--white);
+    outline: none;
+    width: calc(100% - 750px);
+    height: calc(100vh - 90px);
+    position: absolute;
+    scroll-behavior: auto;
+    font-size: 12pt;
+    caret-color: var(--pink);
+    transition: 0.15s;
+    tab-size: 4;
+    position: absolute;
+    bottom: 0;
+}
+
   </style>
 </head>
 
@@ -285,7 +313,7 @@ dialog {
   <p>What are going to use?</p>
   <form method="dialog">
     <button onclick="start()">Blockly Drag & Drop</button>
-    <button>Text Coding</button>
+    <button onclick="advanced_editor()">Text Coding</button>
   </form>
 </dialog>
   
@@ -1104,6 +1132,7 @@ const extensions = [
   <script src="/blockly_editor/scripts/demo_projects.js"></script>
   <script src="/blockly_editor/scripts/fullscreen.js"></script>
   <script src="/blockly_editor/beta/projectjsonopener.js"></script>
+  <script src="/blockly_editor/advanced_editor.js"></script>
   <script>
     console.log("All editor scripts were ran successfully!");
   </script> 
