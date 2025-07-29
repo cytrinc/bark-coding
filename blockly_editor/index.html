@@ -47,12 +47,6 @@
       height: 100%;
       margin: 0;
       padding: 0;
-      --black: #0c090f;
-      --code: #171827;
-      --lavender: #ae95ff;
-      --pink: #e695ff;
-      --white: #fefcff;
-      --red: #ff3e3e;
     }
 
     body {
@@ -282,25 +276,31 @@ dialog {
 }
 
 #code {
-    background-color: var(--code);
+    background-color: #fffefa;
     font-family: monospace;
     padding: 10px;
     padding-left: 40px;
     margin: 0px;
     resize: none;
     border: none;
-    color: var(--white);
+    color: #171827;
     outline: none;
     width: 100%;
     height: calc(100vh - 90px);
     position: absolute;
     scroll-behavior: auto;
     font-size: 12pt;
-    caret-color: var(--pink);
+    caret-color: dodgerblue;
     transition: 0.15s;
     tab-size: 4;
     position: absolute;
     bottom: 0;
+}
+
+.dark-mode #code {
+    background-color: #171827;
+    color: #fefcff;
+    caret-color: #e695ff;
 }
 
   </style>
