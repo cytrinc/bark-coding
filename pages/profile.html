@@ -263,7 +263,7 @@
   	<br/>
 	<div class="profile-comment" id="${data[i].id}">
 		<p>${replace(data[i].content)}</p>
-  		<!-- <p><span onload="this.remove();" title="Delete this profile comment">Delete Comment</span></p> -->
+  		<p><span onclick="await amiadmin() ? console.log(true) : console.log(false)" title="Delete this profile comment">Delete Comment</span></p>
 	</div>
  `
 	}
