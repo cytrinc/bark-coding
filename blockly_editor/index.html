@@ -707,6 +707,15 @@ dialog {
 <script src="/blockly_editor/cates/functions.js"></script>
 <script src="/blockly_editor/cates/advanced.js"></script>
 
+    <script type="module">
+      import * as Blockly from 'blockly';
+import DarkTheme from '@blockly/theme-dark';
+
+Blockly.inject('blocklyDiv', {
+  theme: DarkTheme,
+});
+    </script>
+    
     <script>
       let costume = "/src/images/dog/idle.svg";
       let added = [];
