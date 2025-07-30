@@ -257,13 +257,17 @@
     .then(data => {
 	console.log(data)
 
+  function deletecommentadmin(id) {
+    console.log("e")
+  }
+
       document.getElementById("comments").innerHTML = "";
 	for (i = 0; i < data.length; i++) {
 		document.getElementById("comments").innerHTML += `
   	<br/>
 	<div class="profile-comment" id="${data[i].id}">
 		<p>${replace(data[i].content)}</p>
-  		<p><span onclick="await amiadmin() ? console.log(true) : console.log(false)" title="Delete this profile comment">Delete Comment</span></p>
+  		<!-- <p><span onclick="deletecommentadmin(${data[i].id})" title="Delete this profile comment">Delete Comment</span></p> -->
 	</div>
  `
 	}
