@@ -1050,7 +1050,10 @@ if (theme) {
           window.workspace.refreshTheme();
         }
       }
-      window.addEventListener('start', initializeDarkMode);
+      //window.addEventListener('load', initializeDarkMode);
+      function start() {
+        initializeDarkMode()
+      }
 
       function change_document_title() {
         if (document.getElementById("projectname").value != "project") {
