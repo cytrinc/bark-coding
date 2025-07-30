@@ -1042,12 +1042,12 @@ if (theme) {
         if (isDarkMode) {
           body.classList.add('dark-mode');
           console.log(window.workspace)
-          // window.workspace.setTheme(themedark);
-          // window.workspace.refreshTheme();
+          window.workspace.setTheme(themedark);
+          window.workspace.refreshTheme();
         } else {
           body.classList.remove('dark-mode');
-          // window.workspace.setTheme();
-          // window.workspace.refreshTheme();
+          window.workspace.setTheme();
+          window.workspace.refreshTheme();
         }
       }
       window.addEventListener('load', initializeDarkMode);
