@@ -1051,7 +1051,10 @@ if (theme) {
         }
       }
       //window.addEventListener('load', initializeDarkMode);
-
+      window.addEventListener(toggleDarkMode, initializeDarkMode);
+      function start() {
+        initializeDarkMode()
+      }
 
       function change_document_title() {
         if (document.getElementById("projectname").value != "project") {
