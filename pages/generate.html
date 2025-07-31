@@ -159,7 +159,7 @@
 			//tell the user its generating. it takes a while to generate so its nice to know that the app didnt crash
 			document.getElementById("idea-title").innerText = "Idea - Generating..";
 
-			const response = await fetch("https://reverse.mubilop.com/v1/chat/completions", {
+			const response = await fetch("https://reverse.mubi.tech/v1/chat/completions", {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
