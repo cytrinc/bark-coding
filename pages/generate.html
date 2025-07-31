@@ -81,7 +81,7 @@
 	</style>
 </head>
 <body>
-	<a href="/"><img src="/src/images/Logo.svg" alt="bark" width="25" height="25" style="padding: 12px"></a>
+	<a href="/"><img src="/src/images/logos/normal.png" alt="bark" width="25" height="25" style="padding: 12px"></a>
 	<content>
 		<h1>Bark's Magic Idea Generator</h1>
 		<p>When you're out of ideas but want to feed your hunger for programming, Bark's Magic Idea Generator gives you creative ideas to spend your time on!</p>
@@ -159,7 +159,7 @@
 			//tell the user its generating. it takes a while to generate so its nice to know that the app didnt crash
 			document.getElementById("idea-title").innerText = "Idea - Generating..";
 
-			const response = await fetch("https://reverse.mubi.tech/v1/chat/completions", {
+			const response = await fetch("https://reverse.mubilop.com/v1/chat/completions", {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
