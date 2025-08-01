@@ -19,7 +19,13 @@ localStorage.setItem('theme', 'bluedodger')
 
 // bark news box (apears in the homepage)
 let newsBox =  `
-Bark Coding now has a working comment system!!!
+The Blockly Editor is currently being reworked to be working as new again!
+<br/>
+This may take some time as i am very busy this season.
+<br/>
+<br/>
+ALSO IM ADDING THE ADVANCED EDITOR TO THE BLOCKLY EDITOR!!!
+<img src="https://ibb.co/27yBkJmD" width="100" alt="the blockly editor site having text to code support.">
 `;
 
 let baseUrl = window.location.origin;
