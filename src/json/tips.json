@@ -26,7 +26,7 @@
   "3.1415926535",
   "Fun fact: The 1,000th commit on Bark's GitHub repository is named \"pi🥧\"",
   "Fun fact: The first comment on Bark is called \"TESTTEST\", by sealbeat",
-  "<b>NO</b> BAD WORDS!",
+  "<s>NO</s><u>SOME</u> BAD WORDS <u>OKAY</u>!",
   "Fun fact: Bark is also contributed from the owners of <a href='https://snail-ide.com' class='link'>Snail-IDE</a>",
   "Be sure to look out for spelling errors ;)",
   "i hate long deployments",
@@ -34,5 +34,8 @@
   "Fun fact: You are reading this",
   "The <a href='https://sites.google.com/view/barkofficialwebsite/home'>original Bark website</a> was created by <a href='https://scratch.mit.edu/users/ozzy_drixAnimation'>@ozzy_drixAnimation</a>",
   "Check out the advanced editor!",
-  "did you know comments and profiles exist?"
+  "did you know comments and profiles exist?",
+  "not like us",
+  "Bark is for everyone! even cat people!!",
+  "I love webcore!!!"
 ]
