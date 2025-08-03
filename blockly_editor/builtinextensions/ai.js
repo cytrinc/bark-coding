@@ -5,7 +5,7 @@ Blockly.Blocks['set_chatbot'] = {
       this.appendDummyInput()
         .appendField(new Blockly.FieldImage(icon, 40, 40, { alt: "*", flipRtl: "FALSE" }))
         .appendField("set chatbot to")
-        .appendField(new Blockly.FieldDropdown([["ChatGPT", "CHATGPT"], ["IffyChat", "IFFYCHAT"]]), "NAME");
+        .appendField(new Blockly.FieldDropdown(["ChatGPT", "CHATGPT"]), "NAME");
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(160);
