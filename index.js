@@ -31,9 +31,7 @@ The Blockly Editor is currently being reworked to be working as new again!
 This may take some time as i am very busy this season.
 <br/>
 <br/>
-ALSO IM ADDING THE ADVANCED EDITOR TO THE BLOCKLY EDITOR!!!
-<br/>
-<img src="https://i.ibb.co/VWt8q6r7/Screenshot-2025-07-31-181122.png" width="350" alt="the blockly editor site having text to code support.">
+ALSO IM MERGING THE ADVANCED EDITOR TO THE BLOCKLY EDITOR!!!
 `;
 
 let baseUrl = window.location.origin;

@@ -1,7 +1,7 @@
   if (localStorage.myBarkUsername) {
     document.getElementById("usernameforprofilebox").innerHTML = `<a href="/profile/${localStorage.myBarkUsername}">${localStorage.myBarkUsername}</a>`;
   } else {
-    document.getElementById("profilebox").remove();
+    document.getElementById("pbbutton").innerHTML = `<p>If you would like to be apart of this <span style="font-size: 10px;">small</span> community then click on one of these buttons!</p><button class="buttonFrBx" onclick='window.location = "/signup"'>Signup</button><button class="buttonFrBx" onclick='window.location = "/login"'>Login</button>`
   }
 
   if (new Date().getMonth() === 12 && new Date().getDate() === 31) {
