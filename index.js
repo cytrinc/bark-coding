@@ -11,6 +11,13 @@ toevaluate.forEach(path => {
     });
 });
 
+async function hostMode() {
+  let x = await fetch("/src/scripts/host.js");
+  let y = await x.text();
+  eval(y);
+}
+hostMode();
+
 if (document.URL == "https://bark.dumorando.com/profile/" || document.URL == "https://bark.dumorando.com/profile") {
   window.location.href = "https://bark.dumorando.com/users";
 }
