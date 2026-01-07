@@ -41,7 +41,7 @@ const components = {
     <a href="https://github.com/mariocraft987/bark.github.io/">Source</a>
     <a href="https://bark.dumorando.com/docs">Docs</a>
     <a href="https://discord.gg/hXmHw7H9BF">Discord</a>
-    <p style="font-size: 9pt; color: #777;">© 2023-2025 Bark Coding<br/>
+    <p style="font-size: 9pt; color: #777;">© 2023-2026 Bark Coding<br/>
     Even though this project is hosted on a dumorando.com domain, this project is not affiliated with dumorando anymore.</p>
     <div id="google_translate_element"></div>
     </footer>
